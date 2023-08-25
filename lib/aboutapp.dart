@@ -73,7 +73,8 @@ class _AboutAppPageState extends State<AboutAppPage> {
                     .textTheme
                     .navLargeTitleTextStyle),
             // text display app version
-            Text('Version: ${_packageInfo.buildNumber}',
+            Text(
+                'Version: ${_packageInfo.version} (${_packageInfo.buildNumber})',
                 style: TextStyle(
                     color: const CupertinoDynamicColor.withBrightness(
                       color: CupertinoColors.black,
@@ -82,7 +83,7 @@ class _AboutAppPageState extends State<AboutAppPage> {
                     fontSize: 12)),
             Container(
               padding: const EdgeInsets.all(16),
-              child: Text('© 2023 All rights reserved.',
+              child: Text('© 2023 Ming Lei. All rights reserved.',
                   style: TextStyle(
                       color: const CupertinoDynamicColor.withBrightness(
                         color: CupertinoColors.black,
@@ -93,12 +94,7 @@ class _AboutAppPageState extends State<AboutAppPage> {
             CupertinoButton(
               child: const Text('Privacy Policy'),
               onPressed: () => _launchURL(
-                  'https://www.calendarwiz.com/mobile.html?crd=queenscollege&nolognavbar=1&cid[]=all#'),
-            ),
-            CupertinoButton(
-              child: const Text('Terms of Use'),
-              onPressed: () => _launchURL(
-                  'https://www.calendarwiz.com/mobile.html?crd=queenscollege&nolognavbar=1&cid[]=all#'),
+                  'https://github.com/popoway/goknights/blob/main/PRIVACY.md'),
             ),
             CupertinoButton(
               child: const Text('Open Source Licenses'),

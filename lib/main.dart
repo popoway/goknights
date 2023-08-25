@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CupertinoApp(
       title: 'GoKnights',
+      debugShowCheckedModeBanner: false,
       theme: CupertinoThemeData(
         primaryColor: Color(0xFFE71939),
         primaryContrastingColor: CupertinoColors.white,
