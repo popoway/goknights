@@ -15,7 +15,7 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
   @override
   Widget build(BuildContext context) {
     // list tile text style that match light dark mode of system
-    final TextStyle _textStyle = TextStyle(
+    final TextStyle optionTextStyle = TextStyle(
         color: const CupertinoDynamicColor.withBrightness(
       color: CupertinoColors.black,
       darkColor: CupertinoColors.white,
@@ -35,10 +35,10 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 CupertinoListSection.insetGrouped(
-                  header: Text('My Academics', style: _textStyle),
+                  header: Text('My Academics', style: optionTextStyle),
                   children: <CupertinoListTile>[
                     CupertinoListTile.notched(
-                      title: Text('CUNYFirst', style: _textStyle),
+                      title: Text('CUNYFirst', style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.rectangle_on_rectangle_angled,
                       ),
@@ -47,7 +47,7 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                           _launchURL('https://home.cunyfirst.cuny.edu/'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text('Blackboard', style: _textStyle),
+                      title: Text('Blackboard', style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.square_list,
                       ),
@@ -56,7 +56,7 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                     ),
                     CupertinoListTile.notched(
                       // title that match light dark mode of system
-                      title: Text('Student Email', style: _textStyle),
+                      title: Text('Student Email', style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.mail,
                       ),
@@ -65,7 +65,7 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                           _launchURL('https://outlook.office.com/mail/inbox'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text('Degreeworks', style: _textStyle),
+                      title: Text('Degreeworks', style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.chart_pie,
                       ),
@@ -74,7 +74,7 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                           'https://degreeworks.cuny.edu/Dashboard_qc'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text('QC Navigate', style: _textStyle),
+                      title: Text('QC Navigate', style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.compass,
                       ),
@@ -87,7 +87,7 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                 CupertinoListSection.insetGrouped(
                   children: <CupertinoListTile>[
                     CupertinoListTile.notched(
-                      title: Text('ITS Help Desk', style: _textStyle),
+                      title: Text('ITS Help Desk', style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.cursor_rays,
                       ),
@@ -98,10 +98,10 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                   ],
                 ),
                 CupertinoListSection.insetGrouped(
-                  header: Text('App Settings', style: _textStyle),
+                  header: Text('App Settings', style: optionTextStyle),
                   children: <CupertinoListTile>[
                     CupertinoListTile.notched(
-                      title: Text('Send Feedback', style: _textStyle),
+                      title: Text('Send Feedback', style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.pencil_outline,
                       ),
@@ -110,7 +110,7 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                           'mailto:ming@popoway.com?subject=GoKnights%20feedback'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text('About GoKnights', style: _textStyle),
+                      title: Text('About GoKnights', style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.info,
                       ),
