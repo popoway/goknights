@@ -60,60 +60,100 @@ class _AboutAppPageState extends State<AboutAppPage> {
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ClipRRect(
-              borderRadius: BorderRadius.circular(20), // Image border
-              child: SizedBox.fromSize(
-                size: const Size.fromRadius(48), // Image radius
-                child: Image.asset('assets/icon/icon.png', fit: BoxFit.cover),
-              ),
+          children: [
+            Expanded(
+              flex: MediaQuery.of(context).orientation == Orientation.portrait
+                  ? 4
+                  : 2,
+              child: Container(),
             ),
-            Text(_packageInfo.appName,
-                style: CupertinoTheme.of(context)
-                    .textTheme
-                    .navLargeTitleTextStyle),
-            // text display app version
-            Text(
-                'Version: ${_packageInfo.version} (${_packageInfo.buildNumber})',
-                style: TextStyle(
-                    color: const CupertinoDynamicColor.withBrightness(
-                      color: CupertinoColors.black,
-                      darkColor: CupertinoColors.white,
-                    ).resolveFrom(context),
-                    fontSize: 12)),
-            Container(
-              padding: const EdgeInsets.all(16),
-              child: Text('© 2023 Ming Lei. All rights reserved.',
-                  style: TextStyle(
-                      color: const CupertinoDynamicColor.withBrightness(
-                        color: CupertinoColors.black,
-                        darkColor: CupertinoColors.white,
-                      ).resolveFrom(context),
-                      fontSize: 16)),
-            ),
-            CupertinoButton(
-              child: const Text('Privacy Policy'),
-              onPressed: () => _launchURL(
-                  'https://github.com/popoway/goknights/blob/main/PRIVACY.md'),
-            ),
-            CupertinoButton(
-              child: const Text('Open Source Licenses'),
-              // Displays a LicensePage onClick
-              onPressed: () => showLicensePage(
-                context: context,
-                applicationName: _packageInfo.appName,
-                applicationVersion: _packageInfo.version,
-                applicationIcon: ClipRRect(
-                  borderRadius: BorderRadius.circular(10), // Image border
-                  child: SizedBox.fromSize(
-                    size: const Size.fromRadius(24), // Image radius
-                    child:
-                        Image.asset('assets/icon/icon.png', fit: BoxFit.cover),
+            Expanded(
+              flex: MediaQuery.of(context).orientation == Orientation.portrait
+                  ? 5
+                  : 10,
+              child: Column(
+                children: <Widget>[
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20), // Image border
+                    child: SizedBox.fromSize(
+                      size: const Size.fromRadius(48), // Image radius
+                      child: Image.asset('assets/icon/icon.png',
+                          fit: BoxFit.cover),
+                    ),
                   ),
-                ),
-                applicationLegalese: '© 2023 All rights reserved.',
+                  Text(_packageInfo.appName,
+                      style: CupertinoTheme.of(context)
+                          .textTheme
+                          .navLargeTitleTextStyle),
+                  // text display app version
+                  Text(
+                      'Version: ${_packageInfo.version} (${_packageInfo.buildNumber})',
+                      style: TextStyle(
+                          color: const CupertinoDynamicColor.withBrightness(
+                            color: CupertinoColors.black,
+                            darkColor: CupertinoColors.white,
+                          ).resolveFrom(context),
+                          fontSize: 12)),
+                  Container(
+                    padding: const EdgeInsets.all(16),
+                    child: Text('Copyright © 2023 Ming Lei.',
+                        style: TextStyle(
+                            color: const CupertinoDynamicColor.withBrightness(
+                              color: CupertinoColors.black,
+                              darkColor: CupertinoColors.white,
+                            ).resolveFrom(context),
+                            fontSize: 16)),
+                  ),
+                  CupertinoButton(
+                    child: const Text('Privacy Policy'),
+                    onPressed: () => _launchURL(
+                        'https://github.com/popoway/goknights/blob/main/PRIVACY.md'),
+                  ),
+                  CupertinoButton(
+                    child: const Text('Open Source Licenses'),
+                    // Displays a LicensePage onClick
+                    onPressed: () => showLicensePage(
+                      context: context,
+                      applicationName: _packageInfo.appName,
+                      applicationVersion:
+                          '${_packageInfo.version} (${_packageInfo.buildNumber})',
+                      applicationIcon: ClipRRect(
+                        borderRadius: BorderRadius.circular(10), // Image border
+                        child: SizedBox.fromSize(
+                          size: const Size.fromRadius(24), // Image radius
+                          child: Image.asset('assets/icon/icon.png',
+                              fit: BoxFit.cover),
+                        ),
+                      ),
+                      applicationLegalese: 'GNU General Public License v3.0',
+                    ),
+                  ),
+                  CupertinoButton(
+                    child: const Text('Disclaimer'),
+                    onPressed: () => _launchURL(
+                        'https://github.com/popoway/goknights#disclaimer'),
+                  ),
+                ],
               ),
             ),
+            Expanded(
+              flex: MediaQuery.of(context).orientation == Orientation.portrait
+                  ? 3
+                  : 0,
+              child: Align(
+                // alignment: FractionalOffset.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  child: Text('Made with ❤️ in Queens, NY',
+                      style: TextStyle(
+                          color: const CupertinoDynamicColor.withBrightness(
+                            color: CupertinoColors.placeholderText,
+                            darkColor: Color.fromARGB(100, 199, 199, 205),
+                          ).resolveFrom(context),
+                          fontSize: 10)),
+                ), //Your widget here,
+              ),
+            )
           ],
         ),
       ),

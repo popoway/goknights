@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:quick_actions/quick_actions.dart';
+
 import 'map.dart';
 import 'options.dart';
+import 'dept/tutoring.dart';
 
 class _TabInfo {
   const _TabInfo(this.title, this.icon);
@@ -98,6 +100,40 @@ class _MyHomePageState extends State<MyHomePage> {
     if (!await launchUrl(uri)) {
       throw Exception('Could not launch $url');
     }
+  }
+
+  void _showCounselingActionSheet(BuildContext context) {
+    showCupertinoModalPopup<void>(
+      context: context,
+      builder: (BuildContext context) => CupertinoActionSheet(
+        title: const Text('Counseling'),
+        message: const Text(
+            "Licensed psychologists and counselors offer individual counseling, groups, and referrals to appropriate college or community resources. All sessions are free and confidential.\nTo set up your first appointment, the first step is to email or call our office. Students will be scheduled a time for a brief screening with a counselor.\n\nLocation: Frese Hall 1st Floor\nEmail: CounselingServices@qc.cuny.edu\nPhone: 718-997-5420"),
+        cancelButton: CupertinoActionSheetAction(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Cancel'),
+        ),
+        actions: <CupertinoActionSheetAction>[
+          CupertinoActionSheetAction(
+            isDefaultAction: true,
+            onPressed: () {
+              Navigator.pop(context);
+              _launchURL('mailto:CounselingServices@qc.cuny.edu');
+            },
+            child: const Text('Make an Appointment'),
+          ),
+          CupertinoActionSheetAction(
+            onPressed: () {
+              Navigator.pop(context);
+              _launchURL('https://www.qc.cuny.edu/cs/');
+            },
+            child: const Text('Learn More'),
+          ),
+        ],
+      ),
+    );
   }
 
   void _showPrintingActionSheet(BuildContext context) {
@@ -279,8 +315,8 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
 
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text(widget.title),
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('GoKnights'),
       ),
       child: AnimationLimiter(
         child: GridView.count(
@@ -302,7 +338,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         ).resolveFrom(context),
                         child: CupertinoButton(
                           onPressed: () {
-                            if (iconList[index]['name'] == 'Shuttle') {
+                            if (iconList[index]['name'] == 'Tutoring') {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => const MyTutoringPage(
+                                        title: 'Tutoring')),
+                              );
+                            } else if (iconList[index]['name'] ==
+                                'Counseling') {
+                              _showCounselingActionSheet(context);
+                            } else if (iconList[index]['name'] == 'Shuttle') {
                               _showShuttleActionSheet(context);
                             } else if (iconList[index]['name'] == 'Printing') {
                               _showPrintingActionSheet(context);

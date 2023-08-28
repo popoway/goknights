@@ -2,7 +2,7 @@
 # See https://dart.dev/tools/pub/glossary#lockfile
 packages:
   apple_maps_flutter:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: apple_maps_flutter
       sha256: "3785518d2bf37066e920b055b171f76258e8937d9182946e5c3ba63614f28285"

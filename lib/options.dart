@@ -107,7 +107,7 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                       ),
                       trailing: const CupertinoListTileChevron(),
                       onTap: () => _launchURL(
-                          'mailto:ming@popoway.com?subject=GoKnights%20feedback'),
+                          'mailto:goknights-feedback@popoway.com?subject=GoKnights%20Feedback'),
                     ),
                     CupertinoListTile.notched(
                       title: Text('About GoKnights', style: optionTextStyle),
