@@ -19,6 +19,10 @@
     <a href="#readme-toc"><strong>Explore the docs »</strong></a>
     <br />
     <br />
+    <a href="https://testflight.apple.com/join/74kqoOhR" target="_blank">
+      <img src="assets/docs/testflight-badge.png" alt="Available on Apple TestFlight" height="40">
+    </a>
+    <br />
     <a href="https://github.com/popoway/goknights">View Demo</a>
     ·
     <a href="https://github.com/popoway/goknights/issues">Report Bug</a>
