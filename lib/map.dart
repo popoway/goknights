@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:geolocator/geolocator.dart';
@@ -229,17 +230,25 @@ class _MyMapPageState extends State<MyMapPage> {
       return Future.error(
         'Location permissions are denied by user.',
       );
-    } else {
-      final position = await _geolocatorPlatform.getCurrentPosition();
-      return position;
+    } else if (hasPermission == LocationPermission.denied) {
+      final permission = await _geolocatorPlatform.requestPermission();
+
+      if (permission == LocationPermission.denied ||
+          permission == LocationPermission.deniedForever) {
+        return Future.error(
+          'Location permissions are denied (actual value: $permission).',
+        );
+      }
     }
+    final position = await _geolocatorPlatform.getCurrentPosition();
+    return position;
   }
 
   Widget buildCampusMap() {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: PlatformMap(
-        padding: const EdgeInsets.only(bottom: 64.0, top: 64.0),
+        padding: const EdgeInsets.only(bottom: 64.0, top: 96.0),
         initialCameraPosition: const CameraPosition(
           target: LatLng(40.736366, -73.819483),
           zoom: 16.0,
@@ -358,13 +367,31 @@ class _MyMapPageState extends State<MyMapPage> {
                     future: _getCurrentPosition(),
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
-                        return Text(
-                          '${(Geolocator.distanceBetween(snapshot.data!.latitude, snapshot.data!.longitude, e.position.latitude, e.position.longitude) * 3.28084).round()} ft',
-                        );
+                        double distanceMeter = Geolocator.distanceBetween(
+                            snapshot.data!.latitude,
+                            snapshot.data!.longitude,
+                            e.position.latitude,
+                            e.position.longitude);
+                        double distanceFeet = distanceMeter * 3.28084;
+                        if (distanceFeet < 1000) {
+                          return Text(
+                            '${distanceFeet.round()} ft',
+                          );
+                        } else {
+                          return Text(
+                            // 2 decimal places
+                            '${(distanceFeet / 5280).toStringAsFixed(2)} mi',
+                          );
+                        }
                       } else if (snapshot.hasError) {
-                        return Text('${snapshot.error}');
+                        if (kDebugMode) {
+                          print('${snapshot.error}');
+                        }
+                        return const Text('');
                       }
-                      return const CupertinoActivityIndicator();
+                      return const CircularProgressIndicator.adaptive(
+                          valueColor:
+                              AlwaysStoppedAnimation<Color>(Color(0xFFE71939)));
                     },
                   ),
                   onTap: () {

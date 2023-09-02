@@ -63,13 +63,13 @@ class _AboutAppPageState extends State<AboutAppPage> {
           children: [
             Expanded(
               flex: MediaQuery.of(context).orientation == Orientation.portrait
-                  ? 4
+                  ? 3
                   : 2,
               child: Container(),
             ),
             Expanded(
               flex: MediaQuery.of(context).orientation == Orientation.portrait
-                  ? 5
+                  ? 6
                   : 10,
               child: Column(
                 children: <Widget>[

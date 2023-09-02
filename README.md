@@ -37,9 +37,11 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+- [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [Privacy](#privacy)
 - [License](#license)
+- [Disclaimer](#disclaimer)
 
 ## Description
 
@@ -81,6 +83,12 @@ flutter build ios --release --no-codesign
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Roadmap
+
+- [ ] User onboarding with different roles -> views
+- [ ] Injectable JS WKWebview for calendars
+- [ ] i18n support with Italian, Chinese and Spanish
 
 ## Contributing
 

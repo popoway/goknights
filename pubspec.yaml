@@ -17,7 +17,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+8
+version: 1.0.0+9
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
@@ -45,6 +45,7 @@ dependencies:
   material_floating_search_bar_2: ^0.5.0
   geolocator: ^10.0.0
   apple_maps_flutter: ^1.2.0
+  flutter_config: ^2.0.2
 
 dev_dependencies:
   flutter_test:
@@ -100,12 +101,18 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 
+# After setting up the configuration, all that is left to do is run the package.
+# flutter pub get
+# flutter pub run flutter_launcher_icons
+# https://pub.dev/packages/flutter_launcher_icons
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   remove_alpha_ios: true
   image_path: "assets/icon/icon.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
+  adaptive_icon_background: "assets/icon/icon-background.png" # only available for Android 8.0 devices and above
+  adaptive_icon_foreground: "assets/icon/adaptive-foreground.png" # only available for Android 8.0 devices and above
   web:
     generate: true
     image_path: "assets/icon/icon.png"
