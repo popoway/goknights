@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -248,7 +249,12 @@ class _MyMapPageState extends State<MyMapPage> {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: PlatformMap(
-        padding: const EdgeInsets.only(bottom: 64.0, top: 96.0),
+        // top: if iOS then 64 otherwise 96
+        padding: EdgeInsets.only(
+            bottom: 64.0,
+            top: Platform.isIOS ? 64.0 : 96.0,
+            left: 8.0,
+            right: 8.0),
         initialCameraPosition: const CameraPosition(
           target: LatLng(40.736366, -73.819483),
           zoom: 16.0,
@@ -322,20 +328,20 @@ class _MyMapPageState extends State<MyMapPage> {
       openAxisAlignment: 0.0,
       width: isPortrait ? null : 500,
       debounceDelay: const Duration(milliseconds: 500),
-      backgroundColor: const CupertinoDynamicColor.withBrightness(
-        color: CupertinoColors.white,
-        darkColor: CupertinoColors.black,
-      ).resolveFrom(context),
+      backgroundColor:
+          MediaQuery.of(context).platformBrightness == Brightness.light
+              ? Colors.white
+              : const Color(0xFF202124),
       hintStyle: TextStyle(
-        color: const CupertinoDynamicColor.withBrightness(
-          color: CupertinoColors.placeholderText,
-          darkColor: Color.fromARGB(100, 199, 199, 205),
-        ).resolveFrom(context),
+        color: MediaQuery.of(context).platformBrightness == Brightness.light
+            ? CupertinoColors.placeholderText
+            : const Color.fromARGB(100, 199, 199, 205),
         fontSize: 16,
       ),
-      queryStyle: const TextStyle(
-        color: CupertinoColors.black,
-      ),
+      queryStyle: TextStyle(
+          color: MediaQuery.of(context).platformBrightness == Brightness.light
+              ? CupertinoColors.black
+              : CupertinoColors.white),
       onQueryChanged: (query) {
         searchBuilding(query);
       },
@@ -350,7 +356,9 @@ class _MyMapPageState extends State<MyMapPage> {
         return ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: Material(
-            color: Colors.white,
+            color: MediaQuery.of(context).platformBrightness == Brightness.light
+                ? Colors.white
+                : const Color(0xFF202124),
             elevation: 4.0,
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -360,8 +368,18 @@ class _MyMapPageState extends State<MyMapPage> {
                   return const SizedBox.shrink();
                 }
                 return ListTile(
-                  title: Text(e.infoWindow.title!),
-                  subtitle: const Text('Building'),
+                  title: Text(e.infoWindow.title!,
+                      style: TextStyle(
+                          color: MediaQuery.of(context).platformBrightness ==
+                                  Brightness.light
+                              ? CupertinoColors.black
+                              : CupertinoColors.white)),
+                  subtitle: Text('Building',
+                      style: TextStyle(
+                          color: MediaQuery.of(context).platformBrightness ==
+                                  Brightness.light
+                              ? CupertinoColors.black
+                              : CupertinoColors.white)),
                   // display distance from user to building
                   trailing: FutureBuilder<Position>(
                     future: _getCurrentPosition(),
@@ -376,11 +394,23 @@ class _MyMapPageState extends State<MyMapPage> {
                         if (distanceFeet < 1000) {
                           return Text(
                             '${distanceFeet.round()} ft',
+                            style: TextStyle(
+                                color:
+                                    MediaQuery.of(context).platformBrightness ==
+                                            Brightness.light
+                                        ? CupertinoColors.black
+                                        : CupertinoColors.white),
                           );
                         } else {
                           return Text(
                             // 2 decimal places
                             '${(distanceFeet / 5280).toStringAsFixed(2)} mi',
+                            style: TextStyle(
+                                color:
+                                    MediaQuery.of(context).platformBrightness ==
+                                            Brightness.light
+                                        ? CupertinoColors.black
+                                        : CupertinoColors.white),
                           );
                         }
                       } else if (snapshot.hasError) {
