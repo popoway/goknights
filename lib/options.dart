@@ -1,4 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:goknights/onboarding.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'aboutapp.dart';
 
@@ -12,6 +15,21 @@ class MyOptionsPage extends StatefulWidget {
 }
 
 class _MyOptionsPageState extends State<MyOptionsPage> {
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+  late Future<int> _counter;
+  late Future<String> _role;
+
+  @override
+  void initState() {
+    super.initState();
+    _counter = _prefs.then((SharedPreferences prefs) {
+      return prefs.getInt('counter') ?? 0;
+    });
+    _role = _prefs.then((SharedPreferences prefs) {
+      return prefs.getString('role') ?? 'current';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // list tile text style that match light dark mode of system
@@ -101,6 +119,46 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                   header: Text('App Settings', style: optionTextStyle),
                   children: <CupertinoListTile>[
                     CupertinoListTile.notched(
+                      title: Text('Switch Role', style: optionTextStyle),
+                      leading: const Icon(
+                        CupertinoIcons.person_2,
+                      ),
+                      trailing: const CupertinoListTileChevron(),
+                      additionalInfo: FutureBuilder<String>(
+                          future: _role,
+                          builder: (BuildContext context,
+                              AsyncSnapshot<String> snapshot) {
+                            switch (snapshot.connectionState) {
+                              case ConnectionState.none:
+                              case ConnectionState.waiting:
+                                return const CircularProgressIndicator.adaptive(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                        Color(0xFFE71939)));
+                              case ConnectionState.active:
+                              case ConnectionState.done:
+                                if (snapshot.hasError) {
+                                  return Text('Error: ${snapshot.error}');
+                                } else {
+                                  // if 'current', then show 'Current Student', if 'prospective', then show 'Prospective Student', if 'faculty', then show 'Faculty / Staff'
+                                  return Text(
+                                    snapshot.data == 'current'
+                                        ? 'Current Student'
+                                        : snapshot.data == 'prospective'
+                                            ? 'Prospective Student'
+                                            : 'Faculty / Staff',
+                                  );
+                                }
+                            }
+                          }),
+                      onTap: () => {
+                        // need to pop the current page (with nav) to go back to onboarding
+                        Navigator.of(context, rootNavigator: true).push(
+                            CupertinoPageRoute(
+                                builder: (context) => const OnboardingPage(
+                                    title: 'Welcome to GoKnights'))),
+                      },
+                    ),
+                    CupertinoListTile.notched(
                       title: Text('Send Feedback', style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.pencil_outline,
@@ -126,6 +184,33 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                     ),
                   ],
                 ),
+                FutureBuilder<int>(
+                    future: _counter,
+                    builder:
+                        (BuildContext context, AsyncSnapshot<int> snapshot) {
+                      switch (snapshot.connectionState) {
+                        case ConnectionState.none:
+                        case ConnectionState.waiting:
+                          return const CircularProgressIndicator.adaptive(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                  Color(0xFFE71939)));
+                        case ConnectionState.active:
+                        case ConnectionState.done:
+                          if (snapshot.hasError) {
+                            return Text('Error: ${snapshot.error}');
+                          } else {
+                            return Text(
+                                'GoKnights has enlivened your college experience for ${snapshot.data} time${snapshot.data == 1 ? '' : 's'}.',
+                                style: TextStyle(
+                                    color: const CupertinoDynamicColor
+                                        .withBrightness(
+                                      color: CupertinoColors.black,
+                                      darkColor: CupertinoColors.white,
+                                    ).resolveFrom(context),
+                                    fontSize: 12));
+                          }
+                      }
+                    }),
               ],
             ),
           ),

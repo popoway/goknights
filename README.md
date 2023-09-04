@@ -74,7 +74,12 @@ Below are some brief instructions on setting up this project locally. To get a l
    ```sh
    flutter pub get
    ```
-3. Enter your API keys in `.env`
+3. Enter your API keys in `.env`:
+   ```
+   # example .env file
+   GOOGLE_MAPS_API_KEY=your_key_here
+   UPLOAD_KEYSTORE_PASSWORD=google_play_keystore
+   ```
 4. You're all set! Run the app with `flutter run` or your preferred editor.
 
 To generate a _release_ build for iOS without codesign, run the following command:
@@ -86,7 +91,7 @@ flutter build ios --release --no-codesign
 
 ## Roadmap
 
-- [ ] User onboarding with different roles -> views
+- [x] User onboarding with different roles -> views
 - [ ] Injectable JS WKWebview for calendars
 - [ ] i18n support with Italian, Chinese and Spanish
 

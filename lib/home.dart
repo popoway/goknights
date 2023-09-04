@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:quick_actions/quick_actions.dart';
@@ -95,6 +96,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+  Future<String> _role = Future<String>.value('current');
+
   void _launchURL(String url) async {
     final Uri uri = Uri.parse(url);
     if (!await launchUrl(uri)) {
@@ -216,10 +220,104 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  List<Map<String, dynamic>> iconListCurrent = [];
+  final List<Map<String, dynamic>> iconList = [
+    {
+      'icon': CupertinoIcons.text_badge_checkmark,
+      'name': 'Advising',
+      'url': 'https://www.qc.cuny.edu/aac/',
+      'role': ['current', 'prospective'],
+    },
+    {
+      'icon': CupertinoIcons.book,
+      'name': 'Tutoring',
+      'url': 'https://www.qc.cuny.edu/academics/qclc/#tutoring',
+      'role': ['current'],
+    },
+    {
+      'icon': CupertinoIcons.rectangle_stack_fill_badge_person_crop,
+      'name': 'Careers',
+      'url': 'https://www.qc.cuny.edu/academics/cei/',
+      'role': ['current', 'prospective'],
+    },
+    {
+      'icon': CupertinoIcons.tickets,
+      'name': 'Scholarships',
+      'url': 'https://www.qc.cuny.edu/academics/ohs/',
+      'role': ['current', 'prospective'],
+    },
+    {
+      'icon': CupertinoIcons.chat_bubble_2,
+      'name': 'Counseling',
+      'url': 'https://www.qc.cuny.edu/cs/',
+      'role': ['current'],
+    },
+    {
+      'icon': CupertinoIcons.bookmark,
+      'name': 'Library',
+      'url': 'https://library.qc.cuny.edu/',
+      'role': ['current'],
+    },
+    {
+      'icon': CupertinoIcons.printer,
+      'name': 'Printing',
+      'url': 'https://qcprint.qc.cuny.edu/myprintcenter/#',
+      'role': ['current'],
+    },
+    {
+      'icon': CupertinoIcons.calendar,
+      'name': 'Calendar',
+      'url':
+          'https://www.calendarwiz.com/mobile.html?crd=queenscollege&nolognavbar=1&cid[]=all#',
+      'role': ['current', 'prospective'],
+    },
+    {
+      'icon': CupertinoIcons.phone,
+      'name': 'Directory',
+      'url': 'https://www.qc.cuny.edu/directory/',
+      'role': ['current', 'prospective'],
+    },
+    {
+      'icon': CupertinoIcons.bus,
+      'name': 'Shuttle',
+      'url':
+          'https://queenscollegeshuttles.com/map?showHeader=0&route=3235&silent_disable_timeout=1',
+      'role': ['current', 'prospective'],
+    },
+    {
+      'icon': CupertinoIcons.sportscourt,
+      'name': 'Sports',
+      'url': 'https://queensknights.com/index.aspx',
+      'role': ['current', 'prospective'],
+    },
+    {
+      'icon': CupertinoIcons.arrow_right_arrow_left,
+      'name': 'Transfer',
+      'url': 'https://queensknights.com/index.aspx',
+      'role': ['prospective'],
+    },
+  ];
+
+  Future getCurrentIconList() async {
+    _role.then((String result) {
+      iconListCurrent = [];
+      for (var i = 0; i < iconList.length; i++) {
+        if (iconList[i]['role'].contains(result)) {
+          iconListCurrent.add(iconList[i]);
+        }
+      }
+    });
+  }
+
   // String shortcut = 'no action set';
   @override
   void initState() {
     super.initState();
+
+    _role = _prefs.then((SharedPreferences prefs) {
+      return prefs.getString('role') ?? 'current';
+    });
+    getCurrentIconList();
 
     const QuickActions quickActions = QuickActions();
     quickActions.initialize((String shortcutType) {
@@ -254,65 +352,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // if landscape, show 5 icons per row; if portrait, show 3 icons per row
     final columnCount =
         MediaQuery.of(context).orientation == Orientation.landscape ? 5 : 3;
-    List<Map<String, dynamic>> iconList = [
-      {
-        'icon': CupertinoIcons.text_badge_checkmark,
-        'name': 'Advising',
-        'url': 'https://bbhosted.cuny.edu/webapps/login/',
-      },
-      {
-        'icon': CupertinoIcons.book,
-        'name': 'Tutoring',
-        'url': 'https://www.qc.cuny.edu/academics/qclc/#tutoring',
-      },
-      {
-        'icon': CupertinoIcons.rectangle_stack_fill_badge_person_crop,
-        'name': 'Careers',
-        'url': 'https://www.qc.cuny.edu/academics/cei/',
-      },
-      {
-        'icon': CupertinoIcons.tickets,
-        'name': 'Scholarships',
-        'url': 'https://www.qc.cuny.edu/academics/ohs/',
-      },
-      {
-        'icon': CupertinoIcons.chat_bubble_2,
-        'name': 'Counseling',
-        'url': 'https://www.qc.cuny.edu/cs/',
-      },
-      {
-        'icon': CupertinoIcons.bookmark,
-        'name': 'Library',
-        'url': 'https://library.qc.cuny.edu/',
-      },
-      {
-        'icon': CupertinoIcons.printer,
-        'name': 'Printing',
-        'url': 'https://qcprint.qc.cuny.edu/myprintcenter/#',
-      },
-      {
-        'icon': CupertinoIcons.calendar,
-        'name': 'Calendar',
-        'url':
-            'https://www.calendarwiz.com/mobile.html?crd=queenscollege&nolognavbar=1&cid[]=all#',
-      },
-      {
-        'icon': CupertinoIcons.phone,
-        'name': 'Directory',
-        'url': 'https://www.qc.cuny.edu/directory/',
-      },
-      {
-        'icon': CupertinoIcons.bus,
-        'name': 'Shuttle',
-        'url':
-            'https://queenscollegeshuttles.com/map?showHeader=0&route=3235&silent_disable_timeout=1',
-      },
-      {
-        'icon': CupertinoIcons.sportscourt,
-        'name': 'Sports',
-        'url': 'https://queensknights.com/index.aspx',
-      },
-    ];
+    // add icons that are for current role
 
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
@@ -322,7 +362,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: GridView.count(
             crossAxisCount: columnCount,
             children: List.generate(
-              iconList.length,
+              iconListCurrent.length,
               (int index) {
                 return AnimationConfiguration.staggeredGrid(
                   position: index,
@@ -338,29 +378,32 @@ class _MyHomePageState extends State<MyHomePage> {
                         ).resolveFrom(context),
                         child: CupertinoButton(
                           onPressed: () {
-                            if (iconList[index]['name'] == 'Tutoring') {
+                            if (iconListCurrent[index]['name'] == 'Tutoring') {
                               Navigator.push(
                                 context,
                                 CupertinoPageRoute(
-                                    builder: (context) => const MyTutoringPage(
-                                        title: 'Tutoring')),
+                                    builder: (context) =>
+                                        const MyTutoringPage(title: 'Tutoring'),
+                                    title: 'Tutoring'),
                               );
-                            } else if (iconList[index]['name'] ==
+                            } else if (iconListCurrent[index]['name'] ==
                                 'Counseling') {
                               _showCounselingActionSheet(context);
-                            } else if (iconList[index]['name'] == 'Shuttle') {
+                            } else if (iconListCurrent[index]['name'] ==
+                                'Shuttle') {
                               _showShuttleActionSheet(context);
-                            } else if (iconList[index]['name'] == 'Printing') {
+                            } else if (iconListCurrent[index]['name'] ==
+                                'Printing') {
                               _showPrintingActionSheet(context);
                             } else {
-                              _launchURL(iconList[index]['url']);
+                              _launchURL(iconListCurrent[index]['url']);
                             }
                           },
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(
-                                iconList[index]['icon'],
+                                iconListCurrent[index]['icon'],
                                 size: 50,
                                 color: const Color(0xFFE71939),
                               ),
@@ -368,7 +411,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               FittedBox(
                                 fit: BoxFit.fitWidth,
                                 child: Text(
-                                  iconList[index]['name'],
+                                  iconListCurrent[index]['name'],
                                   style: const TextStyle(
                                     fontSize: 20,
                                     color: Color(0xFFE71939),
