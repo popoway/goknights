@@ -111,228 +111,238 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return CupertinoPageScaffold(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 2,
-              child: Container(),
-            ),
-            Expanded(
-              flex: 8,
-              child: Column(
-                children: <Widget>[
-                  // add a fade in animation to the logo using Animated Opacity
-                  AnimatedOpacity(
-                    opacity: widget1Opacity,
-                    duration: const Duration(seconds: 1),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius:
-                              BorderRadius.circular(20), // Image border
-                          child: SizedBox.fromSize(
-                            size: const Size.fromRadius(48), // Image radius
-                            child: Image.asset('assets/icon/icon.png',
-                                fit: BoxFit.cover),
-                          ),
-                        ),
-                        const SizedBox(height: 16), // Add a 16px padding
-                        Text(widget.title,
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color:
-                                    const CupertinoDynamicColor.withBrightness(
-                                  color: CupertinoColors.black,
-                                  darkColor: CupertinoColors.white,
-                                ).resolveFrom(context),
-                                fontSize: 24)),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 48),
-                  AnimatedOpacity(
-                    opacity: widget2Opacity,
-                    duration: const Duration(seconds: 1),
-                    child: Column(
-                      children: [
-                        Container(
-                          // add a padding left and right
-                          padding: const EdgeInsets.only(left: 32, right: 32),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: <Widget>[
-                              const Icon(
-                                  CupertinoIcons
-                                      .square_stack_3d_down_right_fill,
-                                  size: 36),
-                              const SizedBox(width: 16),
-                              Flexible(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Utilize Student Services',
-                                      style: TextStyle(
-                                        fontSize: 24,
-                                        color: const CupertinoDynamicColor
-                                            .withBrightness(
-                                          color: CupertinoColors.black,
-                                          darkColor: CupertinoColors.white,
-                                        ).resolveFrom(context),
-                                      ),
-                                    ),
-                                    Text(
-                                      'Access advising, tutoring, printing, and other resources you need in a centralized location.',
-                                      style: TextStyle(
-                                        color: const CupertinoDynamicColor
-                                            .withBrightness(
-                                          color: CupertinoColors.black,
-                                          darkColor: CupertinoColors.white,
-                                        ).resolveFrom(context),
-                                      ),
-                                      maxLines: 3,
-                                      textAlign: TextAlign.justify,
-                                      softWrap: true,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 48),
-                  AnimatedOpacity(
-                    opacity: widget3Opacity,
-                    duration: const Duration(seconds: 1),
-                    child: Column(
-                      children: [
-                        Container(
-                          // add a padding left and right
-                          padding: const EdgeInsets.only(left: 32, right: 32),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: <Widget>[
-                              const Icon(CupertinoIcons.map_pin_ellipse,
-                                  size: 36),
-                              const SizedBox(width: 16),
-                              Flexible(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Explore Campus Map',
-                                      style: TextStyle(
-                                        fontSize: 24,
-                                        color: const CupertinoDynamicColor
-                                            .withBrightness(
-                                          color: CupertinoColors.black,
-                                          darkColor: CupertinoColors.white,
-                                        ).resolveFrom(context),
-                                      ),
-                                    ),
-                                    Text(
-                                      'Search for buildings, offices, and classrooms. Get directions to your next class.',
-                                      style: TextStyle(
-                                        color: const CupertinoDynamicColor
-                                            .withBrightness(
-                                          color: CupertinoColors.black,
-                                          darkColor: CupertinoColors.white,
-                                        ).resolveFrom(context),
-                                      ),
-                                      maxLines: 3,
-                                      textAlign: TextAlign.justify,
-                                      softWrap: true,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 48),
-                  AnimatedOpacity(
-                    opacity: widget4Opacity,
-                    duration: const Duration(seconds: 1),
-                    child: Column(
-                      children: [
-                        Container(
-                          // add a padding left and right
-                          padding: const EdgeInsets.only(left: 32, right: 32),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: <Widget>[
-                              const Icon(CupertinoIcons.question, size: 36),
-                              const SizedBox(width: 16),
-                              Flexible(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Find Help',
-                                      style: TextStyle(
-                                        fontSize: 24,
-                                        color: const CupertinoDynamicColor
-                                            .withBrightness(
-                                          color: CupertinoColors.black,
-                                          darkColor: CupertinoColors.white,
-                                        ).resolveFrom(context),
-                                      ),
-                                    ),
-                                    Text(
-                                      'Get common questions answered and find out who to contact for more help.',
-                                      style: TextStyle(
-                                        color: const CupertinoDynamicColor
-                                            .withBrightness(
-                                          color: CupertinoColors.black,
-                                          darkColor: CupertinoColors.white,
-                                        ).resolveFrom(context),
-                                      ),
-                                      maxLines: 3,
-                                      textAlign: TextAlign.justify,
-                                      softWrap: true,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+    return WillPopScope(
+      // forbidden swipe in iOS(my ThemeData(platform: TargetPlatform.iOS,) from onboarding.dart)
+      onWillPop: () async {
+        if (Navigator.of(context).userGestureInProgress) {
+          return false;
+        } else {
+          return true;
+        }
+      },
+      child: CupertinoPageScaffold(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                flex: 2,
+                child: Container(),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Align(
-                  child: AnimatedOpacity(
-                opacity: widget5Opacity,
-                duration: const Duration(seconds: 1),
-                child: CupertinoButton.filled(
-                  onPressed: () {
-                    _showGetStartedActionSheet(context);
-                  },
-                  child: const Text('Get Started'),
+              Expanded(
+                flex: 8,
+                child: Column(
+                  children: <Widget>[
+                    // add a fade in animation to the logo using Animated Opacity
+                    AnimatedOpacity(
+                      opacity: widget1Opacity,
+                      duration: const Duration(seconds: 1),
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius:
+                                BorderRadius.circular(20), // Image border
+                            child: SizedBox.fromSize(
+                              size: const Size.fromRadius(48), // Image radius
+                              child: Image.asset('assets/icon/icon.png',
+                                  fit: BoxFit.cover),
+                            ),
+                          ),
+                          const SizedBox(height: 16), // Add a 16px padding
+                          Text(widget.title,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: const CupertinoDynamicColor
+                                      .withBrightness(
+                                    color: CupertinoColors.black,
+                                    darkColor: CupertinoColors.white,
+                                  ).resolveFrom(context),
+                                  fontSize: 24)),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 48),
+                    AnimatedOpacity(
+                      opacity: widget2Opacity,
+                      duration: const Duration(seconds: 1),
+                      child: Column(
+                        children: [
+                          Container(
+                            // add a padding left and right
+                            padding: const EdgeInsets.only(left: 32, right: 32),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                const Icon(
+                                    CupertinoIcons
+                                        .square_stack_3d_down_right_fill,
+                                    size: 36),
+                                const SizedBox(width: 16),
+                                Flexible(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Utilize Student Services',
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                          color: const CupertinoDynamicColor
+                                              .withBrightness(
+                                            color: CupertinoColors.black,
+                                            darkColor: CupertinoColors.white,
+                                          ).resolveFrom(context),
+                                        ),
+                                      ),
+                                      Text(
+                                        'Access advising, tutoring, printing, and other resources you need in a centralized location.',
+                                        style: TextStyle(
+                                          color: const CupertinoDynamicColor
+                                              .withBrightness(
+                                            color: CupertinoColors.black,
+                                            darkColor: CupertinoColors.white,
+                                          ).resolveFrom(context),
+                                        ),
+                                        maxLines: 3,
+                                        textAlign: TextAlign.justify,
+                                        softWrap: true,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 48),
+                    AnimatedOpacity(
+                      opacity: widget3Opacity,
+                      duration: const Duration(seconds: 1),
+                      child: Column(
+                        children: [
+                          Container(
+                            // add a padding left and right
+                            padding: const EdgeInsets.only(left: 32, right: 32),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                const Icon(CupertinoIcons.map_pin_ellipse,
+                                    size: 36),
+                                const SizedBox(width: 16),
+                                Flexible(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Explore Campus Map',
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                          color: const CupertinoDynamicColor
+                                              .withBrightness(
+                                            color: CupertinoColors.black,
+                                            darkColor: CupertinoColors.white,
+                                          ).resolveFrom(context),
+                                        ),
+                                      ),
+                                      Text(
+                                        'Search for buildings, offices, and classrooms. Get directions to your next class.',
+                                        style: TextStyle(
+                                          color: const CupertinoDynamicColor
+                                              .withBrightness(
+                                            color: CupertinoColors.black,
+                                            darkColor: CupertinoColors.white,
+                                          ).resolveFrom(context),
+                                        ),
+                                        maxLines: 3,
+                                        textAlign: TextAlign.justify,
+                                        softWrap: true,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 48),
+                    AnimatedOpacity(
+                      opacity: widget4Opacity,
+                      duration: const Duration(seconds: 1),
+                      child: Column(
+                        children: [
+                          Container(
+                            // add a padding left and right
+                            padding: const EdgeInsets.only(left: 32, right: 32),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                const Icon(CupertinoIcons.question, size: 36),
+                                const SizedBox(width: 16),
+                                Flexible(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Find Help',
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                          color: const CupertinoDynamicColor
+                                              .withBrightness(
+                                            color: CupertinoColors.black,
+                                            darkColor: CupertinoColors.white,
+                                          ).resolveFrom(context),
+                                        ),
+                                      ),
+                                      Text(
+                                        'Get common questions answered and find out who to contact for more help.',
+                                        style: TextStyle(
+                                          color: const CupertinoDynamicColor
+                                              .withBrightness(
+                                            color: CupertinoColors.black,
+                                            darkColor: CupertinoColors.white,
+                                          ).resolveFrom(context),
+                                        ),
+                                        maxLines: 3,
+                                        textAlign: TextAlign.justify,
+                                        softWrap: true,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-              )),
-            )
-          ],
+              ),
+              Expanded(
+                flex: 2,
+                child: Align(
+                    child: AnimatedOpacity(
+                  opacity: widget5Opacity,
+                  duration: const Duration(seconds: 1),
+                  child: CupertinoButton.filled(
+                    onPressed: () {
+                      _showGetStartedActionSheet(context);
+                    },
+                    child: const Text('Get Started'),
+                  ),
+                )),
+              )
+            ],
+          ),
         ),
       ),
     );

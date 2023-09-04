@@ -35,29 +35,39 @@ class CupertinoTabBarDemo extends StatelessWidget {
       ),
     ];
 
-    return DefaultTextStyle(
-      style: DefaultTextStyle.of(context).style.copyWith(fontSize: 17),
-      child: CupertinoTabScaffold(
-        restorationId: 'cupertino_tab_scaffold',
-        tabBar: CupertinoTabBar(
-          items: [
-            for (final tabInfo in tabInfo)
-              BottomNavigationBarItem(
-                label: tabInfo.title,
-                icon: Icon(tabInfo.icon),
+    return WillPopScope(
+      // forbidden swipe in iOS(my ThemeData(platform: TargetPlatform.iOS,) from onboarding.dart)
+      onWillPop: () async {
+        if (Navigator.of(context).userGestureInProgress) {
+          return false;
+        } else {
+          return true;
+        }
+      },
+      child: DefaultTextStyle(
+        style: DefaultTextStyle.of(context).style.copyWith(fontSize: 17),
+        child: CupertinoTabScaffold(
+          restorationId: 'cupertino_tab_scaffold',
+          tabBar: CupertinoTabBar(
+            items: [
+              for (final tabInfo in tabInfo)
+                BottomNavigationBarItem(
+                  label: tabInfo.title,
+                  icon: Icon(tabInfo.icon),
+                ),
+            ],
+          ),
+          tabBuilder: (context, index) {
+            return CupertinoTabView(
+              restorationScopeId: 'cupertino_tab_view_$index',
+              defaultTitle: tabInfo[index].title,
+              builder: (context) => _CupertinoDemoTab(
+                title: tabInfo[index].title,
+                icon: tabInfo[index].icon,
               ),
-          ],
+            );
+          },
         ),
-        tabBuilder: (context, index) {
-          return CupertinoTabView(
-            restorationScopeId: 'cupertino_tab_view_$index',
-            defaultTitle: tabInfo[index].title,
-            builder: (context) => _CupertinoDemoTab(
-              title: tabInfo[index].title,
-              icon: tabInfo[index].icon,
-            ),
-          );
-        },
       ),
     );
   }
@@ -353,7 +363,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // if landscape, show 5 icons per row; if portrait, show 3 icons per row
     final columnCount =
         MediaQuery.of(context).orientation == Orientation.landscape ? 5 : 3;
-    // add icons that are for current role
 
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
