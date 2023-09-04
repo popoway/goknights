@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:goknights/main.dart';
 import 'package:goknights/onboarding.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -14,45 +15,92 @@ class MyOptionsPage extends StatefulWidget {
   State<MyOptionsPage> createState() => _MyOptionsPageState();
 }
 
+TextStyle optionTextStyle = TextStyle(
+    color: const CupertinoDynamicColor.withBrightness(
+  color: CupertinoColors.black,
+  darkColor: CupertinoColors.white,
+).resolveFrom(NavigationService.navigatorKey.currentContext!));
+
 class _MyOptionsPageState extends State<MyOptionsPage> {
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   late Future<int> _counter;
   late Future<String> _role;
 
-  @override
-  void initState() {
-    super.initState();
-    _counter = _prefs.then((SharedPreferences prefs) {
-      return prefs.getInt('counter') ?? 0;
-    });
-    _role = _prefs.then((SharedPreferences prefs) {
-      return prefs.getString('role') ?? 'current';
-    });
-  }
+  CupertinoListSection myAcademicListSection =
+      CupertinoListSection.insetGrouped(
+    header: Text('My Academics', style: optionTextStyle),
+    children: <CupertinoListTile>[
+      CupertinoListTile.notched(
+        title: Text('Apply to QC', style: optionTextStyle),
+        leading: const Icon(
+          CupertinoIcons.square_arrow_right,
+        ),
+        trailing: const CupertinoListTileChevron(),
+        onTap: () => _launchURL('https://www.qc.cuny.edu/apply/'),
+      ),
+      CupertinoListTile.notched(
+        title: Text('CUNYFirst', style: optionTextStyle),
+        leading: const Icon(
+          CupertinoIcons.rectangle_on_rectangle_angled,
+        ),
+        trailing: const CupertinoListTileChevron(),
+        onTap: () => _launchURL('https://home.cunyfirst.cuny.edu/'),
+      ),
+      CupertinoListTile.notched(
+        title: Text('QC Navigate', style: optionTextStyle),
+        leading: const Icon(
+          CupertinoIcons.compass,
+        ),
+        trailing: const CupertinoListTileChevron(),
+        onTap: () => _launchURL(
+            'https://qc-cuny.navigate.eab.com/api/v1/auth/login/?return_to=https%3A%2F%2Fqc-cuny.navigate.eab.com%2F%23%2Fmy%2Fpriority-feed%2F'),
+      ),
+    ],
+  );
 
-  @override
-  Widget build(BuildContext context) {
-    // list tile text style that match light dark mode of system
-    final TextStyle optionTextStyle = TextStyle(
-        color: const CupertinoDynamicColor.withBrightness(
-      color: CupertinoColors.black,
-      darkColor: CupertinoColors.white,
-    ).resolveFrom(context));
-    return CupertinoPageScaffold(
-      backgroundColor: CupertinoColors.systemGroupedBackground,
-      child: CustomScrollView(
-        // A list of sliver widgets.
-        slivers: <Widget>[
-          const CupertinoSliverNavigationBar(
-            largeTitle: Text('Me'),
-          ),
-          // This widget fills the remaining space in the viewport.
-          // Drag the scrollable area to collapse the CupertinoSliverNavigationBar.
-          SliverFillRemaining(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                CupertinoListSection.insetGrouped(
+  Future getCurrentAcademicList() async {
+    _role.then((value) => {
+          // if the role is 'current', then build myAcademicListSection with student email option
+          if (value == 'prospective')
+            {
+              setState(() {
+                myAcademicListSection = CupertinoListSection.insetGrouped(
+                  header: Text('My Academics', style: optionTextStyle),
+                  children: <CupertinoListTile>[
+                    CupertinoListTile.notched(
+                      title: Text('Apply to QC', style: optionTextStyle),
+                      leading: const Icon(
+                        CupertinoIcons.square_arrow_right,
+                      ),
+                      trailing: const CupertinoListTileChevron(),
+                      onTap: () => _launchURL('https://www.qc.cuny.edu/apply/'),
+                    ),
+                    CupertinoListTile.notched(
+                      title: Text('CUNYFirst', style: optionTextStyle),
+                      leading: const Icon(
+                        CupertinoIcons.rectangle_on_rectangle_angled,
+                      ),
+                      trailing: const CupertinoListTileChevron(),
+                      onTap: () =>
+                          _launchURL('https://home.cunyfirst.cuny.edu/'),
+                    ),
+                    CupertinoListTile.notched(
+                      title: Text('QC Navigate', style: optionTextStyle),
+                      leading: const Icon(
+                        CupertinoIcons.compass,
+                      ),
+                      trailing: const CupertinoListTileChevron(),
+                      onTap: () => _launchURL(
+                          'https://qc-cuny.navigate.eab.com/api/v1/auth/login/?return_to=https%3A%2F%2Fqc-cuny.navigate.eab.com%2F%23%2Fmy%2Fpriority-feed%2F'),
+                    ),
+                  ],
+                );
+              }),
+            }
+          else if (value == 'faculty')
+            {
+              setState(() {
+                myAcademicListSection = CupertinoListSection.insetGrouped(
                   header: Text('My Academics', style: optionTextStyle),
                   children: <CupertinoListTile>[
                     CupertinoListTile.notched(
@@ -73,14 +121,64 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                       onTap: () => _launchURL('https://bbhosted.cuny.edu'),
                     ),
                     CupertinoListTile.notched(
-                      // title that match light dark mode of system
+                      title: Text('Staff Email', style: optionTextStyle),
+                      leading: const Icon(
+                        CupertinoIcons.mail,
+                      ),
+                      additionalInfo: const Text(
+                        '@login.cuny.edu',
+                      ),
+                      trailing: const CupertinoListTileChevron(),
+                      onTap: () =>
+                          _launchURL('https://outlook.com/login.cuny.edu'),
+                    ),
+                    CupertinoListTile.notched(
+                      title: Text('QC Navigate', style: optionTextStyle),
+                      leading: const Icon(
+                        CupertinoIcons.compass,
+                      ),
+                      trailing: const CupertinoListTileChevron(),
+                      onTap: () => _launchURL(
+                          'https://qc-cuny.navigate.eab.com/api/v1/auth/login/?return_to=https%3A%2F%2Fqc-cuny.navigate.eab.com%2F%23%2Fmy%2Fpriority-feed%2F'),
+                    ),
+                  ],
+                );
+              }),
+            }
+          else
+            {
+              setState(() {
+                myAcademicListSection = CupertinoListSection.insetGrouped(
+                  header: Text('My Academics', style: optionTextStyle),
+                  children: <CupertinoListTile>[
+                    CupertinoListTile.notched(
+                      title: Text('CUNYFirst', style: optionTextStyle),
+                      leading: const Icon(
+                        CupertinoIcons.rectangle_on_rectangle_angled,
+                      ),
+                      trailing: const CupertinoListTileChevron(),
+                      onTap: () =>
+                          _launchURL('https://home.cunyfirst.cuny.edu/'),
+                    ),
+                    CupertinoListTile.notched(
+                      title: Text('Blackboard', style: optionTextStyle),
+                      leading: const Icon(
+                        CupertinoIcons.square_list,
+                      ),
+                      trailing: const CupertinoListTileChevron(),
+                      onTap: () => _launchURL('https://bbhosted.cuny.edu'),
+                    ),
+                    CupertinoListTile.notched(
                       title: Text('Student Email', style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.mail,
                       ),
+                      additionalInfo: const Text(
+                        '@qmail.cuny.edu',
+                      ),
                       trailing: const CupertinoListTileChevron(),
                       onTap: () =>
-                          _launchURL('https://outlook.office.com/mail/inbox'),
+                          _launchURL('https://login.microsoftonline.com/'),
                     ),
                     CupertinoListTile.notched(
                       title: Text('Degreeworks', style: optionTextStyle),
@@ -101,7 +199,48 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                           'https://qc-cuny.navigate.eab.com/api/v1/auth/login/?return_to=https%3A%2F%2Fqc-cuny.navigate.eab.com%2F%23%2Fmy%2Fpriority-feed%2F'),
                     ),
                   ],
-                ),
+                );
+              }),
+            }
+        });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _counter = _prefs.then((SharedPreferences prefs) {
+      return prefs.getInt('counter') ?? 0;
+    });
+    _role = _prefs.then((SharedPreferences prefs) {
+      return prefs.getString('role') ?? 'current';
+    });
+    getCurrentAcademicList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // list tile text style that match light dark mode of system
+    final TextStyle optionTextStyle = TextStyle(
+        color: const CupertinoDynamicColor.withBrightness(
+      color: CupertinoColors.black,
+      darkColor: CupertinoColors.white,
+    ).resolveFrom(context));
+
+    return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.systemGroupedBackground,
+      child: CustomScrollView(
+        // A list of sliver widgets.
+        slivers: <Widget>[
+          const CupertinoSliverNavigationBar(
+            largeTitle: Text('Me'),
+          ),
+          // This widget fills the remaining space in the viewport.
+          // Drag the scrollable area to collapse the CupertinoSliverNavigationBar.
+          SliverFillRemaining(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                myAcademicListSection,
                 CupertinoListSection.insetGrouped(
                   children: <CupertinoListTile>[
                     CupertinoListTile.notched(

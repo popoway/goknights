@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:goknights/dept/transfer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -223,6 +224,12 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Map<String, dynamic>> iconListCurrent = [];
   final List<Map<String, dynamic>> iconList = [
     {
+      'icon': CupertinoIcons.arrow_right_arrow_left,
+      'name': 'Transfer',
+      'url': 'https://queensknights.com/index.aspx',
+      'role': ['prospective'],
+    },
+    {
       'icon': CupertinoIcons.text_badge_checkmark,
       'name': 'Advising',
       'url': 'https://www.qc.cuny.edu/aac/',
@@ -256,45 +263,39 @@ class _MyHomePageState extends State<MyHomePage> {
       'icon': CupertinoIcons.bookmark,
       'name': 'Library',
       'url': 'https://library.qc.cuny.edu/',
-      'role': ['current'],
+      'role': ['current', 'faculty'],
     },
     {
       'icon': CupertinoIcons.printer,
       'name': 'Printing',
       'url': 'https://qcprint.qc.cuny.edu/myprintcenter/#',
-      'role': ['current'],
+      'role': ['current', 'faculty'],
     },
     {
       'icon': CupertinoIcons.calendar,
       'name': 'Calendar',
       'url':
           'https://www.calendarwiz.com/mobile.html?crd=queenscollege&nolognavbar=1&cid[]=all#',
-      'role': ['current', 'prospective'],
+      'role': ['current', 'prospective', 'faculty'],
     },
     {
       'icon': CupertinoIcons.phone,
       'name': 'Directory',
       'url': 'https://www.qc.cuny.edu/directory/',
-      'role': ['current', 'prospective'],
+      'role': ['current', 'prospective', 'faculty'],
     },
     {
       'icon': CupertinoIcons.bus,
       'name': 'Shuttle',
       'url':
           'https://queenscollegeshuttles.com/map?showHeader=0&route=3235&silent_disable_timeout=1',
-      'role': ['current', 'prospective'],
+      'role': ['current', 'prospective', 'faculty'],
     },
     {
       'icon': CupertinoIcons.sportscourt,
       'name': 'Sports',
       'url': 'https://queensknights.com/index.aspx',
-      'role': ['current', 'prospective'],
-    },
-    {
-      'icon': CupertinoIcons.arrow_right_arrow_left,
-      'name': 'Transfer',
-      'url': 'https://queensknights.com/index.aspx',
-      'role': ['prospective'],
+      'role': ['current', 'prospective', 'faculty'],
     },
   ];
 
@@ -378,7 +379,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         ).resolveFrom(context),
                         child: CupertinoButton(
                           onPressed: () {
-                            if (iconListCurrent[index]['name'] == 'Tutoring') {
+                            if (iconListCurrent[index]['name'] == 'Transfer') {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) =>
+                                        const MyTransferPage(title: 'Transfer'),
+                                    title: 'Transfer'),
+                              );
+                            } else if (iconListCurrent[index]['name'] ==
+                                'Tutoring') {
                               Navigator.push(
                                 context,
                                 CupertinoPageRoute(

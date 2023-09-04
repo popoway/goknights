@@ -9,7 +9,10 @@ import 'onboarding.dart';
 
 int counter = 0;
 String role = 'current';
-final _mainNavigatorKey = GlobalKey<NavigatorState>();
+
+class NavigationService {
+  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+}
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,7 +46,7 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return CupertinoApp(
-      navigatorKey: _mainNavigatorKey,
+      navigatorKey: NavigationService.navigatorKey,
       title: 'GoKnights',
       debugShowCheckedModeBanner: false,
       theme: const CupertinoThemeData(
