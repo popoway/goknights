@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:goknights/home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key, required this.title});
@@ -79,9 +80,16 @@ class _OnboardingPageState extends State<OnboardingPage> {
   double widget4Opacity = 0;
   double widget5Opacity = 0;
 
+  bool myInterceptor(bool stopDefaultButtonEvent, RouteInfo info) {
+    print("BACK BUTTON!"); // Do some stuff.
+    return true;
+  }
+
   @override
   void initState() {
     super.initState();
+    BackButtonInterceptor.add(myInterceptor);
+
     Future.delayed(const Duration(milliseconds: 100), () {
       setState(() {
         widget1Opacity = 1;
@@ -107,6 +115,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
         widget5Opacity = 1;
       });
     });
+  }
+
+  @override
+  void dispose() {
+    BackButtonInterceptor.remove(myInterceptor);
+    super.dispose();
   }
 
   @override

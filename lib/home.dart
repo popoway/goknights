@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:quick_actions/quick_actions.dart';
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 
 import 'map.dart';
 import 'options.dart';
@@ -320,10 +321,18 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  bool myInterceptor(bool stopDefaultButtonEvent, RouteInfo info) {
+    // navigator pop
+    print("BACK BUTTON!"); // Do some stuff.
+    return true;
+  }
+
   // String shortcut = 'no action set';
   @override
   void initState() {
     super.initState();
+
+    BackButtonInterceptor.add(myInterceptor);
 
     _role = _prefs.then((SharedPreferences prefs) {
       return prefs.getString('role') ?? 'current';
@@ -356,6 +365,12 @@ class _MyHomePageState extends State<MyHomePage> {
         // }
       });
     });
+  }
+
+  @override
+  void dispose() {
+    BackButtonInterceptor.remove(myInterceptor);
+    super.dispose();
   }
 
   @override
