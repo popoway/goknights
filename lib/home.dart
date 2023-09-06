@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:goknights/dept/transfer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -9,6 +8,10 @@ import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'map.dart';
 import 'options.dart';
 import 'dept/tutoring.dart';
+import 'dept/transfer.dart';
+import 'dept/directory.dart';
+import 'dept/calendar.dart';
+import 'dept/shuttle_map.dart';
 
 class _TabInfo {
   const _TabInfo(this.title, this.icon);
@@ -207,8 +210,15 @@ class _MyHomePageState extends State<MyHomePage> {
             isDefaultAction: true,
             onPressed: () {
               Navigator.pop(context);
-              _launchURL(
-                  'https://queenscollegeshuttles.com/map?showHeader=0&route=3235&silent_disable_timeout=1');
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) =>
+                      const MyShuttleMapPage(title: 'Shuttle Map'),
+                  title: 'Shuttle Map',
+                  fullscreenDialog: true,
+                ),
+              );
             },
             child: const Text('Real Time Map'),
           ),
@@ -419,6 +429,24 @@ class _MyHomePageState extends State<MyHomePage> {
                                     builder: (context) =>
                                         const MyTutoringPage(title: 'Tutoring'),
                                     title: 'Tutoring'),
+                              );
+                            } else if (iconListCurrent[index]['name'] ==
+                                'Directory') {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => const MyDirectoryPage(
+                                        title: 'Directory'),
+                                    title: 'Directory'),
+                              );
+                            } else if (iconListCurrent[index]['name'] ==
+                                'Calendar') {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) =>
+                                        const MyCalendarPage(title: 'Calendar'),
+                                    title: 'Calendar'),
                               );
                             } else if (iconListCurrent[index]['name'] ==
                                 'Counseling') {
