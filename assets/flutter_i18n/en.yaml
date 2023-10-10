@@ -1,0 +1,58 @@
+onboarding:
+  title: "Welcome to GoKnights"
+  prompt1a: "Utilize Student Services"
+  prompt1b: "Access advising, tutoring, printing, and other resources you need in a centralized location."
+  prompt2a: "Explore Campus Map"
+  prompt2b: "Search for buildings, offices, and classrooms. Get directions to your next class."
+  prompt3a: "Find Help"
+  prompt3b: "Get common questions answered and find out who to contact for more help."
+  get-started-title: "Select Your Role"
+  get-started-message: "Pick the role that best describes you to get started. You can change this later in the app settings."
+
+role:
+  current: "Current Student"
+  prospective: "Prospective Student"
+  faculty: "Faculty / Staff"
+
+home:
+  discover: "Discover"
+  map: "Map"
+  me: "Me"
+  transfer: "Transfer"
+  advising: "Advising"
+  tutoring: "Tutoring"
+  careers: "Careers"
+  scholarships: "Scholarships"
+  counseling: "Counseling"
+  library: "Library"
+  printing: "Printing"
+  calendar: "Calendar"
+  directory: "Directory"
+  shuttle: "Shuttle"
+  sports: "Sports"
+
+shuttle:
+  message: "Any Queens College student may ride the shuttle by displaying a current QCard as identification."
+  shuttle-map: "Shuttle Map"
+  real-time-map: "Real Time Map"
+  schedule: "Schedule"
+
+printing:
+  message: "Student QCard comes with $10 printing fund each semester (5 cents a page). Upload your documents to the printing system and print them out at any printer on campus:\n\n•	Rosenthal Library 2nd floor\n• I Building 2nd floor lab\n• Powdermaker Hall 210\n• Kiely Hall 131\n• Student Union LL52\n• Queens Hall Lobby"
+  upload-documents: "Upload Documents"
+
+counseling:
+  message: "Licensed psychologists and counselors offer individual counseling, groups, and referrals to appropriate college or community resources. All sessions are free and confidential.\nTo set up your first appointment, the first step is to email or call our office. Students will be scheduled a time for a brief screening with a counselor.\n\nLocation: Frese Hall 1st Floor\nEmail: CounselingServices@qc.cuny.edu\nPhone: 718-997-5420"
+  make-an-appointment: "Make an Appointment"
+
+tutoring:
+  learning-commons: "Learning Commons"
+  learning-commons-message: "The Learning Commons offers free peer tutoring, workshops, study spaces, printing station, and other services.\nLocation: Kiely Hall 131\nEmail: LCommons@qc.cuny.edu\nPhone: 718-997-5670"
+  book-an-appointment: "Book an Appointment"
+  study-print: "Study & Print"
+  writing-center: "Writing Center"
+  writing-center-message: "The Writing Center offers free writing support to all Queens College students, ranging from brainstorming, final revisions, to personal statements and cover letters.\nLocation: Kiely Hall 229\nEmail: qc.writing.center@qc.cuny.edu\nPhone: 718-997-5676"
+
+button:
+  cancel: "Cancel"
+  learn-more: "Learn More"

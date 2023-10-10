@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:goknights/home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:back_button_interceptor/back_button_interceptor.dart';
@@ -29,15 +30,16 @@ class _OnboardingPageState extends State<OnboardingPage> {
     showCupertinoModalPopup<void>(
       context: context,
       builder: (BuildContext context) => CupertinoActionSheet(
-        title: const Text('Select Your Role'),
+        title: Text(
+            FlutterI18n.translate(context, "onboarding.get-started-title")),
         cancelButton: CupertinoActionSheetAction(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Text('Cancel'),
+          child: Text(FlutterI18n.translate(context, "button.cancel")),
         ),
-        message: const Text(
-            'Pick the role that best describes you to get started. You can change this later in the app settings.'),
+        message: Text(
+            FlutterI18n.translate(context, "onboarding.get-started-message")),
         actions: <CupertinoActionSheetAction>[
           CupertinoActionSheetAction(
             /// This parameter indicates the action would be a default
@@ -49,7 +51,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               Navigator.of(context).push(CupertinoPageRoute(
                   builder: (context) => const CupertinoTabBarDemo()));
             },
-            child: const Text('Current Student'),
+            child: Text(FlutterI18n.translate(context, "role.current")),
           ),
           CupertinoActionSheetAction(
             onPressed: () {
@@ -58,7 +60,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               Navigator.of(context).push(CupertinoPageRoute(
                   builder: (context) => const CupertinoTabBarDemo()));
             },
-            child: const Text('Prospective Student'),
+            child: Text(FlutterI18n.translate(context, "role.prospective")),
           ),
           CupertinoActionSheetAction(
             onPressed: () {
@@ -67,7 +69,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               Navigator.of(context).push(CupertinoPageRoute(
                   builder: (context) => const CupertinoTabBarDemo()));
             },
-            child: const Text('Faculty / Staff'),
+            child: Text(FlutterI18n.translate(context, "role.faculty")),
           ),
         ],
       ),
@@ -201,7 +203,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Utilize Student Services',
+                                        FlutterI18n.translate(
+                                            context, "onboarding.prompt1a"),
                                         style: TextStyle(
                                           fontSize: 24,
                                           color: const CupertinoDynamicColor
@@ -212,7 +215,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                         ),
                                       ),
                                       Text(
-                                        'Access advising, tutoring, printing, and other resources you need in a centralized location.',
+                                        FlutterI18n.translate(
+                                            context, "onboarding.prompt1b"),
                                         style: TextStyle(
                                           color: const CupertinoDynamicColor
                                               .withBrightness(
@@ -254,7 +258,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Explore Campus Map',
+                                        FlutterI18n.translate(
+                                            context, "onboarding.prompt2a"),
                                         style: TextStyle(
                                           fontSize: 24,
                                           color: const CupertinoDynamicColor
@@ -265,7 +270,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                         ),
                                       ),
                                       Text(
-                                        'Search for buildings, offices, and classrooms. Get directions to your next class.',
+                                        FlutterI18n.translate(
+                                            context, "onboarding.prompt2b"),
                                         style: TextStyle(
                                           color: const CupertinoDynamicColor
                                               .withBrightness(
@@ -306,7 +312,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Find Help',
+                                        FlutterI18n.translate(
+                                            context, "onboarding.prompt3a"),
                                         style: TextStyle(
                                           fontSize: 24,
                                           color: const CupertinoDynamicColor
@@ -317,7 +324,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                         ),
                                       ),
                                       Text(
-                                        'Get common questions answered and find out who to contact for more help.',
+                                        FlutterI18n.translate(
+                                            context, "onboarding.prompt3b"),
                                         style: TextStyle(
                                           color: const CupertinoDynamicColor
                                               .withBrightness(

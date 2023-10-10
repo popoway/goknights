@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -25,16 +26,16 @@ class CupertinoTabBarDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tabInfo = [
-      const _TabInfo(
-        'Discover',
+      _TabInfo(
+        FlutterI18n.translate(context, "home.discover"),
         CupertinoIcons.layers_alt,
       ),
-      const _TabInfo(
-        'Map',
+      _TabInfo(
+        FlutterI18n.translate(context, "home.map"),
         CupertinoIcons.map,
       ),
-      const _TabInfo(
-        'Me',
+      _TabInfo(
+        FlutterI18n.translate(context, "home.me"),
         CupertinoIcons.profile_circled,
       ),
     ];
@@ -125,14 +126,13 @@ class _MyHomePageState extends State<MyHomePage> {
     showCupertinoModalPopup<void>(
       context: context,
       builder: (BuildContext context) => CupertinoActionSheet(
-        title: const Text('Counseling'),
-        message: const Text(
-            "Licensed psychologists and counselors offer individual counseling, groups, and referrals to appropriate college or community resources. All sessions are free and confidential.\nTo set up your first appointment, the first step is to email or call our office. Students will be scheduled a time for a brief screening with a counselor.\n\nLocation: Frese Hall 1st Floor\nEmail: CounselingServices@qc.cuny.edu\nPhone: 718-997-5420"),
+        title: Text(FlutterI18n.translate(context, "home.counseling")),
+        message: Text(FlutterI18n.translate(context, "counseling.message")),
         cancelButton: CupertinoActionSheetAction(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Text('Cancel'),
+          child: Text(FlutterI18n.translate(context, "button.cancel")),
         ),
         actions: <CupertinoActionSheetAction>[
           CupertinoActionSheetAction(
@@ -141,14 +141,15 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.pop(context);
               _launchURL('mailto:CounselingServices@qc.cuny.edu');
             },
-            child: const Text('Make an Appointment'),
+            child: Text(FlutterI18n.translate(
+                context, "counseling.make-an-appointment")),
           ),
           CupertinoActionSheetAction(
             onPressed: () {
               Navigator.pop(context);
               _launchURL('https://www.qc.cuny.edu/cs/');
             },
-            child: const Text('Learn More'),
+            child: Text(FlutterI18n.translate(context, "button.learn-more")),
           ),
         ],
       ),
@@ -159,14 +160,13 @@ class _MyHomePageState extends State<MyHomePage> {
     showCupertinoModalPopup<void>(
       context: context,
       builder: (BuildContext context) => CupertinoActionSheet(
-        title: const Text('Printing'),
-        message: const Text(
-            "Student QCard comes with \$10 printing fund each semester (5 cents a page). Upload your documents to the printing system and print them out at any printer on campus:\n\n•	Rosenthal Library 2nd floor\n• I Building 2nd floor lab\n• Powdermaker Hall 210\n• Kiely Hall 131\n• Student Union LL52\n• Queens Hall Lobby"),
+        title: Text(FlutterI18n.translate(context, "home.printing")),
+        message: Text(FlutterI18n.translate(context, "printing.message")),
         cancelButton: CupertinoActionSheetAction(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Text('Cancel'),
+          child: Text(FlutterI18n.translate(context, "button.cancel")),
         ),
         actions: <CupertinoActionSheetAction>[
           CupertinoActionSheetAction(
@@ -175,7 +175,8 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.pop(context);
               _launchURL('https://qcprint.qc.cuny.edu/myprintcenter/#');
             },
-            child: const Text('Upload Documents'),
+            child: Text(
+                FlutterI18n.translate(context, "printing.upload-documents")),
           ),
           CupertinoActionSheetAction(
             onPressed: () {
@@ -183,7 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
               _launchURL(
                   'https://www.qc.cuny.edu/its/wp-content/uploads/sites/16/2022/08/QC-Printing-and-Copying.pdf');
             },
-            child: const Text('Learn More'),
+            child: Text(FlutterI18n.translate(context, "button.learn-more")),
           ),
         ],
       ),
@@ -194,14 +195,13 @@ class _MyHomePageState extends State<MyHomePage> {
     showCupertinoModalPopup<void>(
       context: context,
       builder: (BuildContext context) => CupertinoActionSheet(
-        title: const Text('Shuttle'),
-        message: const Text(
-            'Any Queens College student may ride the shuttle by displaying a current QCard as identification.'),
+        title: Text(FlutterI18n.translate(context, "home.shuttle")),
+        message: Text(FlutterI18n.translate(context, "shuttle.message")),
         cancelButton: CupertinoActionSheetAction(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Text('Cancel'),
+          child: Text(FlutterI18n.translate(context, "button.cancel")),
         ),
         actions: <CupertinoActionSheetAction>[
           CupertinoActionSheetAction(
@@ -213,14 +213,16 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.push(
                 context,
                 CupertinoPageRoute(
-                  builder: (context) =>
-                      const MyShuttleMapPage(title: 'Shuttle Map'),
-                  title: 'Shuttle Map',
+                  builder: (context) => MyShuttleMapPage(
+                      title: FlutterI18n.translate(
+                          context, "shuttle.shuttle-map")),
+                  title: FlutterI18n.translate(context, "shuttle.shuttle-map"),
                   fullscreenDialog: true,
                 ),
               );
             },
-            child: const Text('Real Time Map'),
+            child:
+                Text(FlutterI18n.translate(context, "shuttle.real-time-map")),
           ),
           CupertinoActionSheetAction(
             onPressed: () {
@@ -228,14 +230,14 @@ class _MyHomePageState extends State<MyHomePage> {
               _launchURL(
                   'https://www.calendarwiz.com/mobile.html?crd=queenscollege&nolognavbar=1&cid[]=255008#');
             },
-            child: const Text('Schedule'),
+            child: Text(FlutterI18n.translate(context, "shuttle.schedule")),
           ),
           CupertinoActionSheetAction(
             onPressed: () {
               Navigator.pop(context);
               _launchURL('https://www.qc.cuny.edu/a/shuttle/');
             },
-            child: const Text('Learn More'),
+            child: Text(FlutterI18n.translate(context, "button.learn-more")),
           ),
         ],
       ),
@@ -246,75 +248,75 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Map<String, dynamic>> iconList = [
     {
       'icon': CupertinoIcons.arrow_right_arrow_left,
-      'name': 'Transfer',
+      'name': 'transfer',
       'url': 'https://queensknights.com/index.aspx',
       'role': ['prospective'],
     },
     {
       'icon': CupertinoIcons.text_badge_checkmark,
-      'name': 'Advising',
+      'name': 'advising',
       'url': 'https://www.qc.cuny.edu/aac/',
       'role': ['current', 'prospective'],
     },
     {
       'icon': CupertinoIcons.book,
-      'name': 'Tutoring',
+      'name': 'tutoring',
       'url': 'https://www.qc.cuny.edu/academics/qclc/#tutoring',
       'role': ['current'],
     },
     {
       'icon': CupertinoIcons.rectangle_stack_fill_badge_person_crop,
-      'name': 'Careers',
+      'name': 'careers',
       'url': 'https://www.qc.cuny.edu/academics/cei/',
       'role': ['current', 'prospective'],
     },
     {
       'icon': CupertinoIcons.tickets,
-      'name': 'Scholarships',
+      'name': 'scholarships',
       'url': 'https://www.qc.cuny.edu/academics/ohs/',
       'role': ['current', 'prospective'],
     },
     {
       'icon': CupertinoIcons.chat_bubble_2,
-      'name': 'Counseling',
+      'name': 'counseling',
       'url': 'https://www.qc.cuny.edu/cs/',
       'role': ['current'],
     },
     {
       'icon': CupertinoIcons.bookmark,
-      'name': 'Library',
+      'name': 'library',
       'url': 'https://library.qc.cuny.edu/',
       'role': ['current', 'faculty'],
     },
     {
       'icon': CupertinoIcons.printer,
-      'name': 'Printing',
+      'name': 'printing',
       'url': 'https://qcprint.qc.cuny.edu/myprintcenter/#',
       'role': ['current', 'faculty'],
     },
     {
       'icon': CupertinoIcons.calendar,
-      'name': 'Calendar',
+      'name': 'calendar',
       'url':
           'https://www.calendarwiz.com/mobile.html?crd=queenscollege&nolognavbar=1&cid[]=all#',
       'role': ['current', 'prospective', 'faculty'],
     },
     {
       'icon': CupertinoIcons.phone,
-      'name': 'Directory',
+      'name': 'directory',
       'url': 'https://www.qc.cuny.edu/directory/',
       'role': ['current', 'prospective', 'faculty'],
     },
     {
       'icon': CupertinoIcons.bus,
-      'name': 'Shuttle',
+      'name': 'shuttle',
       'url':
           'https://queenscollegeshuttles.com/map?showHeader=0&route=3235&silent_disable_timeout=1',
       'role': ['current', 'prospective', 'faculty'],
     },
     {
       'icon': CupertinoIcons.sportscourt,
-      'name': 'Sports',
+      'name': 'sports',
       'url': 'https://queensknights.com/index.aspx',
       'role': ['current', 'prospective', 'faculty'],
     },
@@ -365,7 +367,7 @@ class _MyHomePageState extends State<MyHomePage> {
     quickActions.setShortcutItems(<ShortcutItem>[
       const ShortcutItem(
         type: 'action_printing',
-        localizedTitle: 'Printing',
+        localizedTitle: 'printing',
       ),
       const ShortcutItem(type: 'action_shuttle', localizedTitle: 'Shuttle'),
     ]).then((void _) {
@@ -413,49 +415,57 @@ class _MyHomePageState extends State<MyHomePage> {
                         ).resolveFrom(context),
                         child: CupertinoButton(
                           onPressed: () {
-                            if (iconListCurrent[index]['name'] == 'Transfer') {
+                            if (iconListCurrent[index]['name'] == 'transfer') {
                               Navigator.push(
                                 context,
                                 CupertinoPageRoute(
-                                    builder: (context) =>
-                                        const MyTransferPage(title: 'Transfer'),
-                                    title: 'Transfer'),
+                                    builder: (context) => MyTransferPage(
+                                        title: FlutterI18n.translate(
+                                            context, "home.transfer")),
+                                    title: FlutterI18n.translate(
+                                        context, "home.transfer")),
                               );
                             } else if (iconListCurrent[index]['name'] ==
-                                'Tutoring') {
+                                'tutoring') {
                               Navigator.push(
                                 context,
                                 CupertinoPageRoute(
-                                    builder: (context) =>
-                                        const MyTutoringPage(title: 'Tutoring'),
-                                    title: 'Tutoring'),
+                                    builder: (context) => MyTutoringPage(
+                                        title: FlutterI18n.translate(
+                                            context, "home.tutoring")),
+                                    title: FlutterI18n.translate(
+                                        context, "home.tutoring")),
                               );
                             } else if (iconListCurrent[index]['name'] ==
-                                'Directory') {
+                                'directory') {
                               Navigator.push(
                                 context,
                                 CupertinoPageRoute(
-                                    builder: (context) => const MyDirectoryPage(
-                                        title: 'Directory'),
-                                    title: 'Directory'),
+                                    builder: (context) => MyDirectoryPage(
+                                        title: FlutterI18n.translate(
+                                            context, "home.directory")),
+                                    title: FlutterI18n.translate(
+                                        context, "home.directory")),
                               );
                             } else if (iconListCurrent[index]['name'] ==
-                                'Calendar') {
+                                'calendar') {
                               Navigator.push(
                                 context,
                                 CupertinoPageRoute(
-                                    builder: (context) =>
-                                        const MyCalendarPage(title: 'Calendar'),
-                                    title: 'Calendar'),
+                                    builder: (context) => MyCalendarPage(
+                                        title: FlutterI18n.translate(
+                                            context, "home.calendar")),
+                                    title: FlutterI18n.translate(
+                                        context, "home.calendar")),
                               );
                             } else if (iconListCurrent[index]['name'] ==
-                                'Counseling') {
+                                'counseling') {
                               _showCounselingActionSheet(context);
                             } else if (iconListCurrent[index]['name'] ==
-                                'Shuttle') {
+                                'shuttle') {
                               _showShuttleActionSheet(context);
                             } else if (iconListCurrent[index]['name'] ==
-                                'Printing') {
+                                'printing') {
                               _showPrintingActionSheet(context);
                             } else {
                               _launchURL(iconListCurrent[index]['url']);
@@ -473,7 +483,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               FittedBox(
                                 fit: BoxFit.fitWidth,
                                 child: Text(
-                                  iconListCurrent[index]['name'],
+                                  FlutterI18n.translate(context,
+                                      'home.${iconListCurrent[index]['name']}'),
                                   style: const TextStyle(
                                     fontSize: 20,
                                     color: Color(0xFFE71939),

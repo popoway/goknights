@@ -322,8 +322,8 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                       ),
                       trailing: const CupertinoListTileChevron(),
                       onTap: () => _launchURL(
-                          // include app version and build number in subject
-                          'mailto:goknights-feedback@popoway.com?subject=GoKnights%20Feedback%20v${_packageInfo.version}%20(${_packageInfo.buildNumber})'),
+                          // include app version and build number in subject, ask the user to not remove the app version and build number when sending
+                          'mailto:goknights-feedback@popoway.com?subject=GoKnights%20Feedback%20v${_packageInfo.version}%20(${_packageInfo.buildNumber})&body=Please%20do%20not%20remove%20the%20app%20version%20and%20build%20number%20below%20when%20sending%20feedback.%0A%0A%0A%0A%0A%0A%0A%0A%0A%0AApp%20Version%3A%20${_packageInfo.version}%0ABuild%20Number%3A%20${_packageInfo.buildNumber}%0A'),
                     ),
                     CupertinoListTile.notched(
                       title: Text('About GoKnights', style: optionTextStyle),

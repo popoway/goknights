@@ -12,6 +12,7 @@
     "Delany",
     "Frak",
     "Frese",
+    "fullscreen",
     "Geolocator",
     "goknights",
     "Goldstein",
@@ -24,6 +25,7 @@
     "Remsen",
     "Rosenthal",
     "Schyler",
+    "shuttlemap",
     "sportscourt"
   ],
   "java.configuration.updateBuildConfiguration": "interactive",

@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_config/flutter_config.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'home.dart';
 import 'onboarding.dart';
@@ -65,13 +67,32 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      localizationsDelegates: const [
-        DefaultMaterialLocalizations.delegate,
-        DefaultCupertinoLocalizations.delegate,
-        DefaultWidgetsLocalizations.delegate,
+      localizationsDelegates: [
+        FlutterI18nDelegate(
+          translationLoader: FileTranslationLoader(
+              useCountryCode: false,
+              fallbackFile: 'en',
+              basePath: 'assets/flutter_i18n'),
+          missingTranslationHandler: (key, locale) {
+            print(
+                "--- Missing Key: $key, languageCode: ${locale?.languageCode}");
+          },
+        ),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
       ],
+      supportedLocales: const [
+        Locale('en'), // English
+        Locale('es'), // Spanish
+        Locale('zh'), // Chinese
+        Locale('it'), // Italian
+        Locale('ru'), // Russian
+      ],
+      builder: FlutterI18n.rootAppBuilder(),
       home: counter == 0
-          ? const OnboardingPage(title: 'Welcome to GoKnights')
+          ? OnboardingPage(
+              title: FlutterI18n.translate(context, "onboarding.title"))
           : const CupertinoTabBarDemo(),
     );
   }
