@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -316,7 +317,7 @@ class _MyMapPageState extends State<MyMapPage> {
 
     return FloatingSearchBar(
       controller: _floatingSearchBarController,
-      hint: 'Search buildings...',
+      hint: FlutterI18n.translate(context, "map.hint"),
       autocorrect: false,
       clearQueryOnClose: false,
       borderRadius: const BorderRadius.all(Radius.circular(16)),
@@ -374,7 +375,7 @@ class _MyMapPageState extends State<MyMapPage> {
                                   Brightness.light
                               ? CupertinoColors.black
                               : CupertinoColors.white)),
-                  subtitle: Text('Building',
+                  subtitle: Text(FlutterI18n.translate(context, "map.building"),
                       style: TextStyle(
                           color: MediaQuery.of(context).platformBrightness ==
                                   Brightness.light

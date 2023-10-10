@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -51,7 +52,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
 
     return CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
-          middle: const Text('Calendar'),
+          middle: const Text(FlutterI18n.translate(context, "home.calendar")),
           trailing: CupertinoButton(
             padding: EdgeInsets.zero,
             child: Icon(CupertinoIcons.share),

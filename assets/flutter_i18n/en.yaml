@@ -53,6 +53,38 @@ tutoring:
   writing-center: "Writing Center"
   writing-center-message: "The Writing Center offers free writing support to all Queens College students, ranging from brainstorming, final revisions, to personal statements and cover letters.\nLocation: Kiely Hall 229\nEmail: qc.writing.center@qc.cuny.edu\nPhone: 718-997-5676"
 
+transfer:
+  transfer-explorer: "CUNY Transfer Explorer"
+  transfer-explorer-message: "CUNY Transfer Explorer makes important information about college transfer public and easy to understand so that students know what to expect before they enroll in a new college.\n * CUNY login required"
+  transfer-explorer-by-course: "CUNY to CUNY by Course"
+  transfer-explorer-by-subject: "CUNY to CUNY by Subject"
+  transfer-explorer-by-transcript: "CUNY to CUNY by Transcript *"
+  qc-transfer-support: "QC Transfer Support"
+  qc-transfer-support-message: "ACE QC is a comprehensive support program designed to build on transfer students’ academic momentum and help students complete their bachelor’s degree on time."
+  qc-transfer-support-transfer-honors: "Transfer Honors"
+  qc-transfer-support-transfer-advising: "Transfer Advising"
+  qc-transfer-support-international-transfer: "International Transfer"
+
+map:
+  hint: "Search buildings..."
+  building: "Building"
+
+options:
+  my-academics: "My Academics"
+  apply-to-qc: "Apply to QC"
+  staff-email: "Staff Email"
+  student-email: "Student Email"
+  app-settings: "App Settings"
+  switch-role: "Switch Role"
+  send-feedback: "Send Feedback"
+  about-app: "About GoKnights"
+
+aboutapp:
+  about: "About"
+  privacy-policy: "Privacy Policy"
+  open-source-licenses: "Open Source Licenses"
+  disclaimer: "Disclaimer"
+
 button:
   cancel: "Cancel"
   learn-more: "Learn More"

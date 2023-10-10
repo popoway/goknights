@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -43,7 +44,7 @@ class _MyShuttleMapPageState extends State<MyShuttleMapPage> {
 
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
-        middle: Text('Shuttle Map'),
+        middle: Text(FlutterI18n.translate(context, "shuttle.shuttle-map")),
       ),
       child: SafeArea(child: WebViewWidget(controller: controller)),
     );

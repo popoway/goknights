@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -83,7 +84,7 @@ class _MyDirectoryPageState extends State<MyDirectoryPage> {
 
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
-        middle: Text('Directory'),
+        middle: Text(FlutterI18n.translate(context, "home.directory")),
       ),
       child: SafeArea(child: WebViewWidget(controller: controller)),
     );

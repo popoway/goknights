@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -105,12 +106,12 @@ class _AboutAppPageState extends State<AboutAppPage> {
                             fontSize: 16)),
                   ),
                   CupertinoButton(
-                    child: const Text('Privacy Policy'),
+                    child: const Text(FlutterI18n.translate(context, "aboutapp.privacy-policy")),
                     onPressed: () => _launchURL(
                         'https://github.com/popoway/goknights/blob/main/PRIVACY.md'),
                   ),
                   CupertinoButton(
-                    child: const Text('Open Source Licenses'),
+                    child: const Text(FlutterI18n.translate(context, "aboutapp.open-source-licenses")),
                     // Displays a LicensePage onClick
                     onPressed: () => showLicensePage(
                       context: context,
@@ -129,7 +130,7 @@ class _AboutAppPageState extends State<AboutAppPage> {
                     ),
                   ),
                   CupertinoButton(
-                    child: const Text('Disclaimer'),
+                    child: const Text(FlutterI18n.translate(context, "aboutapp.disclaimer")),
                     onPressed: () => _launchURL(
                         'https://github.com/popoway/goknights#disclaimer'),
                   ),
