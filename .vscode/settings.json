@@ -26,5 +26,6 @@
     "Schyler",
     "sportscourt"
   ],
-  "java.configuration.updateBuildConfiguration": "interactive"
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "cmake.configureOnOpen": false
 }

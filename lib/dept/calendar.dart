@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:share_plus/share_plus.dart';
 
 class MyCalendarPage extends StatefulWidget {
   const MyCalendarPage({super.key, required this.title});
@@ -23,7 +23,9 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
       ..setNavigationDelegate(
         NavigationDelegate(
           onProgress: (int progress) {},
-          onPageStarted: (String url) {},
+          onPageStarted: (String url) {
+            print('Page started loading: $url');
+          },
           onPageFinished: (String url) {
             print('Page finished loading: $url');
             try {
@@ -48,18 +50,20 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
           'https://www.calendarwiz.com/mobile.html?crd=queenscollege&nolognavbar=1&cid[]=all#'));
 
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-        middle: Text('Calendar'),
-      ),
-      child: SafeArea(child: WebViewWidget(controller: controller)),
-    );
-  }
-}
-
-_launchURL(String url) async {
-  final Uri uri = Uri.parse(url);
-  // launch in web browser
-  if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
-    throw Exception('Could not launch $url');
+        navigationBar: CupertinoNavigationBar(
+          middle: const Text('Calendar'),
+          trailing: CupertinoButton(
+            padding: EdgeInsets.zero,
+            child: Icon(CupertinoIcons.share),
+            onPressed: () async {
+              Share.share(await controller.currentUrl() as String,
+                  subject: 'QC Calendar from GoKnights',
+                  // from the right edge of the screen
+                  sharePositionOrigin: Rect.fromLTWH(
+                      MediaQuery.of(context).size.width - 75, 0, 60, 70));
+            },
+          ),
+        ),
+        child: SafeArea(child: WebViewWidget(controller: controller)));
   }
 }

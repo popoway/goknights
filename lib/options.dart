@@ -4,6 +4,7 @@ import 'package:goknights/main.dart';
 import 'package:goknights/onboarding.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'aboutapp.dart';
 
 class MyOptionsPage extends StatefulWidget {
@@ -205,6 +206,15 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
         });
   }
 
+  PackageInfo _packageInfo = PackageInfo(
+    appName: 'Unknown',
+    packageName: 'Unknown',
+    version: 'Unknown',
+    buildNumber: 'Unknown',
+    buildSignature: 'Unknown',
+    installerStore: 'Unknown',
+  );
+
   @override
   void initState() {
     super.initState();
@@ -215,6 +225,14 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
       return prefs.getString('role') ?? 'current';
     });
     getCurrentAcademicList();
+    _initPackageInfo();
+  }
+
+  Future<void> _initPackageInfo() async {
+    final info = await PackageInfo.fromPlatform();
+    setState(() {
+      _packageInfo = info;
+    });
   }
 
   @override
@@ -304,7 +322,8 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                       ),
                       trailing: const CupertinoListTileChevron(),
                       onTap: () => _launchURL(
-                          'mailto:goknights-feedback@popoway.com?subject=GoKnights%20Feedback'),
+                          // include app version and build number in subject
+                          'mailto:goknights-feedback@popoway.com?subject=GoKnights%20Feedback%20v${_packageInfo.version}%20(${_packageInfo.buildNumber})'),
                     ),
                     CupertinoListTile.notched(
                       title: Text('About GoKnights', style: optionTextStyle),
