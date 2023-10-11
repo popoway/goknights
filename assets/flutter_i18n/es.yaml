@@ -1,0 +1,91 @@
+onboarding:
+  title: "Bienvenido a GoKnights"
+  prompt1a: "Utiliza los Servicios Estudiantiles"
+  prompt1b: "Accede a asesoramiento, tutoría, impresión y otros recursos que necesitas en una ubicación centralizada."
+  prompt2a: "Explora el Mapa del Campus"
+  prompt2b: "Busca edificios, oficinas y aulas. Obtén direcciones para tu próxima clase."
+  prompt3a: "Encuentra Ayuda"
+  prompt3b: "Responde a preguntas comunes y descubre a quién contactar para obtener más ayuda."
+  get-started: "Empezar"
+  get-started-title: "Selecciona Tu Rol"
+  get-started-message: "Elige el rol que mejor te describa para comenzar. Puedes cambiar esto más tarde en la configuración de la aplicación."
+
+role:
+  current: "Estudiante Actual"
+  prospective: "Estudiante Prospecto"
+  faculty: "Facultad / Personal"
+
+home:
+  discover: "Descubrir"
+  map: "Mapa"
+  me: "Yo"
+  transfer: "Trasladar"
+  advising: "Asesoramiento"
+  tutoring: "Tutoría"
+  careers: "Carreras"
+  scholarships: "Becas"
+  counseling: "Consejería"
+  library: "Biblioteca"
+  printing: "Impresión"
+  calendar: "Calendario"
+  directory: "Directorio"
+  shuttle: "Lanzadera"
+  sports: "Deportes"
+
+shuttle:
+  message: "Cualquier estudiante de Queens College puede tomar la lanzadera mostrando una QCard actual como identificación."
+  shuttle-map: "Mapa de la Lanzadera"
+  real-time-map: "Mapa en Tiempo Real"
+  schedule: "Horario"
+
+printing:
+  message: "La QCard del estudiante viene con un fondo de impresión de $10 cada semestre (5 centavos por página). Sube tus documentos al sistema de impresión e imprímelos en cualquier impresora del campus:\n\n• Rosenthal Library 2do piso\n• I Building 2do piso lab\n• Powdermaker Hall 210\n• Kiely Hall 131\n• Student Union LL52\n• Queens Hall Vestíbulo"
+  upload-documents: "Subir Documentos"
+
+counseling:
+  message: "Los psicólogos y consejeros autorizados ofrecen asesoramiento individual, grupal y referencias a recursos universitarios o comunitarios apropiados. Todas las sesiones son gratuitas y confidenciales.\nPara programar su primera cita, el primer paso es enviar un correo electrónico o llamar a nuestra oficina. A los estudiantes se les programará una hora para una breve evaluación con un consejero.\n\nUbicación: Frese Hall 1er piso\nEmail: CounselingServices@qc.cuny.edu\nNúmero de teléfono: 718-997-5420"
+  make-an-appointment: "Haga una cita"
+
+tutoring:
+  learning-commons: "Centro de Aprendizaje"
+  learning-commons-message: "El Centro de Aprendizaje ofrece tutoría gratuita entre compañeros, talleres, espacios de estudio, estación de impresión y otros servicios.\nUbicación: Kiely Hall 131\nCorreo electrónico: LCommons@qc.cuny.edu\nTeléfono: 718-997-5670"
+  book-an-appointment: "Reservar una Cita"
+  study-print: "Estudiar e Imprimir"
+  writing-center: "Centro de Escritura"
+  writing-center-message: "El Centro de Escritura ofrece apoyo gratuito en escritura a todos los estudiantes de Queens College, desde la generación de ideas, revisiones finales, hasta declaraciones personales y cartas de presentación.\nUbicación: Kiely Hall 229\nCorreo electrónico: qc.writing.center@qc.cuny.edu\nTeléfono: 718-997-5676"
+
+transfer:
+  transfer-explorer: "Explorador de Transferencias CUNY"
+  transfer-explorer-message: "El Explorador de Transferencias CUNY hace pública y fácil de entender la información importante sobre la transferencia universitaria, para que los estudiantes sepan qué esperar antes de inscribirse en una nueva universidad.\n * Se requiere inicio de sesión de CUNY"
+  transfer-explorer-by-course: "De CUNY a CUNY por Curso"
+  transfer-explorer-by-subject: "De CUNY a CUNY por Asignatura"
+  transfer-explorer-by-transcript: "De CUNY a CUNY por Expediente *"
+  qc-transfer-support: "Soporte de Transferencia QC"
+  qc-transfer-support-message: "ACE QC es un programa de apoyo integral diseñado para construir sobre el ímpetu académico de los estudiantes de transferencia y ayudar a los estudiantes a completar su licenciatura a tiempo."
+  qc-transfer-support-transfer-honors: "Honores de Transferencia"
+  qc-transfer-support-transfer-advising: "Asesoramiento para Transferencias"
+  qc-transfer-support-international-transfer: "Transferencia Internacional"
+
+map:
+  hint: "Buscar edificios..."
+  building: "Edificio"
+
+options:
+  my-academics: "Mis Estudios"
+  apply-to-qc: "Aplicar a QC"
+  staff-email: "Correo Electrónico del Personal"
+  student-email: "Correo Electrónico del Estudiante"
+  app-settings: "Ajustes de Aplicacion"
+  switch-role: "Cambiar rol"
+  send-feedback: "Enviar comentarios"
+  about-app: "Acerca de GoKnights"
+
+aboutapp:
+  about: "Acerca de"
+  privacy-policy: "Politica de Privacidad"
+  open-source-licenses: "Licencias de código abierto"
+  disclaimer: "Descargo de responsabilidad"
+
+button:
+  cancel: "Cancelar"
+  learn-more: "Aprende más"

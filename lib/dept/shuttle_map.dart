@@ -43,7 +43,7 @@ class _MyShuttleMapPageState extends State<MyShuttleMapPage> {
           'https://queenscollegeshuttles.com/map?showHeader=0&route=3235&silent_disable_timeout=1'));
 
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
+      navigationBar: CupertinoNavigationBar(
         middle: Text(FlutterI18n.translate(context, "shuttle.shuttle-map")),
       ),
       child: SafeArea(child: WebViewWidget(controller: controller)),

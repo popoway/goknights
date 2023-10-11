@@ -367,9 +367,9 @@ class _MyHomePageState extends State<MyHomePage> {
     quickActions.setShortcutItems(<ShortcutItem>[
       const ShortcutItem(
         type: 'action_printing',
-        localizedTitle: 'printing',
+        localizedTitle: "Printing",
       ),
-      const ShortcutItem(type: 'action_shuttle', localizedTitle: 'Shuttle'),
+      const ShortcutItem(type: 'action_shuttle', localizedTitle: "Shuttle"),
     ]).then((void _) {
       setState(() {
         // if (shortcut == 'no action set') {

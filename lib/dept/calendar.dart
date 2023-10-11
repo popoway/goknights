@@ -52,7 +52,7 @@ class _MyCalendarPageState extends State<MyCalendarPage> {
 
     return CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
-          middle: const Text(FlutterI18n.translate(context, "home.calendar")),
+          middle: Text(FlutterI18n.translate(context, "home.calendar")),
           trailing: CupertinoButton(
             padding: EdgeInsets.zero,
             child: Icon(CupertinoIcons.share),

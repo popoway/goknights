@@ -41,6 +41,7 @@
 - [Contributing](#contributing)
 - [Privacy](#privacy)
 - [License](#license)
+- [Acknowledgements](#acknowledgements)
 - [Disclaimer](#disclaimer)
 
 ## Description
@@ -92,7 +93,7 @@ flutter build ios --release --no-codesign
 ## Roadmap
 
 - [x] User onboarding with different roles -> views
-- [ ] Injectable JS WKWebview for calendars
+- [x] Injectable JS WKWebview for calendars
 - [ ] i18n support with Italian, Chinese and Spanish
 
 ## Contributing
@@ -136,6 +137,63 @@ This app does not use cookies or similar technology to deliver its services and 
 Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
 
 Open Source Licenses and Acknowledgements are available within the "About" dialog of the app.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Acknowledgements
+
+<table style="width: 100%;">
+    <tbody>
+        <tr>
+            <td>Programming</td>
+            <td rowspan=3>Ming Lei</td>
+        </tr>
+        <tr>
+            <td>Graphics</td>
+        </tr>
+        <tr>
+            <td>Translation: Chinese</td>
+        </tr>
+        <tr>
+            <td>Translation: Spanish</td>
+            <td>L3 Name D</td>
+        </tr>
+        <tr>
+            <td>Translation: Italian</td>
+            <td>L3 Name D</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;" rowspan=9>Beta Testers</td>
+            <td>L3 Name D</td>
+        </tr>
+        <tr>
+            <td>L3 Name D</td>
+        </tr>
+        <tr>
+            <td>L3 Name D</td>
+        </tr>
+        <tr>
+            <td>L3 Name D</td>
+        </tr>
+        <tr>
+            <td>L3 Name D</td>
+        </tr>
+        <tr>
+            <td>L3 Name D</td>
+        </tr>
+        <tr>
+            <td>L3 Name D</td>
+        </tr>
+        <tr>
+            <td>L3 Name D</td>
+        </tr>
+        <tr>
+            <td>L3 Name D</td>
+        </tr>
+    </tbody>
+</table>
+
+Special thanks to the Office of Associate Provost for Innovation and Student Success, and the International Students and Scholars Office at Queens College for their support and guidance.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

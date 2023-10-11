@@ -83,16 +83,29 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
-        Locale('en'), // English
+        Locale('en', 'US'), // English
         Locale('es'), // Spanish
         Locale('zh'), // Chinese
-        Locale('it'), // Italian
-        Locale('ru'), // Russian
+        // Locale('it'), // Italian
+        // Locale('ru'), // Russian
       ],
+      localeListResolutionCallback: (allLocales, supportedLocales) {
+        final locale = allLocales?.first.languageCode;
+        if (locale == 'en') {
+          return const Locale('en', 'US');
+        }
+        if (locale == 'es') {
+          return const Locale('es', 'ES');
+        }
+        if (locale == 'zh') {
+          return const Locale('zh', 'CN');
+        }
+        // The default locale
+        return const Locale('en', 'US');
+      },
       builder: FlutterI18n.rootAppBuilder(),
       home: counter == 0
-          ? OnboardingPage(
-              title: FlutterI18n.translate(context, "onboarding.title"))
+          ? const OnboardingPage(title: "Welcome to GoKnights")
           : const CupertinoTabBarDemo(),
     );
   }

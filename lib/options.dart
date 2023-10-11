@@ -30,10 +30,10 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
 
   CupertinoListSection myAcademicListSection =
       CupertinoListSection.insetGrouped(
-    header: Text(FlutterI18n.translate(context, "options.my-academics"), style: optionTextStyle),
+    header: Text('My Academics', style: optionTextStyle),
     children: <CupertinoListTile>[
       CupertinoListTile.notched(
-        title: Text(FlutterI18n.translate(context, "options.apply-to-qc"), style: optionTextStyle),
+        title: Text('Apply to QC', style: optionTextStyle),
         leading: const Icon(
           CupertinoIcons.square_arrow_right,
         ),
@@ -67,10 +67,14 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
             {
               setState(() {
                 myAcademicListSection = CupertinoListSection.insetGrouped(
-                  header: Text(FlutterI18n.translate(context, "options.my-academics"), style: optionTextStyle),
+                  header: Text(
+                      FlutterI18n.translate(context, "options.my-academics"),
+                      style: optionTextStyle),
                   children: <CupertinoListTile>[
                     CupertinoListTile.notched(
-                      title: Text(FlutterI18n.translate(context, "options.apply-to-qc"), style: optionTextStyle),
+                      title: Text(
+                          FlutterI18n.translate(context, "options.apply-to-qc"),
+                          style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.square_arrow_right,
                       ),
@@ -103,7 +107,9 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
             {
               setState(() {
                 myAcademicListSection = CupertinoListSection.insetGrouped(
-                  header: Text(FlutterI18n.translate(context, "options.my-academics"), style: optionTextStyle),
+                  header: Text(
+                      FlutterI18n.translate(context, "options.my-academics"),
+                      style: optionTextStyle),
                   children: <CupertinoListTile>[
                     CupertinoListTile.notched(
                       title: Text('CUNYFirst', style: optionTextStyle),
@@ -123,7 +129,9 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                       onTap: () => _launchURL('https://bbhosted.cuny.edu'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text(FlutterI18n.translate(context, "options.staff-email"), style: optionTextStyle),
+                      title: Text(
+                          FlutterI18n.translate(context, "options.staff-email"),
+                          style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.mail,
                       ),
@@ -151,7 +159,9 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
             {
               setState(() {
                 myAcademicListSection = CupertinoListSection.insetGrouped(
-                  header: Text(FlutterI18n.translate(context, "options.my-academics"), style: optionTextStyle),
+                  header: Text(
+                      FlutterI18n.translate(context, "options.my-academics"),
+                      style: optionTextStyle),
                   children: <CupertinoListTile>[
                     CupertinoListTile.notched(
                       title: Text('CUNYFirst', style: optionTextStyle),
@@ -171,7 +181,10 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                       onTap: () => _launchURL('https://bbhosted.cuny.edu'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text(FlutterI18n.translate(context, "options.student-email"), style: optionTextStyle),
+                      title: Text(
+                          FlutterI18n.translate(
+                              context, "options.student-email"),
+                          style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.mail,
                       ),
@@ -250,7 +263,7 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
       child: CustomScrollView(
         // A list of sliver widgets.
         slivers: <Widget>[
-          const CupertinoSliverNavigationBar(
+          CupertinoSliverNavigationBar(
             largeTitle: Text(FlutterI18n.translate(context, "home.me")),
           ),
           // This widget fills the remaining space in the viewport.
@@ -274,10 +287,14 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                   ],
                 ),
                 CupertinoListSection.insetGrouped(
-                  header: Text(FlutterI18n.translate(context, "options.app-settings"), style: optionTextStyle),
+                  header: Text(
+                      FlutterI18n.translate(context, "options.app-settings"),
+                      style: optionTextStyle),
                   children: <CupertinoListTile>[
                     CupertinoListTile.notched(
-                      title: Text(FlutterI18n.translate(context, "options.switch-role"), style: optionTextStyle),
+                      title: Text(
+                          FlutterI18n.translate(context, "options.switch-role"),
+                          style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.person_2,
                       ),
@@ -300,10 +317,13 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                                   // if 'current', then show 'Current Student', if 'prospective', then show 'Prospective Student', if 'faculty', then show 'Faculty / Staff'
                                   return Text(
                                     snapshot.data == 'current'
-                                        ? FlutterI18n.translate(context, "role.current")
+                                        ? FlutterI18n.translate(
+                                            context, "role.current")
                                         : snapshot.data == 'prospective'
-                                            ? FlutterI18n.translate(context, "role.prospective")
-                                            : FlutterI18n.translate(context, "role.faculty"),
+                                            ? FlutterI18n.translate(
+                                                context, "role.prospective")
+                                            : FlutterI18n.translate(
+                                                context, "role.faculty"),
                                   );
                                 }
                             }
@@ -313,11 +333,15 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                         Navigator.of(context, rootNavigator: true).push(
                             CupertinoPageRoute(
                                 builder: (context) => OnboardingPage(
-                                    title: FlutterI18n.translate(context, "onboarding.title")))),
+                                    title: FlutterI18n.translate(
+                                        context, "onboarding.title")))),
                       },
                     ),
                     CupertinoListTile.notched(
-                      title: Text(FlutterI18n.translate(context, "options.send-feedback"), style: optionTextStyle),
+                      title: Text(
+                          FlutterI18n.translate(
+                              context, "options.send-feedback"),
+                          style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.pencil_outline,
                       ),
@@ -327,7 +351,9 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                           'mailto:goknights-feedback@popoway.com?subject=GoKnights%20Feedback%20v${_packageInfo.version}%20(${_packageInfo.buildNumber})&body=Please%20do%20not%20remove%20the%20app%20version%20and%20build%20number%20below%20when%20sending%20feedback.%0A%0A%0A%0A%0A%0A%0A%0A%0A%0AApp%20Version%3A%20${_packageInfo.version}%0ABuild%20Number%3A%20${_packageInfo.buildNumber}%0A'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text(FlutterI18n.translate(context, "options.about-app"), style: optionTextStyle),
+                      title: Text(
+                          FlutterI18n.translate(context, "options.about-app"),
+                          style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.info,
                       ),
@@ -335,8 +361,9 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                       onTap: () {
                         Navigator.of(context).push(
                           CupertinoPageRoute<void>(
-                            builder: (BuildContext context) =>
-                                const AboutAppPage(title: FlutterI18n.translate(context, "aboutapp.about")),
+                            builder: (BuildContext context) => AboutAppPage(
+                                title: FlutterI18n.translate(
+                                    context, "aboutapp.about")),
                           ),
                         );
                       },

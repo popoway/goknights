@@ -106,12 +106,14 @@ class _AboutAppPageState extends State<AboutAppPage> {
                             fontSize: 16)),
                   ),
                   CupertinoButton(
-                    child: const Text(FlutterI18n.translate(context, "aboutapp.privacy-policy")),
+                    child: Text(FlutterI18n.translate(
+                        context, "aboutapp.privacy-policy")),
                     onPressed: () => _launchURL(
                         'https://github.com/popoway/goknights/blob/main/PRIVACY.md'),
                   ),
                   CupertinoButton(
-                    child: const Text(FlutterI18n.translate(context, "aboutapp.open-source-licenses")),
+                    child: Text(FlutterI18n.translate(
+                        context, "aboutapp.open-source-licenses")),
                     // Displays a LicensePage onClick
                     onPressed: () => showLicensePage(
                       context: context,
@@ -130,7 +132,8 @@ class _AboutAppPageState extends State<AboutAppPage> {
                     ),
                   ),
                   CupertinoButton(
-                    child: const Text(FlutterI18n.translate(context, "aboutapp.disclaimer")),
+                    child: Text(
+                        FlutterI18n.translate(context, "aboutapp.disclaimer")),
                     onPressed: () => _launchURL(
                         'https://github.com/popoway/goknights#disclaimer'),
                   ),

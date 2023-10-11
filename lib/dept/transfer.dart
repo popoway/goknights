@@ -25,7 +25,7 @@ class _MyTransferPageState extends State<MyTransferPage> {
       child: CustomScrollView(
         // A list of sliver widgets.
         slivers: <Widget>[
-          const CupertinoSliverNavigationBar(
+          CupertinoSliverNavigationBar(
             largeTitle: Text(FlutterI18n.translate(context, "home.transfer")),
           ),
           // This widget fills the remaining space in the viewport.
@@ -35,60 +35,83 @@ class _MyTransferPageState extends State<MyTransferPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 CupertinoListSection.insetGrouped(
-                  header:
-                      Text(FlutterI18n.translate(context, "transfer.transfer-explorer"), style: optionTextStyle),
+                  header: Text(
+                      FlutterI18n.translate(
+                          context, "transfer.transfer-explorer"),
+                      style: optionTextStyle),
                   footer: Text(
-                      FlutterI18n.translate(context, "transfer.transfer-explorer-message"),
+                      FlutterI18n.translate(
+                          context, "transfer.transfer-explorer-message"),
                       style: optionTextStyle),
                   children: <CupertinoListTile>[
                     CupertinoListTile.notched(
-                      title: Text(FlutterI18n.translate(context, "transfer.transfer-explorer-by-course"),
+                      title: Text(
+                          FlutterI18n.translate(
+                              context, "transfer.transfer-explorer-by-course"),
                           style: optionTextStyle),
                       trailing: const CupertinoListTileChevron(),
                       onTap: () => _launchURL(
                           'https://explorer.cuny.edu/course-transfer'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text(FlutterI18n.translate(context, "transfer.transfer-explorer-by-subject"),
+                      title: Text(
+                          FlutterI18n.translate(
+                              context, "transfer.transfer-explorer-by-subject"),
                           style: optionTextStyle),
                       trailing: const CupertinoListTileChevron(),
                       onTap: () => _launchURL(
                           'https://explorer.cuny.edu/transfer-rules'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text(FlutterI18n.translate(context, "transfer.transfer-explorer-by-transcript"),
+                      title: Text(
+                          FlutterI18n.translate(context,
+                              "transfer.transfer-explorer-by-transcript"),
                           style: optionTextStyle),
                       trailing: const CupertinoListTileChevron(),
                       onTap: () =>
                           _launchURL('https://explorer.cuny.edu/logincuny'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text(FlutterI18n.translate(context, "button.learn-more"), style: optionTextStyle),
+                      title: Text(
+                          FlutterI18n.translate(context, "button.learn-more"),
+                          style: optionTextStyle),
                       trailing: const CupertinoListTileChevron(),
                       onTap: () => _launchURL('https://explorer.cuny.edu/'),
                     ),
                   ],
                 ),
                 CupertinoListSection.insetGrouped(
-                  header: Text(FlutterI18n.translate(context, "transfer.qc-transfer-support"), style: optionTextStyle),
+                  header: Text(
+                      FlutterI18n.translate(
+                          context, "transfer.qc-transfer-support"),
+                      style: optionTextStyle),
                   footer: Text(
-                      FlutterI18n.translate(context, "transfer.qc-transfer-support-message"),
+                      FlutterI18n.translate(
+                          context, "transfer.qc-transfer-support-message"),
                       style: optionTextStyle),
                   children: <CupertinoListTile>[
                     CupertinoListTile.notched(
-                      title: Text(FlutterI18n.translate(context, "qc-transfer-support-transfer-honors"), style: optionTextStyle),
+                      title: Text(
+                          FlutterI18n.translate(context,
+                              "transfer.qc-transfer-support-transfer-honors"),
+                          style: optionTextStyle),
                       trailing: const CupertinoListTileChevron(),
                       onTap: () => _launchURL(
                           'https://www.qc.cuny.edu/academics/ohs/transfer-honors-program/'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text(FlutterI18n.translate(context, "qc-transfer-support-transfer-advising"), style: optionTextStyle),
+                      title: Text(
+                          FlutterI18n.translate(context,
+                              "transfer.qc-transfer-support-transfer-advising"),
+                          style: optionTextStyle),
                       trailing: const CupertinoListTileChevron(),
                       onTap: () => _launchURL(
                           'https://www.qc.cuny.edu/aac/transfer-advising/'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text(FlutterI18n.translate(context, "qc-transfer-support-international-transfer"),
+                      title: Text(
+                          FlutterI18n.translate(context,
+                              "transfer.qc-transfer-support-international-transfer"),
                           style: optionTextStyle),
                       trailing: const CupertinoListTileChevron(),
                       onTap: () =>

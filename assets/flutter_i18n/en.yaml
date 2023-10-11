@@ -6,6 +6,7 @@ onboarding:
   prompt2b: "Search for buildings, offices, and classrooms. Get directions to your next class."
   prompt3a: "Find Help"
   prompt3b: "Get common questions answered and find out who to contact for more help."
+  get-started: "Get Started"
   get-started-title: "Select Your Role"
   get-started-message: "Pick the role that best describes you to get started. You can change this later in the app settings."
 

@@ -168,7 +168,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             ),
                           ),
                           const SizedBox(height: 16), // Add a 16px padding
-                          Text(widget.title,
+                          Text(
+                              FlutterI18n.translate(
+                                  context, "onboarding.title"),
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: const CupertinoDynamicColor
@@ -359,7 +361,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     onPressed: () {
                       _showGetStartedActionSheet(context);
                     },
-                    child: const Text('Get Started'),
+                    child: Text(FlutterI18n.translate(
+                        context, "onboarding.get-started")),
                   ),
                 )),
               )

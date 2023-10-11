@@ -83,7 +83,7 @@ class _MyDirectoryPageState extends State<MyDirectoryPage> {
       ..loadRequest(Uri.parse('https://www.qc.cuny.edu/directory/'));
 
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
+      navigationBar: CupertinoNavigationBar(
         middle: Text(FlutterI18n.translate(context, "home.directory")),
       ),
       child: SafeArea(child: WebViewWidget(controller: controller)),

@@ -1,17 +1,91 @@
 onboarding:
-  title: "Welcome to GoKnights"
+  title: "欢迎来到 GoKnights"
+  prompt1a: "使用学生服务"
+  prompt1b: "在一个集中的地方获取您需要的咨询、辅导、打印和其他资源。"
+  prompt2a: "探索校园地图"
+  prompt2b: "搜索建筑物、办公室和教室。获取到下一节课的方向。"
+  prompt3a: "寻求帮助"
+  prompt3b: "回答常见问题，并找出谁可以提供更多的帮助。"
+  get-started: "开始使用"
+  get-started-title: "选择您的角色"
+  get-started-message: "选择最能描述您的角色开始。您稍后可以在应用设置中更改此设置。"
+
+role:
+  current: "现任学生"
+  prospective: "预期的学生"
+  faculty: "教职员工"
 
 home:
   discover: "发现"
+  map: "地图"
+  me: "我"
+  transfer: "转学生"
+  advising: "咨询"
+  tutoring: "辅导"
+  careers: "职业"
+  scholarships: "奖学金"
+  counseling: "咨询"
+  library: "图书馆"
+  printing: "打印"
+  calendar: "日历"
+  directory: "目录"
+  shuttle: "班车"
+  sports: "运动"
 
-# Objects can be many levels deep
+shuttle:
+  message: "任何 Queens College 的学生都可以通过显示当前的 QCard 作为身份证明乘坐班车。"
+  shuttle-map: "班车地图"
+  real-time-map: "实时地图"
+  schedule: "时间表"
+
+printing:
+  message: "学生 QCard 每学期都有10美元的打印资金(每页5分)。将您的文件上传到打印系统，并在校园内的任何打印机上打印出来：\n\n• Rosenthal Library 2楼\n• I Building 2楼实验室\n• Powdermaker Hall 210\n• Kiely Hall 131\n• Student Union LL52\n• Queens Hall 大厅"
+  upload-documents: "上传文件"
+
+counseling:
+  message: "持有执照的心理学家和咨询师提供个别咨询、团体和转介到适当的学院或社区资源。所有会议都是免费和保密的。要安排您的第一个约会，第一步是发送电子邮件或致电我们的办公室。学生将被安排一个与咨询师进行简短筛查的时间。\n\n位置: Frese Hall 1楼\n电子邮件: CounselingServices@qc.cuny.edu\n电话: 718-997-5420"
+  make-an-appointment: "预约"
+
+tutoring:
+  learning-commons: "学习公共"
+  learning-commons-message: "学习公共提供免费的同伴辅导、工作坊、学习空间、打印站和其他服务。\n位置: Kiely Hall 131\n电子邮件: LCommons@qc.cuny.edu\n电话: 718-997-5670"
+  book-an-appointment: "预约"
+  study-print: "学习和打印"
+  writing-center: "写作中心"
+  writing-center-message: "写作中心为所有 Queens College 的学生提供免费的写作支持，范围从头脑风暴、最后修订到个人陈述和求职信。\n位置: Kiely Hall 229\n电子邮件: qc.writing.center@qc.cuny.edu\n电话: 718-997-5676"
+
+transfer:
+  transfer-explorer: "CUNY 转学生探索者"
+  transfer-explorer-message: "CUNY 转学生探索者使有关大学转学的重要信息变得公开且易于理解，以便学生在入学新学院之前知道可以预期什么。\n * 需要CUNY登录"
+  transfer-explorer-by-course: "CUNY到CUNY按课程"
+  transfer-explorer-by-subject: "CUNY到CUNY按学科"
+  transfer-explorer-by-transcript: "CUNY到CUNY按成绩单 *"
+  qc-transfer-support: "QC 转学生支持"
+  qc-transfer-support-message: "ACE QC是一个全面的支持计划，旨在建立转学生的学术势头，并帮助学生准时完成学士学位。"
+  qc-transfer-support-transfer-honors: "转学生荣誉"
+  qc-transfer-support-transfer-advising: "转学生咨询"
+  qc-transfer-support-international-transfer: "国际转学生"
+
+map:
+  hint: "搜索建筑物..."
+  building: "建筑物"
+
+options:
+  my-academics: "我的学术"
+  apply-to-qc: "申请到QC"
+  staff-email: "员工邮件"
+  student-email: "学生邮件"
+  app-settings: "应用设置"
+  switch-role: "切换角色"
+  send-feedback: "发送反馈"
+  about-app: "关于GoKnights"
+
+aboutapp:
+  about: "关于"
+  privacy-policy: "隐私政策"
+  open-source-licenses: "开源许可证"
+  disclaimer: "免责声明"
+
 button:
-  label:
-    clickMe: "Click here"
-    language: "Change language"
-  toastMessage: "You clicked on button!"
-
-clicked:
-  times-0: "You clicked {times} times!"
-  times-1: "You clicked {time} time!"
-  times-2: "You clicked {times} times!"
+  cancel: "取消"
+  learn-more: "了解更多"
