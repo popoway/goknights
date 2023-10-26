@@ -164,31 +164,31 @@ Open Source Licenses and Acknowledgements are available within the "About" dialo
         </tr>
         <tr>
             <td style="vertical-align: top;" rowspan=9>Beta Testers</td>
-            <td>L3 Name D</td>
+            <td>Allan Edmond</td>
         </tr>
         <tr>
-            <td>L3 Name D</td>
+            <td>Arina Logosh</td>
         </tr>
         <tr>
-            <td>L3 Name D</td>
+            <td>Brian Flores</td>
         </tr>
         <tr>
-            <td>L3 Name D</td>
+            <td>Callie Podias</td>
         </tr>
         <tr>
-            <td>L3 Name D</td>
+            <td>Chris Galarraga</td>
         </tr>
         <tr>
-            <td>L3 Name D</td>
+            <td>Daniel Yakubov</td>
         </tr>
         <tr>
-            <td>L3 Name D</td>
+            <td>Erika Guadalupe</td>
         </tr>
         <tr>
-            <td>L3 Name D</td>
+            <td>Riyahauna Headley</td>
         </tr>
         <tr>
-            <td>L3 Name D</td>
+            <td>Sayashmini Madhow</td>
         </tr>
     </tbody>
 </table>
