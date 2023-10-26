@@ -7,6 +7,11 @@ We reserve the right to change this policy at any given time, of which you will 
 updated. If you want to make sure that you are up to date with the latest changes, we advise
 you to frequently visit this page.
 
+## Definition
+
+- “Collect” refers to transmitting data off the device in a way that allows us and/or our third-party partners to access it for a period longer than necessary to service the transmitted request in real time.
+- “Third-party partners” include analytics tools, advertising networks, third-party SDKs, or other external vendors whose code we have added to the app.
+
 ## What User Data We Collect
 
 When you use the app, we may collect the following data:
@@ -27,7 +32,7 @@ technologies and software, which help us safeguard all the information we collec
 
 ## Our Cookie Policy
 
-The app do not use cookies or similar technologies to collect data about the user.
+The app does not use cookies or similar technologies to collect data about the user.
 
 ## Links to Other Websites
 
