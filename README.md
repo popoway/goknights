@@ -22,6 +22,9 @@
     <a href="https://testflight.apple.com/join/74kqoOhR" target="_blank">
       <img src="assets/docs/testflight-badge.png" alt="Available on Apple TestFlight" height="40">
     </a>
+    <a href="https://apps.apple.com/us/app/goknights/id6463623285?platform=ipad" target="_blank">
+      <img src="assets/docs/appstore-badge.png" alt="Download on the App Store" height="40">
+    </a>
     <br />
     <a href="https://github.com/popoway/goknights">View Demo</a>
     ·
