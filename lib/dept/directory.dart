@@ -43,6 +43,10 @@ class _MyDirectoryPageState extends State<MyDirectoryPage> {
               // controller.runJavaScript(
               //     'var input = document.getElementsByTagName("input")[4]');
               // controller.runJavaScript('input.style.width = "100vw"');
+              //set id="table_1_filter" to display none
+              controller.runJavaScript(
+                  'var tableFilter = document.getElementById("table_1_filter")');
+              controller.runJavaScript('tableFilter.style.display = "none"');
               // data table setup
               controller.runJavaScript(
                   'var responsiveExpander = document.getElementsByClassName("responsiveExpander")');
@@ -86,7 +90,25 @@ class _MyDirectoryPageState extends State<MyDirectoryPage> {
       navigationBar: CupertinoNavigationBar(
         middle: Text(FlutterI18n.translate(context, "home.directory")),
       ),
-      child: SafeArea(child: WebViewWidget(controller: controller)),
+      child: SafeArea(
+        maintainBottomViewPadding: true,
+        child: WebViewWidget(controller: controller),
+        // search bar and webview
+        // child: Column(
+        //   children: [
+        //     Container(
+        //       padding: EdgeInsets.all(10),
+        //       child: CupertinoSearchTextField(
+        //         placeholder: FlutterI18n.translate(context, "button.search"),
+        //         onSubmitted: (String value) {},
+        //       ),
+        //     ),
+        //     Expanded(
+        //       child: WebViewWidget(controller: controller),
+        //     ),
+        //   ],
+        // ),
+      ),
     );
   }
 }
