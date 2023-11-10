@@ -86,6 +86,7 @@ class MyApp extends StatelessWidget {
         Locale('en', 'US'), // English
         Locale('es'), // Spanish
         Locale('zh'), // Chinese
+        Locale('he'), // Hebrew
         // Locale('it'), // Italian
         // Locale('ru'), // Russian
       ],
@@ -99,6 +100,9 @@ class MyApp extends StatelessWidget {
         }
         if (locale == 'zh') {
           return const Locale('zh', 'CN');
+        }
+        if (locale == 'he') {
+          return const Locale('he', 'IL');
         }
         // The default locale
         return const Locale('en', 'US');

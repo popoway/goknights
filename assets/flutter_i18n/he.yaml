@@ -1,0 +1,92 @@
+onboarding:
+  title: "ברוכים הבאים ל-GoKnights"
+  prompt1a: "השתמש בשירותי הסטודנטים"
+  prompt1b: "גישה לייעוץ, חונכות, הדפסה ומשאבים נוספים שאתה זקוק להם במיקום מרכזי."
+  prompt2a: "חקור את מפת הקמפוס"
+  prompt2b: "חפש בניינים, משרדים וכיתות. קבל הנחיות לשיעור הבא שלך."
+  prompt3a: "מצא עזרה"
+  prompt3b: "קבל תשובות לשאלות נפוצות ומצא מי לפנות אליו לעזרה נוספת."
+  get-started: "מהתחיל"
+  get-started-title: "בחר את התפקיד שלך"
+  get-started-message: " בחר את התפקיד שמתאר אותך בצורה הטובה ביותר כדי להתחיל. ניתן לשנות זאת מאוחר יותר בהגדרות האפליקציה."
+
+role:
+  current: "סטודנט נוכחי"
+  prospective: "סטודנט עתידי"
+  faculty: "סגל / צוות"
+
+home:
+  discover: "גלה"
+  map: "מפה"
+  me: "אני"
+  transfer: "העברה"
+  advising: "ייעוץ"
+  tutoring: "חונכות"
+  careers: "קריירות"
+  scholarships: "מלגות"
+  counseling: "ייעוץ"
+  library: "ספרייה"
+  printing: "הדפסה"
+  calendar: "לוח שנה"
+  directory: "מדריך"
+  shuttle: "שאטל"
+  sports: "ספורטים"
+
+shuttle:
+  message: "כל סטודנט בקווינס קולג' יכול לרכב בשאטל על ידי הצגת QCard נוכחית כזיהוי."
+  shuttle-map: "מפת שאטל"
+  real-time-map: "מפה בזמן אמת"
+  schedule: "לוח זמנים"
+
+printing:
+  message: "QCard של הסטודנט מגיעה עם $10 להדפסה בכל סמסטר (5 סנט לדף). העלה את המסמכים שלך למערכת ההדפסה והדפס אותם בכל מדפסת בקמפוס:\n\n• ספריית Rosenthal קומה שנייה\n• מעבדה בקומה השנייה של בניין I\n• Powdermaker Hall 210\n• Kiely Hall 131\n• Student Union LL52\n• לובי Queens Hall"
+  upload-documents: "העלה מסמכים"
+
+counseling:
+  message: "פסיכולוגים מורשים ויועצים מציעים ייעוץ אישי, קבוצות והפניות למשאבים מתאימים במכללה או בקהילה. כל הפגישות הן חינם ובסודיות מלאה.\nכדי לקבוע את הפגישה הראשונה שלך, השלב הראשון הוא לשלוח אימייל או להתקשר למשרד שלנו. לסטודנטים תיקבע זמן לסקרינג קצר עם יועץ.\n\nמיקום: Frese Hall קומה ראשונה\nדוא\"ל: CounselingServices@qc.cuny.edu\nטלפון: 718-997-5420"
+  make-an-appointment: "קבע פגישה"
+
+tutoring:
+  learning-commons: "מרכז למידה"
+  learning-commons-message: "מרכז הלמידה מציע חונכות עמיתים בחינם, סדנאות, מרחבי למידה, תחנת הדפסה, ושירותים נוספים.\nמיקום: Kiely Hall 131\nדוא\"ל: LCommons@qc.cuny.edu\nטלפון: 718-997-5670"
+  book-an-appointment: "קבע פגישה"
+  study-print: "לימוד והדפסה"
+  writing-center: "מרכז כתיבה"
+  writing-center-message: "מרכז הכתיבה מציע תמיכה בכתיבה בחינם לכל סטודנטי Queens College, החל מבריינסטורמינג, עד לשלבי הגימור הסופיים, אישיות אישיות ומכתבי מוטיבציה.\nמיקום: Kiely Hall 229\nדוא\"ל: qc.writing.center@qc.cuny.edu\nטלפון: 718-997-5676"
+
+transfer:
+  transfer-explorer: "משלוח ההעברה CUNY"
+  transfer-explorer-message: "משלוח ההעברה של CUNY מפרסם מידע חשוב על העברת קולג' ומקל על הבנתו כך שהסטודנטים ידעו מה לצפות לפני שירשמו לקולג' חדש.\n * נדרשת התחברות ל-CUNY"
+  transfer-explorer-by-course: "מ-CUNY ל-CUNY לפי קורס"
+  transfer-explorer-by-subject: "מ-CUNY ל-CUNY לפי נושא"
+  transfer-explorer-by-transcript: "מ-CUNY ל-CUNY לפי תעודה *"
+  qc-transfer-support: "תמיכת העברה של QC"
+  qc-transfer-support-message: "ACE QC הוא תוכנית תמיכה מקיפה שנועדה לבנות על התנופה האקדמית של סטודנטים מעבירים ולעזור להם להשלים את תואר התואר הראשון שלהם בזמן."
+  qc-transfer-support-transfer-honors: "העברת כבוד"
+  qc-transfer-support-transfer-advising: "ייעוץ העברה"
+  qc-transfer-support-international-transfer: "העברה בינלאומית"
+
+map:
+  hint: "חפש בניינים..."
+  building: "בניין"
+
+options:
+  my-academics: "הלימודים שלי"
+  apply-to-qc: "הגש מועמדות ל-QC"
+  staff-email: "דואר אלקטרוני לצוות"
+  student-email: "דואר אלקטרוני לסטודנטים"
+  app-settings: "הגדרות האפליקציה"
+  switch-role: "החלף תפקיד"
+  send-feedback: "שלח משוב"
+  about-app: "אודות GoKnights"
+
+aboutapp:
+  about: "אודות"
+  privacy-policy: "מדיניות פרטיות"
+  open-source-licenses: "רישיונות קוד פתוח"
+  disclaimer: "הבהרה"
+
+button:
+  cancel: "בטל"
+  learn-more: "למד עוד"
+  search: "חפש"
