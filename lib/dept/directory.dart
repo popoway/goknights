@@ -89,6 +89,14 @@ class _MyDirectoryPageState extends State<MyDirectoryPage> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text(FlutterI18n.translate(context, "home.directory")),
+        trailing: CupertinoButton(
+          padding: EdgeInsets.zero,
+          // open in external browser button
+          child: const Icon(CupertinoIcons.arrowshape_turn_up_right_circle),
+          onPressed: () {
+            _launchURL('https://www.qc.cuny.edu/directory/');
+          },
+        ),
       ),
       child: SafeArea(
         maintainBottomViewPadding: true,

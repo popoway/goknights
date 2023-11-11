@@ -152,7 +152,7 @@ Open Source Licenses and Acknowledgements are available within the "About" dialo
     <tbody>
         <tr>
             <td>Programming</td>
-            <td rowspan=3>Ming Lei</td>
+            <td rowspan=4>Ming Lei</td>
         </tr>
         <tr>
             <td>Graphics</td>
@@ -162,11 +162,14 @@ Open Source Licenses and Acknowledgements are available within the "About" dialo
         </tr>
         <tr>
             <td>Translation: Spanish</td>
-            <td>L3 Name D</td>
         </tr>
         <tr>
             <td>Translation: Italian</td>
             <td>L3 Name D</td>
+        </tr>
+        <tr>
+            <td>Translation: Hebrew</td>
+            <td>Sofia Taherkhani</td>
         </tr>
         <tr>
             <td style="vertical-align: top;" rowspan=9>Beta Testers</td>
