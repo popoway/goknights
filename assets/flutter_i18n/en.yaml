@@ -66,6 +66,32 @@ transfer:
   qc-transfer-support-transfer-advising: "Transfer Advising"
   qc-transfer-support-international-transfer: "International Transfer"
 
+library:
+  rosenthal-library: "Rosenthal Library"
+  rosenthal-library-message: "The Rosenthal Library is the intellectual center of the college. It provides a wide range of services and resources to support the Queens College community in its pursuit of knowledge and intellectual growth.\nLocation: Benjamin S. Rosenthal Building\nPhone: (718) 997-3700"
+  onesearch: "OneSearch"
+  library-hours: "Library Hours"
+  remote-access: "Remote Access"
+  makerspace: "Makerspace"
+  makerspace-message: "The Queens College Makerspace is a a place for all to tinker, craft, make, design, and learn. It provides access to 3D printers, laser cutters, sewing machines, and other tools and materials. New users must request Orientation to use the Makerspace. \nLocation: Benjamin S. Rosenthal Library, Level 1, Room 101\nEmail: makerspace@qc.cuny.edu"
+  makerspace-hours: "Makerspace Hours"
+  makerspace-orientation: "Makerspace Orientation"
+
+careers:
+  cei: "Center for Career Engagement and Internships"
+  cei-message: "The Center for Career Engagement and Internships (CEI) provides career development services to all Queens College students and alumni. CEI offers career counseling, resume and cover letter reviews, mock interviews, and career workshops.\nHireQC is CEI's job posting site, uniquely available to Queens College students.\nLocation: Frese Hall 213\nEmail: qc_career@qc.cuny.edu\nPhone: 718-997-4465"
+  career-liaisons: "Career Liaisons"
+  upcoming-workshops-events: "Upcoming Workshops & Events"
+  join-hireqc: "Join HireQC"
+
+advising:
+  aac: "Academic Advising Center"
+  aac-message: "The Academic Advising Center (AAC) provides academic advising to all Queens College students. AAC advisors help students understand degree requirements, select courses, and plan for graduation.\nLocation: Kiely Hall 217\nEmail: advising@qc.cuny.edu\nPhone: 718-997-5599"
+  make-advising-appointment: "Make an Appointment"
+  academic-advising-resources: "Academic Advising Resources"
+  specialty-advising: "Specialty Advising"
+  meet-our-staff: "Meet Our Staff"
+
 map:
   hint: "Search buildings..."
   building: "Building"

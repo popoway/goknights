@@ -20,11 +20,11 @@ home:
   map: "地图"
   me: "我"
   transfer: "转学生"
-  advising: "咨询"
-  tutoring: "辅导"
+  advising: "学术规划"
+  tutoring: "学业辅导"
   careers: "职业"
   scholarships: "奖学金"
-  counseling: "咨询"
+  counseling: "心理咨询"
   library: "图书馆"
   printing: "打印"
   calendar: "日历"
@@ -47,8 +47,8 @@ counseling:
   make-an-appointment: "预约"
 
 tutoring:
-  learning-commons: "学习公共"
-  learning-commons-message: "学习公共提供免费的同伴辅导、工作坊、学习空间、打印站和其他服务。\n位置: Kiely Hall 131\n电子邮件: LCommons@qc.cuny.edu\n电话: 718-997-5670"
+  learning-commons: "学习共享空间"
+  learning-commons-message: "学习共享空间提供免费的同伴辅导、工作坊、学习空间、打印站和其他服务。\n位置: Kiely Hall 131\n电子邮件: LCommons@qc.cuny.edu\n电话: 718-997-5670"
   book-an-appointment: "预约"
   study-print: "学习和打印"
   writing-center: "写作中心"
@@ -65,6 +65,32 @@ transfer:
   qc-transfer-support-transfer-honors: "转学生荣誉"
   qc-transfer-support-transfer-advising: "转学生咨询"
   qc-transfer-support-international-transfer: "国际转学生"
+
+library:
+  rosenthal-library: "Rosenthal 图书馆"
+  rosenthal-library-message: "Rosenthal 图书馆是学院的智力中心。它为皇后学院社区追求知识和智力成长提供了广泛的服务和资源。\n地点：Benjamin S. Rosenthal大楼\n电话：(718) 997-3700"
+  onesearch: "OneSearch"
+  library-hours: "图书馆开放时间"
+  remote-access: "远程访问"
+  makerspace: "创客空间"
+  makerspace-message: "皇后学院创客空间是一个供所有人探索、创作、制作、设计和学习的地方。它提供3D打印机、激光切割机、缝纫机等工具和材料的使用。新用户必须申请导向课程才能使用创客空间。\n地点：Benjamin S. Rosenthal图书馆，1楼，101室\n电子邮件：makerspace@qc.cuny.edu"
+  makerspace-hours: "创客空间开放时间"
+  makerspace-orientation: "创客空间导向课程"
+
+careers:
+  cei: "职业参与和实习中心"
+  cei-message: "职业参与和实习中心（CEI）为所有皇后学院学生和校友提供职业发展服务。CEI提供职业咨询、简历和求职信审查、模拟面试和职业研讨会。\nHireQC是CEI的招聘网站，专为皇后学院学生提供。\n地点：Frese Hall 213\n电子邮件：qc_career@qc.cuny.edu\n电话：718-997-4465"
+  career-liaisons: "职业联络员"
+  upcoming-workshops-events: "即将举行的研讨会和活动"
+  join-hireqc: "加入HireQC"
+
+advising:
+  aac: "学术指导中心"
+  aac-message: "学术指导中心（AAC）为所有皇后学院学生提供学术指导。AAC顾问帮助学生了解学位要求、选择课程和规划毕业。\n地点：Kiely Hall 217\n电子邮件：advising@qc.cuny.edu\n电话：718-997-5599"
+  make-advising-appointment: "预约咨询"
+  academic-advising-resources: "学术指导资源"
+  specialty-advising: "专业指导"
+  meet-our-staff: "认识我们的员工"
 
 map:
   hint: "搜索建筑物..."
@@ -89,3 +115,4 @@ aboutapp:
 button:
   cancel: "取消"
   learn-more: "了解更多"
+  search: "搜索"

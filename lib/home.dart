@@ -12,6 +12,9 @@ import 'dept/tutoring.dart';
 import 'dept/transfer.dart';
 import 'dept/directory.dart';
 import 'dept/calendar.dart';
+import 'dept/library.dart';
+import 'dept/careers.dart';
+import 'dept/advising.dart';
 import 'dept/shuttle_map.dart';
 
 class _TabInfo {
@@ -457,6 +460,39 @@ class _MyHomePageState extends State<MyHomePage> {
                                             context, "home.calendar")),
                                     title: FlutterI18n.translate(
                                         context, "home.calendar")),
+                              );
+                            } else if (iconListCurrent[index]['name'] ==
+                                'library') {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => MyLibraryPage(
+                                        title: FlutterI18n.translate(
+                                            context, "home.library")),
+                                    title: FlutterI18n.translate(
+                                        context, "home.library")),
+                              );
+                            } else if (iconListCurrent[index]['name'] ==
+                                'advising') {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => MyAdvisingPage(
+                                        title: FlutterI18n.translate(
+                                            context, "home.advising")),
+                                    title: FlutterI18n.translate(
+                                        context, "home.advising")),
+                              );
+                            } else if (iconListCurrent[index]['name'] ==
+                                'careers') {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => MyCareersPage(
+                                        title: FlutterI18n.translate(
+                                            context, "home.careers")),
+                                    title: FlutterI18n.translate(
+                                        context, "home.careers")),
                               );
                             } else if (iconListCurrent[index]['name'] ==
                                 'counseling') {

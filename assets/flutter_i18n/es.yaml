@@ -66,6 +66,32 @@ transfer:
   qc-transfer-support-transfer-advising: "Asesoramiento para Transferencias"
   qc-transfer-support-international-transfer: "Transferencia Internacional"
 
+library:
+  rosenthal-library: "Rosenthal Library"
+  rosenthal-library-message: "La Biblioteca Rosenthal es el centro intelectual de la universidad. Proporciona una amplia gama de servicios y recursos para apoyar a la comunidad de Queens College en su búsqueda de conocimiento y crecimiento intelectual.\nUbicación: Edificio Benjamin S. Rosenthal\nTeléfono: (718) 997-3700"
+  onesearch: "OneSearch"
+  library-hours: "Horario de la Biblioteca"
+  remote-access: "Acceso Remoto"
+  makerspace: "Espacio de Creación"
+  makerspace-message: "El Espacio de Creación de Queens College es un lugar para que todos experimenten, creen, fabriquen, diseñen y aprendan. Ofrece acceso a impresoras 3D, cortadoras láser, máquinas de coser y otras herramientas y materiales. Los nuevos usuarios deben solicitar una Orientación para usar el Espacio de Creación.\nUbicación: Biblioteca Benjamin S. Rosenthal, Nivel 1, Sala 101\nCorreo electrónico: makerspace@qc.cuny.edu"
+  makerspace-hours: "Horario del Espacio de Creación"
+  makerspace-orientation: "Orientación del Espacio de Creación"
+
+careers:
+  cei: "Centro de Compromiso Profesional y Pasantías"
+  cei-message: "El Centro de Compromiso Profesional y Pasantías (CEI) ofrece servicios de desarrollo profesional a todos los estudiantes y exalumnos de Queens College. El CEI ofrece asesoramiento profesional, revisión de currículums y cartas de presentación, entrevistas simuladas y talleres de carrera.\nHireQC es el sitio de publicación de empleos del CEI, exclusivo para estudiantes de Queens College.\nUbicación: Frese Hall 213\nCorreo electrónico: qc_career@qc.cuny.edu\nTeléfono: 718-997-4465"
+  career-liaisons: "Enlaces de Carrera"
+  upcoming-workshops-events: "Próximos Talleres y Eventos"
+  join-hireqc: "Únete a HireQC"
+
+advising:
+  aac: "Centro de Asesoramiento Académico"
+  aac-message: "El Centro de Asesoramiento Académico (AAC) proporciona asesoramiento académico a todos los estudiantes de Queens College. Los asesores de AAC ayudan a los estudiantes a comprender los requisitos del grado, seleccionar cursos y planificar la graduación.\nUbicación: Kiely Hall 217\nCorreo electrónico: advising@qc.cuny.edu\nTeléfono: 718-997-5599"
+  make-advising-appointment: "Agendar una Cita"
+  academic-advising-resources: "Recursos de Asesoramiento Académico"
+  specialty-advising: "Asesoramiento Especializado"
+  meet-our-staff: "Conoce a Nuestro Personal"
+
 map:
   hint: "Buscar edificios..."
   building: "Edificio"
@@ -89,3 +115,4 @@ aboutapp:
 button:
   cancel: "Cancelar"
   learn-more: "Aprende más"
+  search: "Buscar"
