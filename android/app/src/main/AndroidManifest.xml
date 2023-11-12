@@ -6,7 +6,8 @@
     <application
         android:label="GoKnights"
         android:name="${applicationName}"
-        android:icon="@mipmap/launcher_icon">
+        android:icon="@mipmap/launcher_icon"
+        android:localeConfig="@xml/locales_config">
         <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="@string/GOOGLE_MAPS_API_KEY" />
         <activity

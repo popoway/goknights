@@ -123,8 +123,9 @@ Pull requests: If this is your first Flutter/Dart project, below are a few resou
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
 For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[online documentation](https://docs.flutter.dev/), which offers tutorials, samples, guidance on mobile development, and a full API reference.
+
+To assist with translations, please review the [Localization Guide](https://github.com/popoway/goknights/wiki/Translations).
 
 To report a security vulnerability, please review the [Security Policy](https://github.com/popoway/goknights/blob/main/SECURITY.md).
 
@@ -162,10 +163,6 @@ Open Source Licenses and Acknowledgements are available within the "About" dialo
         </tr>
         <tr>
             <td>Translation: Spanish</td>
-        </tr>
-        <tr>
-            <td>Translation: Italian</td>
-            <td>L3 Name D</td>
         </tr>
         <tr>
             <td>Translation: Hebrew</td>

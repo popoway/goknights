@@ -103,6 +103,7 @@ options:
   student-email: "Student Email"
   app-settings: "App Settings"
   switch-role: "Switch Role"
+  switch-language: "Switch Language"
   send-feedback: "Send Feedback"
   about-app: "About GoKnights"
 
@@ -116,3 +117,9 @@ button:
   cancel: "Cancel"
   learn-more: "Learn More"
   search: "Search"
+
+language:
+  en_US: "English"
+  es_ES: "Español"
+  zh_CN: "中文"
+  he_IL: "עברית"

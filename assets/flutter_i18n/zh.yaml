@@ -103,6 +103,7 @@ options:
   student-email: "学生邮件"
   app-settings: "应用设置"
   switch-role: "切换角色"
+  switch-language: "切换语言"
   send-feedback: "发送反馈"
   about-app: "关于GoKnights"
 
@@ -116,3 +117,9 @@ button:
   cancel: "取消"
   learn-more: "了解更多"
   search: "搜索"
+
+language:
+  en_US: "English"
+  es_ES: "Español"
+  zh_CN: "中文"
+  he_IL: "עברית"

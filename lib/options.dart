@@ -6,6 +6,7 @@ import 'package:goknights/onboarding.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:app_settings/app_settings.dart';
 import 'aboutapp.dart';
 
 class MyOptionsPage extends StatefulWidget {
@@ -336,6 +337,20 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                                     title: FlutterI18n.translate(
                                         context, "onboarding.title")))),
                       },
+                    ),
+                    CupertinoListTile.notched(
+                      title: Text(
+                          FlutterI18n.translate(
+                              context, "options.switch-language"),
+                          style: optionTextStyle),
+                      leading: const Icon(CupertinoIcons.globe),
+                      trailing: const CupertinoListTileChevron(),
+                      // list FlutterI18n.currentLocale and the corresponding language name
+                      additionalInfo: Text(
+                        '${FlutterI18n.translate(context, "language.${FlutterI18n.currentLocale(context).toString()}")} (${FlutterI18n.currentLocale(context).toString()})',
+                      ),
+                      onTap: () => AppSettings.openAppSettings(
+                          type: AppSettingsType.settings),
                     ),
                     CupertinoListTile.notched(
                       title: Text(

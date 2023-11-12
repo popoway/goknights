@@ -103,6 +103,7 @@ options:
   student-email: "דואר אלקטרוני לסטודנטים"
   app-settings: "הגדרות האפליקציה"
   switch-role: "החלף תפקיד"
+  switch-language: "החלף שפה"
   send-feedback: "שלח משוב"
   about-app: "אודות GoKnights"
 
@@ -116,3 +117,9 @@ button:
   cancel: "בטל"
   learn-more: "למד עוד"
   search: "חפש"
+
+language:
+  en_US: "English"
+  es_ES: "Español"
+  zh_CN: "中文"
+  he_IL: "עברית"
