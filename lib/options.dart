@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:app_settings/app_settings.dart';
+import 'package:in_app_review/in_app_review.dart';
 import 'aboutapp.dart';
 
 class MyOptionsPage extends StatefulWidget {
@@ -269,150 +270,170 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
           ),
           // This widget fills the remaining space in the viewport.
           // Drag the scrollable area to collapse the CupertinoSliverNavigationBar.
-          SliverFillRemaining(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                myAcademicListSection,
-                CupertinoListSection.insetGrouped(
-                  children: <CupertinoListTile>[
-                    CupertinoListTile.notched(
-                      title: Text('ITS Help Desk', style: optionTextStyle),
-                      leading: const Icon(
-                        CupertinoIcons.cursor_rays,
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 900,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  myAcademicListSection,
+                  CupertinoListSection.insetGrouped(
+                    children: <CupertinoListTile>[
+                      CupertinoListTile.notched(
+                        title: Text('ITS Help Desk', style: optionTextStyle),
+                        leading: const Icon(
+                          CupertinoIcons.cursor_rays,
+                        ),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://support.qc.cuny.edu/support/home'),
                       ),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://support.qc.cuny.edu/support/home'),
-                    ),
-                  ],
-                ),
-                CupertinoListSection.insetGrouped(
-                  header: Text(
-                      FlutterI18n.translate(context, "options.app-settings"),
-                      style: optionTextStyle),
-                  children: <CupertinoListTile>[
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(context, "options.switch-role"),
-                          style: optionTextStyle),
-                      leading: const Icon(
-                        CupertinoIcons.person_2,
+                    ],
+                  ),
+                  CupertinoListSection.insetGrouped(
+                    header: Text(
+                        FlutterI18n.translate(context, "options.app-settings"),
+                        style: optionTextStyle),
+                    children: <CupertinoListTile>[
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "options.switch-role"),
+                            style: optionTextStyle),
+                        leading: const Icon(
+                          CupertinoIcons.person_2,
+                        ),
+                        trailing: const CupertinoListTileChevron(),
+                        additionalInfo: FutureBuilder<String>(
+                            future: _role,
+                            builder: (BuildContext context,
+                                AsyncSnapshot<String> snapshot) {
+                              switch (snapshot.connectionState) {
+                                case ConnectionState.none:
+                                case ConnectionState.waiting:
+                                  return const CircularProgressIndicator
+                                      .adaptive(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                          Color(0xFFE71939)));
+                                case ConnectionState.active:
+                                case ConnectionState.done:
+                                  if (snapshot.hasError) {
+                                    return Text('Error: ${snapshot.error}');
+                                  } else {
+                                    // if 'current', then show 'Current Student', if 'prospective', then show 'Prospective Student', if 'faculty', then show 'Faculty / Staff'
+                                    return Text(
+                                      snapshot.data == 'current'
+                                          ? FlutterI18n.translate(
+                                              context, "role.current")
+                                          : snapshot.data == 'prospective'
+                                              ? FlutterI18n.translate(
+                                                  context, "role.prospective")
+                                              : FlutterI18n.translate(
+                                                  context, "role.faculty"),
+                                    );
+                                  }
+                              }
+                            }),
+                        onTap: () => {
+                          // need to pop the current page (with nav) to go back to onboarding
+                          Navigator.of(context, rootNavigator: true).push(
+                              CupertinoPageRoute(
+                                  builder: (context) => OnboardingPage(
+                                      title: FlutterI18n.translate(
+                                          context, "onboarding.title")))),
+                        },
                       ),
-                      trailing: const CupertinoListTileChevron(),
-                      additionalInfo: FutureBuilder<String>(
-                          future: _role,
-                          builder: (BuildContext context,
-                              AsyncSnapshot<String> snapshot) {
-                            switch (snapshot.connectionState) {
-                              case ConnectionState.none:
-                              case ConnectionState.waiting:
-                                return const CircularProgressIndicator.adaptive(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                        Color(0xFFE71939)));
-                              case ConnectionState.active:
-                              case ConnectionState.done:
-                                if (snapshot.hasError) {
-                                  return Text('Error: ${snapshot.error}');
-                                } else {
-                                  // if 'current', then show 'Current Student', if 'prospective', then show 'Prospective Student', if 'faculty', then show 'Faculty / Staff'
-                                  return Text(
-                                    snapshot.data == 'current'
-                                        ? FlutterI18n.translate(
-                                            context, "role.current")
-                                        : snapshot.data == 'prospective'
-                                            ? FlutterI18n.translate(
-                                                context, "role.prospective")
-                                            : FlutterI18n.translate(
-                                                context, "role.faculty"),
-                                  );
-                                }
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "options.switch-language"),
+                            style: optionTextStyle),
+                        leading: const Icon(CupertinoIcons.globe),
+                        trailing: const CupertinoListTileChevron(),
+                        // list FlutterI18n.currentLocale and the corresponding language name
+                        additionalInfo: Text(
+                          '${FlutterI18n.translate(context, "language.${FlutterI18n.currentLocale(context).toString()}")} (${FlutterI18n.currentLocale(context).toString()})',
+                        ),
+                        onTap: () => AppSettings.openAppSettings(
+                            type: AppSettingsType.settings),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "options.send-feedback"),
+                            style: optionTextStyle),
+                        leading: const Icon(
+                          CupertinoIcons.pencil_outline,
+                        ),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            // include app version and build number in subject, ask the user to not remove the app version and build number when sending
+                            'mailto:goknights-feedback@popoway.com?subject=GoKnights%20Feedback%20v${_packageInfo.version}%20(${_packageInfo.buildNumber})&body=Please%20do%20not%20remove%20the%20app%20version%20and%20build%20number%20below%20when%20sending%20feedback.%0A%0A%0A%0A%0A%0A%0A%0A%0A%0AApp%20Version%3A%20${_packageInfo.version}%0ABuild%20Number%3A%20${_packageInfo.buildNumber}%0A'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "options.rate-this-app"),
+                            style: optionTextStyle),
+                        leading: const Icon(
+                          CupertinoIcons.star,
+                        ),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () {
+                          final InAppReview inAppReview = InAppReview.instance;
+                          inAppReview.openStoreListing(
+                              appStoreId: '6463623285');
+                        },
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(context, "options.about-app"),
+                            style: optionTextStyle),
+                        leading: const Icon(
+                          CupertinoIcons.info,
+                        ),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () {
+                          Navigator.of(context).push(
+                            CupertinoPageRoute<void>(
+                              builder: (BuildContext context) => AboutAppPage(
+                                  title: FlutterI18n.translate(
+                                      context, "aboutapp.about")),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                  FutureBuilder<int>(
+                      future: _counter,
+                      builder:
+                          (BuildContext context, AsyncSnapshot<int> snapshot) {
+                        switch (snapshot.connectionState) {
+                          case ConnectionState.none:
+                          case ConnectionState.waiting:
+                            return const CircularProgressIndicator.adaptive(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                    Color(0xFFE71939)));
+                          case ConnectionState.active:
+                          case ConnectionState.done:
+                            if (snapshot.hasError) {
+                              return Text('Error: ${snapshot.error}');
+                            } else {
+                              return Text(
+                                  'GoKnights has enlivened your college experience for ${snapshot.data} time${snapshot.data == 1 ? '' : 's'}.',
+                                  style: TextStyle(
+                                      color: const CupertinoDynamicColor
+                                          .withBrightness(
+                                        color: CupertinoColors.black,
+                                        darkColor: CupertinoColors.white,
+                                      ).resolveFrom(context),
+                                      fontSize: 12));
                             }
-                          }),
-                      onTap: () => {
-                        // need to pop the current page (with nav) to go back to onboarding
-                        Navigator.of(context, rootNavigator: true).push(
-                            CupertinoPageRoute(
-                                builder: (context) => OnboardingPage(
-                                    title: FlutterI18n.translate(
-                                        context, "onboarding.title")))),
-                      },
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(
-                              context, "options.switch-language"),
-                          style: optionTextStyle),
-                      leading: const Icon(CupertinoIcons.globe),
-                      trailing: const CupertinoListTileChevron(),
-                      // list FlutterI18n.currentLocale and the corresponding language name
-                      additionalInfo: Text(
-                        '${FlutterI18n.translate(context, "language.${FlutterI18n.currentLocale(context).toString()}")} (${FlutterI18n.currentLocale(context).toString()})',
-                      ),
-                      onTap: () => AppSettings.openAppSettings(
-                          type: AppSettingsType.settings),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(
-                              context, "options.send-feedback"),
-                          style: optionTextStyle),
-                      leading: const Icon(
-                        CupertinoIcons.pencil_outline,
-                      ),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          // include app version and build number in subject, ask the user to not remove the app version and build number when sending
-                          'mailto:goknights-feedback@popoway.com?subject=GoKnights%20Feedback%20v${_packageInfo.version}%20(${_packageInfo.buildNumber})&body=Please%20do%20not%20remove%20the%20app%20version%20and%20build%20number%20below%20when%20sending%20feedback.%0A%0A%0A%0A%0A%0A%0A%0A%0A%0AApp%20Version%3A%20${_packageInfo.version}%0ABuild%20Number%3A%20${_packageInfo.buildNumber}%0A'),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(context, "options.about-app"),
-                          style: optionTextStyle),
-                      leading: const Icon(
-                        CupertinoIcons.info,
-                      ),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () {
-                        Navigator.of(context).push(
-                          CupertinoPageRoute<void>(
-                            builder: (BuildContext context) => AboutAppPage(
-                                title: FlutterI18n.translate(
-                                    context, "aboutapp.about")),
-                          ),
-                        );
-                      },
-                    ),
-                  ],
-                ),
-                FutureBuilder<int>(
-                    future: _counter,
-                    builder:
-                        (BuildContext context, AsyncSnapshot<int> snapshot) {
-                      switch (snapshot.connectionState) {
-                        case ConnectionState.none:
-                        case ConnectionState.waiting:
-                          return const CircularProgressIndicator.adaptive(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                  Color(0xFFE71939)));
-                        case ConnectionState.active:
-                        case ConnectionState.done:
-                          if (snapshot.hasError) {
-                            return Text('Error: ${snapshot.error}');
-                          } else {
-                            return Text(
-                                'GoKnights has enlivened your college experience for ${snapshot.data} time${snapshot.data == 1 ? '' : 's'}.',
-                                style: TextStyle(
-                                    color: const CupertinoDynamicColor
-                                        .withBrightness(
-                                      color: CupertinoColors.black,
-                                      darkColor: CupertinoColors.white,
-                                    ).resolveFrom(context),
-                                    fontSize: 12));
-                          }
-                      }
-                    }),
-              ],
+                        }
+                      }),
+                ],
+              ),
             ),
           ),
         ],

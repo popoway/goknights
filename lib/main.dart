@@ -5,6 +5,7 @@ import 'package:flutter_config/flutter_config.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:in_app_review/in_app_review.dart';
 
 import 'home.dart';
 import 'onboarding.dart';
@@ -14,6 +15,14 @@ String role = 'current';
 
 class NavigationService {
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+}
+
+void _showReviewDialog() async {
+  final InAppReview inAppReview = InAppReview.instance;
+
+  if (await inAppReview.isAvailable()) {
+    inAppReview.requestReview();
+  }
 }
 
 Future<void> main() async {
@@ -47,6 +56,12 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+    // print(counter.toString());
+    // if counter == 5 or 20, show review dialog
+    if (counter == 5 || counter == 20) {
+      // print('show review dialog ' + counter.toString());
+      _showReviewDialog();
+    }
     return CupertinoApp(
       navigatorKey: NavigationService.navigatorKey,
       title: 'GoKnights',
