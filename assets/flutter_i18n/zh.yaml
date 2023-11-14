@@ -105,6 +105,7 @@ options:
   switch-role: "切换角色"
   switch-language: "切换语言"
   send-feedback: "发送反馈"
+  rate-this-app: "评分此应用"
   about-app: "关于GoKnights"
 
 aboutapp:

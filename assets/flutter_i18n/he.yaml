@@ -105,6 +105,7 @@ options:
   switch-role: "החלף תפקיד"
   switch-language: "החלף שפה"
   send-feedback: "שלח משוב"
+  rate-this-app: "דרג את האפליקציה הזו"
   about-app: "אודות GoKnights"
 
 aboutapp:

@@ -103,8 +103,9 @@ options:
   student-email: "Correo Electrónico del Estudiante"
   app-settings: "Ajustes de Aplicacion"
   switch-role: "Cambiar rol"
-  switch-language: "Cambiar idioma"
-  send-feedback: "Enviar comentarios"
+  switch-language: "Cambiar Idioma"
+  send-feedback: "Enviar Comentarios"
+  rate-this-app: "Califica esta Aplicación"
   about-app: "Acerca de GoKnights"
 
 aboutapp:
