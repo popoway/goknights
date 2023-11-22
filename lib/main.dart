@@ -62,70 +62,75 @@ class MyApp extends StatelessWidget {
       // print('show review dialog ' + counter.toString());
       _showReviewDialog();
     }
-    return CupertinoApp(
-      navigatorKey: NavigationService.navigatorKey,
-      title: 'GoKnights',
-      debugShowCheckedModeBanner: false,
-      theme: const CupertinoThemeData(
-        primaryColor: Color(0xFFE71939),
-        primaryContrastingColor: CupertinoColors.white,
-        textTheme: CupertinoTextThemeData(
-          primaryColor: Color(0xFFE71939),
-          textStyle: TextStyle(
-            color: CupertinoColors.black,
+    return Theme(
+        data: ThemeData(
+            colorScheme:
+                ColorScheme.fromSeed(seedColor: const Color(0xFFE71939))),
+        child: CupertinoApp(
+          navigatorKey: NavigationService.navigatorKey,
+          title: 'GoKnights',
+          debugShowCheckedModeBanner: false,
+          theme: const CupertinoThemeData(
+            applyThemeToAll: true,
+            primaryColor: Color(0xFFE71939),
+            primaryContrastingColor: CupertinoColors.white,
+            textTheme: CupertinoTextThemeData(
+              primaryColor: Color(0xFFE71939),
+              textStyle: TextStyle(
+                color: CupertinoColors.black,
+              ),
+              actionTextStyle: TextStyle(
+                color: Color(0xFFE71939),
+              ),
+              tabLabelTextStyle: TextStyle(
+                color: Color(0xFFE71939),
+              ),
+            ),
           ),
-          actionTextStyle: TextStyle(
-            color: Color(0xFFE71939),
-          ),
-          tabLabelTextStyle: TextStyle(
-            color: Color(0xFFE71939),
-          ),
-        ),
-      ),
-      localizationsDelegates: [
-        FlutterI18nDelegate(
-          translationLoader: FileTranslationLoader(
-              useCountryCode: false,
-              fallbackFile: 'en',
-              basePath: 'assets/flutter_i18n'),
-          missingTranslationHandler: (key, locale) {
-            print(
-                "--- Missing Key: $key, languageCode: ${locale?.languageCode}");
+          localizationsDelegates: [
+            FlutterI18nDelegate(
+              translationLoader: FileTranslationLoader(
+                  useCountryCode: false,
+                  fallbackFile: 'en',
+                  basePath: 'assets/flutter_i18n'),
+              missingTranslationHandler: (key, locale) {
+                print(
+                    "--- Missing Key: $key, languageCode: ${locale?.languageCode}");
+              },
+            ),
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: const [
+            Locale('en', 'US'), // English
+            Locale('es'), // Spanish
+            Locale('zh'), // Chinese
+            Locale('he'), // Hebrew
+            // Locale('it'), // Italian
+            // Locale('ru'), // Russian
+          ],
+          localeListResolutionCallback: (allLocales, supportedLocales) {
+            final locale = allLocales?.first.languageCode;
+            if (locale == 'en') {
+              return const Locale('en', 'US');
+            }
+            if (locale == 'es') {
+              return const Locale('es', 'ES');
+            }
+            if (locale == 'zh') {
+              return const Locale('zh', 'CN');
+            }
+            if (locale == 'he') {
+              return const Locale('he', 'IL');
+            }
+            // The default locale
+            return const Locale('en', 'US');
           },
-        ),
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('en', 'US'), // English
-        Locale('es'), // Spanish
-        Locale('zh'), // Chinese
-        Locale('he'), // Hebrew
-        // Locale('it'), // Italian
-        // Locale('ru'), // Russian
-      ],
-      localeListResolutionCallback: (allLocales, supportedLocales) {
-        final locale = allLocales?.first.languageCode;
-        if (locale == 'en') {
-          return const Locale('en', 'US');
-        }
-        if (locale == 'es') {
-          return const Locale('es', 'ES');
-        }
-        if (locale == 'zh') {
-          return const Locale('zh', 'CN');
-        }
-        if (locale == 'he') {
-          return const Locale('he', 'IL');
-        }
-        // The default locale
-        return const Locale('en', 'US');
-      },
-      builder: FlutterI18n.rootAppBuilder(),
-      home: counter == 0
-          ? const OnboardingPage(title: "Welcome to GoKnights")
-          : const CupertinoTabBarDemo(),
-    );
+          builder: FlutterI18n.rootAppBuilder(),
+          home: counter == 0
+              ? const OnboardingPage(title: "Welcome to GoKnights")
+              : const CupertinoTabBarDemo(),
+        ));
   }
 }
