@@ -182,7 +182,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 48),
+                    SizedBox(
+                        height:
+                            MediaQuery.of(context).size.height < 700 ? 24 : 48),
                     AnimatedOpacity(
                       opacity: widget2Opacity,
                       duration: const Duration(seconds: 1),
@@ -208,7 +210,17 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                         FlutterI18n.translate(
                                             context, "onboarding.prompt1a"),
                                         style: TextStyle(
-                                          fontSize: 24,
+                                          fontSize: MediaQuery.of(context)
+                                                      .size
+                                                      .width <
+                                                  380
+                                              ? MediaQuery.of(context)
+                                                          .size
+                                                          .width <
+                                                      330
+                                                  ? 18
+                                                  : 20
+                                              : 24,
                                           color: const CupertinoDynamicColor
                                               .withBrightness(
                                             color: CupertinoColors.black,
@@ -239,7 +251,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 48),
+                    SizedBox(
+                        height:
+                            MediaQuery.of(context).size.height < 700 ? 24 : 48),
                     AnimatedOpacity(
                       opacity: widget3Opacity,
                       duration: const Duration(seconds: 1),
@@ -263,7 +277,17 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                         FlutterI18n.translate(
                                             context, "onboarding.prompt2a"),
                                         style: TextStyle(
-                                          fontSize: 24,
+                                          fontSize: MediaQuery.of(context)
+                                                      .size
+                                                      .width <
+                                                  380
+                                              ? MediaQuery.of(context)
+                                                          .size
+                                                          .width <
+                                                      330
+                                                  ? 18
+                                                  : 20
+                                              : 24,
                                           color: const CupertinoDynamicColor
                                               .withBrightness(
                                             color: CupertinoColors.black,
@@ -294,7 +318,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 48),
+                    SizedBox(
+                        height:
+                            MediaQuery.of(context).size.height < 700 ? 24 : 48),
                     AnimatedOpacity(
                       opacity: widget4Opacity,
                       duration: const Duration(seconds: 1),
@@ -317,7 +343,17 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                         FlutterI18n.translate(
                                             context, "onboarding.prompt3a"),
                                         style: TextStyle(
-                                          fontSize: 24,
+                                          fontSize: MediaQuery.of(context)
+                                                      .size
+                                                      .width <
+                                                  380
+                                              ? MediaQuery.of(context)
+                                                          .size
+                                                          .width <
+                                                      330
+                                                  ? 18
+                                                  : 20
+                                              : 24,
                                           color: const CupertinoDynamicColor
                                               .withBrightness(
                                             color: CupertinoColors.black,
