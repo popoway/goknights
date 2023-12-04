@@ -19,14 +19,14 @@
     <a href="#readme-toc"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://testflight.apple.com/join/74kqoOhR" target="_blank">
-      <img src="assets/docs/testflight-badge.png" alt="Available on Apple TestFlight" height="40">
+    <a href="https://play.google.com/store/apps/details?id=com.popoway.goknights" target="_blank">
+      <img src="assets/docs/googleplay-badge.png" alt="Get it on Google Play" height="40">
     </a>
     <a href="https://apps.apple.com/us/app/goknights/id6463623285?platform=ipad" target="_blank">
       <img src="assets/docs/appstore-badge.png" alt="Download on the App Store" height="40">
     </a>
-    <a href="https://play.google.com/store/apps/details?id=com.popoway.goknights" target="_blank">
-      <img src="assets/docs/googleplay-badge.png" alt="Get it on Google Play" height="40">
+    <a href="https://testflight.apple.com/join/74kqoOhR" target="_blank">
+      <img src="assets/docs/testflight-badge.png" alt="Available on Apple TestFlight" height="40">
     </a>
     <br />
     <a href="https://apps.apple.com/us/app/goknights/id6463623285?platform=ipad" target="_blank">View Demo</a>
@@ -98,9 +98,9 @@ flutter build ios --release --no-codesign
 
 ## Roadmap
 
-- [x] User onboarding with different roles -> views
 - [x] Injectable JS WKWebview for calendars
 - [ ] i18n support with Italian, Chinese and Spanish
+- [ ] Faculty timesheet
 
 ## Contributing
 
@@ -199,7 +199,7 @@ Open Source Licenses and Acknowledgements are available within the "About" dialo
     </tbody>
 </table>
 
-Special thanks to the Office of Associate Provost for Innovation and Student Success, and the International Students and Scholars Office at Queens College for their support and guidance.
+Special thanks to the [Office of Associate Provost for Innovation and Student Success](https://www.qc.cuny.edu/student-success/), the [International Students and Scholars Office](https://www.qc.cuny.edu/academics/iss/), and the [Office of Student Affairs and Enrollment Management](https://www.qc.cuny.edu/student-affairs-enrollment-management/) at Queens College for their support and guidance.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
