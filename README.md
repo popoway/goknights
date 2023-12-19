@@ -101,6 +101,7 @@ flutter build ios --release --no-codesign
 - [x] Injectable JS WKWebview for calendars
 - [ ] i18n support with Italian, Chinese and Spanish
 - [ ] Faculty timesheet
+- [ ] https://pub.dev/packages/app_links
 
 ## Contributing
 
