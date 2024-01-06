@@ -19,7 +19,9 @@ home:
   discover: "Discover"
   map: "Map"
   me: "Me"
+  admissions: "Admissions"
   transfer: "Transfer"
+  timesheet: "Timesheet"
   advising: "Advising"
   tutoring: "Tutoring"
   careers: "Careers"
@@ -41,6 +43,12 @@ shuttle:
 printing:
   message: "Student QCard comes with $10 printing fund each semester (5 cents a page). Upload your documents to the printing system and print them out at any printer on campus:\n\n•	Rosenthal Library 2nd floor\n• I Building 2nd floor lab\n• Powdermaker Hall 210\n• Kiely Hall 131\n• Student Union LL52\n• Queens Hall Lobby"
   upload-documents: "Upload Documents"
+
+timesheet:
+  message: "Access Time and Leave Reporting System (TLR) to submit your timesheet. Access to the HR/PR assist pages are limited to on-campus computers, campus Wi-Fi (qwifi-secured), and VPN users. Learn more about how to access them in ITS's support page."
+  hr: "HRAssist (Full-Time)"
+  pr: "PRAssist (Part-Time)"
+  how-to-access: "How to Access"
 
 counseling:
   message: "Licensed psychologists and counselors offer individual counseling, groups, and referrals to appropriate college or community resources. All sessions are free and confidential.\nTo set up your first appointment, the first step is to email or call our office. Students will be scheduled a time for a brief screening with a counselor.\n\nLocation: Frese Hall 1st Floor\nEmail: CounselingServices@qc.cuny.edu\nPhone: 718-997-5420"

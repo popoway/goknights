@@ -17,7 +17,7 @@ Scholarship List: https://qc-cuny.academicworks.com/opportunities
 Athletics and Recreation: https://queensknights.com/
 Career Development and Internships: https://www.qc.cuny.edu/academics/cei/
 First Year Experience: https://www.qc.cuny.edu/fye/
-Learning Commons (Academic Support Center): https://www.qc.cuny.edu/academics/qclc/
+Learning Commons (Academic Support Center, Tutoring): https://www.qc.cuny.edu/academics/qclc/
 Peer Support Services: https://www.qc.cuny.edu/sl/peer-support-services/
 International Student Services: https://www.qc.cuny.edu/academics/iss/
 Shuttle Bus: http://www.qc.cuny.edu/a/shuttle/

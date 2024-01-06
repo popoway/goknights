@@ -21,12 +21,14 @@
     "Klapper",
     "Powdermaker",
     "prefs",
+    "qwifi",
     "Razran",
     "Remsen",
     "Rosenthal",
     "Schyler",
     "shuttlemap",
-    "sportscourt"
+    "sportscourt",
+    "Timesheet"
   ],
   "java.configuration.updateBuildConfiguration": "interactive",
   "cmake.configureOnOpen": false

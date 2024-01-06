@@ -125,6 +125,48 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  void _showTimesheetActionSheet(BuildContext context) {
+    showCupertinoModalPopup<void>(
+      context: context,
+      builder: (BuildContext context) => CupertinoActionSheet(
+        title: Text(FlutterI18n.translate(context, "home.timesheet")),
+        message: Text(FlutterI18n.translate(context, "timesheet.message")),
+        cancelButton: CupertinoActionSheetAction(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text(FlutterI18n.translate(context, "button.cancel")),
+        ),
+        actions: <CupertinoActionSheetAction>[
+          CupertinoActionSheetAction(
+            onPressed: () {
+              Navigator.pop(context);
+              _launchURL('https://apps.qc.cuny.edu/hr_assist/hrlogon.aspx');
+            },
+            child: Text(FlutterI18n.translate(context, "timesheet.hr")),
+          ),
+          CupertinoActionSheetAction(
+            onPressed: () {
+              Navigator.pop(context);
+              _launchURL('https://apps.qc.cuny.edu/pr_assist/prlogon.aspx');
+            },
+            child: Text(FlutterI18n.translate(context, "timesheet.pr")),
+          ),
+          CupertinoActionSheetAction(
+            isDefaultAction: true,
+            onPressed: () {
+              Navigator.pop(context);
+              _launchURL(
+                  'https://support.qc.cuny.edu/support/solutions/articles/15000055324');
+            },
+            child:
+                Text(FlutterI18n.translate(context, "timesheet.how-to-access")),
+          ),
+        ],
+      ),
+    );
+  }
+
   void _showCounselingActionSheet(BuildContext context) {
     showCupertinoModalPopup<void>(
       context: context,
@@ -250,10 +292,22 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Map<String, dynamic>> iconListCurrent = [];
   final List<Map<String, dynamic>> iconList = [
     {
+      'icon': CupertinoIcons.square_arrow_right,
+      'name': 'admissions',
+      'url': 'https://www.qc.cuny.edu/admissions/',
+      'role': ['prospective'],
+    },
+    {
       'icon': CupertinoIcons.arrow_right_arrow_left,
       'name': 'transfer',
       'url': 'https://queensknights.com/index.aspx',
       'role': ['prospective'],
+    },
+    {
+      'icon': CupertinoIcons.clock_fill,
+      'name': 'timesheet',
+      'url': 'https://www.qc.cuny.edu/a/staff/',
+      'role': ['faculty'],
     },
     {
       'icon': CupertinoIcons.text_badge_checkmark,
@@ -494,6 +548,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                     title: FlutterI18n.translate(
                                         context, "home.careers")),
                               );
+                            } else if (iconListCurrent[index]['name'] ==
+                                'timesheet') {
+                              _showTimesheetActionSheet(context);
                             } else if (iconListCurrent[index]['name'] ==
                                 'counseling') {
                               _showCounselingActionSheet(context);
