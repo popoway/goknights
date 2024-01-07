@@ -129,7 +129,7 @@ class MyApp extends StatelessWidget {
           },
           builder: FlutterI18n.rootAppBuilder(),
           home: counter == 0
-              ? const OnboardingPage(title: "Welcome to GoKnights")
+              ? const OnboardingPage()
               : const CupertinoTabBarDemo(),
         ));
   }

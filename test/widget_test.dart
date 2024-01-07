@@ -5,26 +5,70 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:goknights/main.dart';
+import 'package:goknights/onboarding.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  group('UI TESTS', () {
+    Widget makeTesteableWidget({required Widget child}) {
+      return CupertinoApp(
+          title: 'GoKnights',
+          debugShowCheckedModeBanner: false,
+          localizationsDelegates: [
+            FlutterI18nDelegate(
+              translationLoader: FileTranslationLoader(
+                  useCountryCode: false,
+                  fallbackFile: 'en',
+                  basePath: 'assets/flutter_i18n'),
+              missingTranslationHandler: (key, locale) {
+                print(
+                    "--- Missing Key: $key, languageCode: ${locale?.languageCode}");
+              },
+            ),
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: const [
+            Locale('en', 'US'), // English
+            Locale('es'), // Spanish
+            Locale('zh'), // Chinese
+            Locale('he'), // Hebrew
+            // Locale('it'), // Italian
+            // Locale('ru'), // Russian
+          ],
+          localeListResolutionCallback: (allLocales, supportedLocales) {
+            final locale = allLocales?.first.languageCode;
+            if (locale == 'en') {
+              return const Locale('en', 'US');
+            }
+            if (locale == 'es') {
+              return const Locale('es', 'ES');
+            }
+            if (locale == 'zh') {
+              return const Locale('zh', 'CN');
+            }
+            if (locale == 'he') {
+              return const Locale('he', 'IL');
+            }
+            // The default locale
+            return const Locale('en', 'US');
+          },
+          builder: FlutterI18n.rootAppBuilder(),
+          home: child);
+    }
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    testWidgets('Onboarding page', (WidgetTester tester) async {
+      // Create the widget by telling the tester to build it.
+      final widget = makeTesteableWidget(
+        child: const OnboardingPage(),
+      );
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+      await tester.pumpWidget(widget);
+    });
   });
 }

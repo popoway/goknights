@@ -6,9 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:back_button_interceptor/back_button_interceptor.dart';
 
 class OnboardingPage extends StatefulWidget {
-  const OnboardingPage({super.key, required this.title});
-
-  final String title;
+  const OnboardingPage({super.key});
 
   @override
   State<OnboardingPage> createState() => _OnboardingPageState();

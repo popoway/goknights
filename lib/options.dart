@@ -338,9 +338,8 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                           // need to pop the current page (with nav) to go back to onboarding
                           Navigator.of(context, rootNavigator: true).push(
                               CupertinoPageRoute(
-                                  builder: (context) => OnboardingPage(
-                                      title: FlutterI18n.translate(
-                                          context, "onboarding.title")))),
+                                  builder: (context) =>
+                                      const OnboardingPage())),
                         },
                       ),
                       CupertinoListTile.notched(

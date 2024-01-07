@@ -28,6 +28,7 @@
     "Schyler",
     "shuttlemap",
     "sportscourt",
+    "Testeable",
     "Timesheet"
   ],
   "java.configuration.updateBuildConfiguration": "interactive",
