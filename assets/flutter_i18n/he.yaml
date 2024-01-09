@@ -19,12 +19,15 @@ home:
   discover: "גלה"
   map: "מפה"
   me: "אני"
+  admissions: "קבלה"
   transfer: "העברה"
+  timesheet: "גיליון זמנים"
   advising: "ייעוץ"
   tutoring: "חונכות"
   careers: "קריירות"
   scholarships: "מלגות"
   counseling: "ייעוץ"
+  student-life: "חיי הסטודנטים"
   library: "ספרייה"
   printing: "הדפסה"
   calendar: "לוח שנה"
@@ -41,6 +44,12 @@ shuttle:
 printing:
   message: "QCard של הסטודנט מגיעה עם $10 להדפסה בכל סמסטר (5 סנט לדף). העלה את המסמכים שלך למערכת ההדפסה והדפס אותם בכל מדפסת בקמפוס:\n\n• ספריית Rosenthal קומה שנייה\n• מעבדה בקומה השנייה של בניין I\n• Powdermaker Hall 210\n• Kiely Hall 131\n• Student Union LL52\n• לובי Queens Hall"
   upload-documents: "העלה מסמכים"
+
+timesheet:
+  message: "גש למערכת דיווח שעות ועזיבה (TLR) כדי להגיש את גיליון הזמנים שלך. הגישה לדפי סיוע ב-HR/PR מוגבלת למחשבים בקמפוס, ל-Wi-Fi בקמפוס (מאובטח qwifi) ומשתמשי VPN. למד עוד על איך לגשת אליהם בדף התמיכה של ITS."
+  hr: "HRAssist (זמן מלא)"
+  pr: "PRAssist (משרה חלקית)"
+  how-to-access: "כיצד לגשת"
 
 counseling:
   message: "פסיכולוגים מורשים ויועצים מציעים ייעוץ אישי, קבוצות והפניות למשאבים מתאימים במכללה או בקהילה. כל הפגישות הן חינם ובסודיות מלאה.\nכדי לקבוע את הפגישה הראשונה שלך, השלב הראשון הוא לשלוח אימייל או להתקשר למשרד שלנו. לסטודנטים תיקבע זמן לסקרינג קצר עם יועץ.\n\nמיקום: Frese Hall קומה ראשונה\nדוא\"ל: CounselingServices@qc.cuny.edu\nטלפון: 718-997-5420"
@@ -91,6 +100,18 @@ advising:
   academic-advising-resources: "משאבי ייעוץ אקדמי"
   specialty-advising: "ייעוץ מיוחד"
   meet-our-staff: "הכירו את הצוות שלנו"
+
+student-life:
+  osdl: "המשרד לפיתוח ומנהיגות תלמידים"
+  osdl-message: "המשרד לפיתוח ומנהיגות סטודנטים (OSDL) מספק הזדמנויות לסטודנטים לפתח מיומנויות מנהיגות, לעסוק בחיי הקמפוס ולבנות קהילה. OSDL מפקחת על מועדוני סטודנטים וארגונים, ממשלת סטודנטים ואירועי קמפוס.\nLocation: Student Union, Lower Level 23\nEmail: Studentlife@qc.cuny.edu"
+  clubs: "מועדונים וארגונים"
+  student-association: "אגודת סטודנטים"
+  food-pantry: "Knights Table מזווה מזון"
+  nso: "אוריינטציה חדשה לסטודנטים"
+  vpsa: "ניהול ענייני סטודנטים והצטרפות"
+  vpsa-message: "החטיבה לענייני סטודנטים וניהול רישום (SAEM) מספקת שירותים ותוכניות לתמיכה בהצלחתם האקדמית והאישית של הסטודנטים.\nLocation: Student Union, Room 300\nEmail: vpsa@qc.cuny.edu"
+  meet-our-staff: "הכירו את הצוות שלנו"
+  student-affairs: "ענייני סטודנטים"
 
 map:
   hint: "חפש בניינים..."

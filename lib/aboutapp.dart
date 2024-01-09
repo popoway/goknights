@@ -97,7 +97,7 @@ class _AboutAppPageState extends State<AboutAppPage> {
                           fontSize: 12)),
                   Container(
                     padding: const EdgeInsets.all(16),
-                    child: Text('Copyright © 2023 Ming Lei.',
+                    child: Text('Copyright © 2024 Ming Lei.',
                         style: TextStyle(
                             color: const CupertinoDynamicColor.withBrightness(
                               color: CupertinoColors.black,

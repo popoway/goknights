@@ -10,6 +10,7 @@ import 'map.dart';
 import 'options.dart';
 import 'dept/tutoring.dart';
 import 'dept/transfer.dart';
+import 'dept/student_life.dart';
 import 'dept/directory.dart';
 import 'dept/calendar.dart';
 import 'dept/library.dart';
@@ -334,6 +335,12 @@ class _MyHomePageState extends State<MyHomePage> {
       'role': ['current', 'prospective'],
     },
     {
+      'icon': CupertinoIcons.rectangle_3_offgrid,
+      'name': 'student-life',
+      'url': 'https://www.qc.cuny.edu/sl/',
+      'role': ['current', 'prospective'],
+    },
+    {
       'icon': CupertinoIcons.chat_bubble_2,
       'name': 'counseling',
       'url': 'https://www.qc.cuny.edu/cs/',
@@ -547,6 +554,17 @@ class _MyHomePageState extends State<MyHomePage> {
                                             context, "home.careers")),
                                     title: FlutterI18n.translate(
                                         context, "home.careers")),
+                              );
+                            } else if (iconListCurrent[index]['name'] ==
+                                'student-life') {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => MyStudentLifePage(
+                                        title: FlutterI18n.translate(
+                                            context, "home.student-life")),
+                                    title: FlutterI18n.translate(
+                                        context, "home.student-life")),
                               );
                             } else if (iconListCurrent[index]['name'] ==
                                 'timesheet') {

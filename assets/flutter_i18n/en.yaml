@@ -27,6 +27,7 @@ home:
   careers: "Careers"
   scholarships: "Scholarships"
   counseling: "Counseling"
+  student-life: "Student Life"
   library: "Library"
   printing: "Printing"
   calendar: "Calendar"
@@ -99,6 +100,18 @@ advising:
   academic-advising-resources: "Academic Advising Resources"
   specialty-advising: "Specialty Advising"
   meet-our-staff: "Meet Our Staff"
+
+student-life:
+  osdl: "The Office of Student Development & Leadership"
+  osdl-message: "The Office of Student Development & Leadership (OSDL) provides opportunities for students to develop leadership skills, engage in campus life, and build community. OSDL oversees student clubs and organizations, student government, and campus events.\nLocation: Student Union, Lower Level 23\nEmail: Studentlife@qc.cuny.edu"
+  clubs: "Clubs and Organizations"
+  student-association: "Student Association"
+  food-pantry: "Knights Table Food Pantry"
+  nso: "New Student Orientation"
+  vpsa: "Student Affairs & Enrollment Management"
+  vpsa-message: "The Division of Student Affairs & Enrollment Management (SAEM) provides services and programs to support students’ academic and personal success.\nLocation: Student Union, Room 300\nEmail: vpsa@qc.cuny.edu"
+  meet-our-staff: "Meet Our Staff"
+  student-affairs: "Student Affairs"
 
 map:
   hint: "Search buildings..."

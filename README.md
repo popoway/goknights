@@ -94,13 +94,17 @@ To generate a _release_ build for iOS without codesign, run the following comman
 flutter build ios --release --no-codesign
 ```
 
+To build an Android app bundle for submission, run the following command:
+```
+flutter build appbundle
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Roadmap
 
-- [x] Injectable JS WKWebview for calendars
+- [x] Faculty timesheet
 - [ ] i18n support with Italian, Chinese and Spanish
-- [ ] Faculty timesheet
 - [ ] https://pub.dev/packages/app_links
 
 ## Contributing

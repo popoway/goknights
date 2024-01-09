@@ -19,12 +19,15 @@ home:
   discover: "发现"
   map: "地图"
   me: "我"
+  admissions: "招生"
   transfer: "转学生"
+  timesheet: "时间表"
   advising: "学术规划"
   tutoring: "学业辅导"
   careers: "职业"
   scholarships: "奖学金"
   counseling: "心理咨询"
+  student-life: "学生生活"
   library: "图书馆"
   printing: "打印"
   calendar: "日历"
@@ -41,6 +44,12 @@ shuttle:
 printing:
   message: "学生 QCard 每学期都有10美元的打印资金(每页5分)。将您的文件上传到打印系统，并在校园内的任何打印机上打印出来：\n\n• Rosenthal Library 2楼\n• I Building 2楼实验室\n• Powdermaker Hall 210\n• Kiely Hall 131\n• Student Union LL52\n• Queens Hall 大厅"
   upload-documents: "上传文件"
+
+timesheet:
+  message: "访问时间和休假报告系统 (TLR) 以提交您的时间表。 访问 HR/PR Assist 页面仅限于校园内计算机、校园 Wi-Fi (qwifi-secured)和 VPN 用户。 在 ITS 的支持页面中了解有关如何访问它们的更多信息。"
+  hr: "HRAssist (全职)"
+  pr: "PRAssist (兼职)"
+  how-to-access: "如何访问"
 
 counseling:
   message: "持有执照的心理学家和咨询师提供个别咨询、团体和转介到适当的学院或社区资源。所有会议都是免费和保密的。要安排您的第一个约会，第一步是发送电子邮件或致电我们的办公室。学生将被安排一个与咨询师进行简短筛查的时间。\n\n位置: Frese Hall 1楼\n电子邮件: CounselingServices@qc.cuny.edu\n电话: 718-997-5420"
@@ -91,6 +100,18 @@ advising:
   academic-advising-resources: "学术指导资源"
   specialty-advising: "专业指导"
   meet-our-staff: "认识我们的员工"
+
+student-life:
+  osdl: "学生发展与领导力办公室"
+  osdl-message: "学生发展与领导力办公室 (OSDL) 为学生提供培养领导技能、参与校园生活和建立社区的机会。 OSDL 负责监督学生俱乐部和组织、学生政府和校园活动。\n地点: Student Union, Lower Level 23\n电子邮件: Studentlife@qc.cuny.edu"
+  clubs: "俱乐部和组织"
+  student-association: "学生会"
+  food-pantry: "Knights Table 食品储藏室"
+  nso: "新生迎新"
+  vpsa: "学生事务及招生管理"
+  vpsa-message: "学生事务和招生管理部 (SAEM) 提供服务和计划来支持学生的学业和个人成功。\n地点: Student Union, Room 300\n电子邮件: vpsa@qc.cuny.edu"
+  meet-our-staff: "认识我们的员工"
+  student-affairs: "学生事务"
 
 map:
   hint: "搜索建筑物..."

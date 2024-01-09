@@ -19,12 +19,15 @@ home:
   discover: "Descubrir"
   map: "Mapa"
   me: "Yo"
+  admissions: "Admisiones"
   transfer: "Trasladar"
+  timesheet: "Hoja de Tiempo"
   advising: "Asesoramiento"
   tutoring: "Tutoría"
   careers: "Carreras"
   scholarships: "Becas"
   counseling: "Consejería"
+  student-life: "Vida Estudiantil"
   library: "Biblioteca"
   printing: "Impresión"
   calendar: "Calendario"
@@ -41,6 +44,12 @@ shuttle:
 printing:
   message: "La QCard del estudiante viene con un fondo de impresión de $10 cada semestre (5 centavos por página). Sube tus documentos al sistema de impresión e imprímelos en cualquier impresora del campus:\n\n• Rosenthal Library 2do piso\n• I Building 2do piso lab\n• Powdermaker Hall 210\n• Kiely Hall 131\n• Student Union LL52\n• Queens Hall Vestíbulo"
   upload-documents: "Subir Documentos"
+
+timesheet:
+  message: "Acceda al Sistema de informes de tiempo y licencia (TLR) para enviar su hoja de tiempo. El acceso a las páginas de asistencia de Recursos Humanos y Relaciones Públicas está limitado a las computadoras del campus, a los usuarios de Wi-Fi (qwifi-secured) y VPN del campus. Obtenga más información sobre cómo acceder a ellos en la página de soporte de ITS."
+  hr: "HRAssist (Full-Time)"
+  pr: "PRAssist (Part-Time)"
+  how-to-access: "Cómo Acceder"
 
 counseling:
   message: "Los psicólogos y consejeros autorizados ofrecen asesoramiento individual, grupal y referencias a recursos universitarios o comunitarios apropiados. Todas las sesiones son gratuitas y confidenciales.\nPara programar su primera cita, el primer paso es enviar un correo electrónico o llamar a nuestra oficina. A los estudiantes se les programará una hora para una breve evaluación con un consejero.\n\nUbicación: Frese Hall 1er piso\nEmail: CounselingServices@qc.cuny.edu\nNúmero de teléfono: 718-997-5420"
@@ -91,6 +100,18 @@ advising:
   academic-advising-resources: "Recursos de Asesoramiento Académico"
   specialty-advising: "Asesoramiento Especializado"
   meet-our-staff: "Conoce a Nuestro Personal"
+
+student-life:
+  osdl: "La Oficina de Desarrollo y Liderazgo Estudiantil"
+  osdl-message: "La Oficina de Liderazgo y Desarrollo Estudiantil (OSDL) brinda oportunidades para que los estudiantes desarrollen habilidades de liderazgo, participen en la vida del campus y construyan una comunidad. OSDL supervisa los clubes y organizaciones estudiantiles, el gobierno estudiantil y los eventos del campus.\nUbicación: Student Union, Lower Level 23\nCorreo electrónico: Studentlife@qc.cuny.edu"
+  clubs: "Clubes y Organizaciones"
+  student-association: "Asociación de Estudiantes"
+  food-pantry: "Knights Table Despensa de Alimentos"
+  nso: "Orientación Para Nuevos Estudiantes"
+  vpsa: "Asuntos Estudiantiles y Gestión de Inscripciones"
+  vpsa-message: "La División de Asuntos Estudiantiles y Gestión de Inscripciones (SAEM) brinda servicios y programas para apoyar el éxito académico y personal de los estudiantes.\nUbicación: Student Union, Room 300\nCorreo electrónico: vpsa@qc.cuny.edu"
+  meet-our-staff: "Conozca a Nuestro Personal"
+  student-affairs: "Asuntos Estudiantiles"
 
 map:
   hint: "Buscar edificios..."
