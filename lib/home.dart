@@ -6,6 +6,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:quick_actions/quick_actions.dart';
 import 'package:back_button_interceptor/back_button_interceptor.dart';
 
+import 'chatknights.dart';
 import 'map.dart';
 import 'options.dart';
 import 'dept/tutoring.dart';
@@ -33,6 +34,10 @@ class CupertinoTabBarDemo extends StatelessWidget {
       _TabInfo(
         FlutterI18n.translate(context, "home.discover"),
         CupertinoIcons.layers_alt,
+      ),
+      _TabInfo(
+        FlutterI18n.translate(context, "home.chat"),
+        CupertinoIcons.chat_bubble_text,
       ),
       _TabInfo(
         FlutterI18n.translate(context, "home.map"),
@@ -95,12 +100,19 @@ class _CupertinoDemoTab extends StatelessWidget {
   Widget build(BuildContext context) {
     if (icon == CupertinoIcons.layers_alt) {
       return MyHomePage(title: title);
+    } else if (icon == CupertinoIcons.chat_bubble_text) {
+      return const MyChatPage();
     } else if (icon == CupertinoIcons.map) {
       return MyMapPage(title: title);
     } else if (icon == CupertinoIcons.profile_circled) {
       return MyOptionsPage(title: title);
     } else {
-      return Container();
+      return Container(
+        child: const Text(
+          '\n\n\n\nempty tab',
+          textAlign: TextAlign.center,
+        ),
+      );
     }
   }
 }

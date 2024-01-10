@@ -17,6 +17,7 @@ role:
 
 home:
   discover: "Discover"
+  chat: "Chat"
   map: "Map"
   me: "Me"
   admissions: "Admissions"
