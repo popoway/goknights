@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 // import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:flutter_config/flutter_config.dart';
@@ -59,6 +60,9 @@ class _MyChatPageState extends State<MyChatPage> {
       body: Chat(
           messages: _messages,
           onSendPressed: _handleSendPressed,
+          onAvatarTap: _handleAvatarTapped,
+          // when user double taps on message, select the entire text of that message
+          onMessageDoubleTap: _handleMessageDoubleTapped,
           user: _user,
           showUserNames: true,
           showUserAvatars: true,
@@ -72,6 +76,7 @@ class _MyChatPageState extends State<MyChatPage> {
                       border: Border(
                           top: BorderSide(
                               color: CupertinoColors.darkBackgroundGray))),
+                  primaryColor: Color(0xFFE71939),
                   userAvatarNameColors: [Color(0xFFE71939)])
               : const DefaultChatTheme(
                   inputBackgroundColor: CupertinoColors.white,
@@ -81,6 +86,7 @@ class _MyChatPageState extends State<MyChatPage> {
                       border: Border(
                           top: BorderSide(
                               color: CupertinoColors.lightBackgroundGray))),
+                  primaryColor: Color(0xFFE71939),
                   userAvatarNameColors: [Color(0xFFE71939)]),
           l10n: const ChatL10nEn(
             inputPlaceholder: 'Message ChatKnights...',
@@ -123,10 +129,11 @@ class _MyChatPageState extends State<MyChatPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
+                    Text(
                       'Try: ',
                       style: TextStyle(
-                        color: CupertinoColors.black,
+                        color:
+                            isDarkMode ? CupertinoColors.white : Colors.black,
                         fontSize: 16,
                       ),
                     ),
@@ -145,7 +152,10 @@ class _MyChatPageState extends State<MyChatPage> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 140),
+                // if devide height is less than 600, make a smaller sized box
+                MediaQuery.of(context).size.height < 760
+                    ? const SizedBox(height: 70)
+                    : const SizedBox(height: 140),
                 FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Row(
@@ -199,7 +209,7 @@ class _MyChatPageState extends State<MyChatPage> {
         Uri.parse(
             "https://$_endpoint/openai/deployments/$_model/chat/completions?api-version=2023-05-15"),
         headers: <String, String>{
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json; charset=UTF-8',
           'api-key': _key,
         },
         body: partialRequest);
@@ -258,8 +268,8 @@ class _MyChatPageState extends State<MyChatPage> {
       // send message to Azure OpenAI API
       var response = await fetchCompletion(
           await _composeRequestJSON(_messages, message.text));
-      print(response.body);
-      var responseJSON = jsonDecode(response.body);
+      print(utf8.decode(response.bodyBytes));
+      var responseJSON = jsonDecode(utf8.decode(response.bodyBytes));
       // sample response:
       // {"id":"chatcmpl-8f6aKXU20mj0koJvwLXLe9eb9Qynw","object":"chat.completion","created":1704807452,"model":"gpt-35-turbo","choices":[{"finish_reason":"stop","index":0,"message":{"role":"assistant","content":"Yes, many Azure AI services support customer managed keys. These include Azure Cognitive Services, Azure Machine Learning, and Azure Databricks."}}],"usage":{"prompt_tokens":59,"completion_tokens":27,"total_tokens":86}}
       var responseContent = responseJSON['choices'][0]['message']['content'];
@@ -272,6 +282,60 @@ class _MyChatPageState extends State<MyChatPage> {
       );
 
       _addMessage(responseMessage);
+    });
+  }
+
+  void _handleAvatarTapped(types.User user) {
+    print('Avatar tapped: ${user.firstName} ${user.lastName}');
+    _showAlertDialog(context);
+  }
+
+  void _showAlertDialog(BuildContext context) {
+    showCupertinoModalPopup<void>(
+      context: context,
+      builder: (BuildContext context) => CupertinoAlertDialog(
+        title: const Text('Alert'),
+        content: const Text('Remove all messages?'),
+        actions: <CupertinoDialogAction>[
+          CupertinoDialogAction(
+            isDefaultAction: true,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text('No'),
+          ),
+          CupertinoDialogAction(
+            isDestructiveAction: true,
+            onPressed: () {
+              // remove all messages
+              setState(() {
+                _messages.clear();
+              });
+              Navigator.pop(context);
+            },
+            child: const Text('Yes'),
+          ),
+        ],
+        insetAnimationDuration: const Duration(milliseconds: 50),
+      ),
+    );
+  }
+
+  void _handleMessageDoubleTapped(
+      BuildContext context, types.Message msg) async {
+    // cast msg to TextMessage
+    types.TextMessage textMessage = msg as types.TextMessage;
+    Clipboard.setData(ClipboardData(text: textMessage.text));
+    // add a new message to the chat
+    var textMessage2Id = randomString();
+    var textMessage2 = types.TextMessage(
+        id: textMessage2Id, text: 'Message copied!', author: _bot);
+    _addMessage(textMessage2);
+    // remove the message
+    Future.delayed(const Duration(milliseconds: 1000), () async {
+      setState(() {
+        _messages.removeWhere((element) => element.id == textMessage2Id);
+      });
     });
   }
 }
