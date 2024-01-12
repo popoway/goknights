@@ -17,6 +17,7 @@ role:
 
 home:
   discover: "Descubrir"
+  chat: "Charlar"
   map: "Mapa"
   me: "Yo"
   admissions: "Admisiones"
@@ -113,6 +114,17 @@ student-life:
   meet-our-staff: "Conozca a Nuestro Personal"
   student-affairs: "Asuntos Estudiantiles"
 
+chat:
+  title: "Bienvenido a ChatKnights"
+  subtitle: "Soy un chatbot de inteligencia artificial en CUNY Queens College que responde preguntas sobre recursos académicos, vida estudiantil y más."
+  try-it: "Pruébalo"
+  try-example-1: "¿Cómo me uno a un club?"
+  try-example-2: "¿Dónde está el centro de tutoría?"
+  try-example-3: "Necesito cambiar una clase."
+  try-example-4: "¿Cuál es el sitio web de la oficina del Registro?"
+  disclaimer: "ChatKnights puede cometer errores. Considera verificar información importante."
+  placeholder: "Mensaje a ChatKnights..."
+
 map:
   hint: "Buscar edificios..."
   building: "Edificio"
@@ -145,3 +157,4 @@ language:
   es_ES: "Español"
   zh_CN: "中文"
   he_IL: "עברית"
+  hi_IN: "हिन्दी"

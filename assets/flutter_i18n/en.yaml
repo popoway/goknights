@@ -114,6 +114,17 @@ student-life:
   meet-our-staff: "Meet Our Staff"
   student-affairs: "Student Affairs"
 
+chat:
+  title: "Welcome to ChatKnights"
+  subtitle: "I am an AI chatbot at CUNY Queens College that answers questions about academic resources, student life, and more."
+  try-it: "Try It"
+  try-example-1: "How do I join a club?"
+  try-example-2: "Where is the tutoring center?"
+  try-example-3: "I need to swap a class."
+  try-example-4: "What‘s Registrar office website?"
+  disclaimer: "ChatKnights can make mistakes. Consider checking important information."
+  placeholder: "Message ChatKnights..."
+
 map:
   hint: "Search buildings..."
   building: "Building"
@@ -146,3 +157,4 @@ language:
   es_ES: "Español"
   zh_CN: "中文"
   he_IL: "עברית"
+  hi_IN: "हिन्दी"

@@ -56,6 +56,8 @@
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
 		879E5D455D4FDA15DA2EDC60 /* Pods_RunnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		924816ED2AA47D31005A0DF9 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
+		927905612B50B97A0010A73B /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Main.strings; sourceTree = "<group>"; };
+		927905622B50B97A0010A73B /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		92C512912B03112A0012F313 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		92C512922B03112A0012F313 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		92C512932B03115B0012F313 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				es,
 				"zh-Hans",
 				he,
+				hi,
 			);
 			mainGroup = 97C146E51CF9000F007C117D;
 			productRefGroup = 97C146EF1CF9000F007C117D /* Products */;
@@ -432,6 +435,7 @@
 				92C512912B03112A0012F313 /* es */,
 				92C512932B03115B0012F313 /* zh-Hans */,
 				92C512952B0311890012F313 /* he */,
+				927905612B50B97A0010A73B /* hi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -443,6 +447,7 @@
 				92C512922B03112A0012F313 /* es */,
 				92C512942B03115B0012F313 /* zh-Hans */,
 				92C512962B0311890012F313 /* he */,
+				927905622B50B97A0010A73B /* hi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

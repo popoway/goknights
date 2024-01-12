@@ -1,0 +1,160 @@
+onboarding:
+  title: "GoKnights में आपका स्वागत है"
+  prompt1a: "छात्र सेवाओं का उपयोग करें"
+  prompt1b: "सलाह, ट्यूटरिंग, प्रिंटिंग, और अन्य आवश्यक संसाधनों तक केंद्रीकृत स्थान पर पहुँच प्राप्त करें।"
+  prompt2a: "परिसर का नक्शा खोजें"
+  prompt2b: "इमारतों, कार्यालयों और कक्षाओं की खोज करें। अपनी अगली कक्षा के लिए दिशा-निर्देश प्राप्त करें।"
+  prompt3a: "मदद प्राप्त करें"
+  prompt3b: "सामान्य प्रश्नों के उत्तर प्राप्त करें और अधिक मदद के लिए संपर्क करने वाले व्यक्ति का पता लगाएं।"
+  get-started: "शुरू करें"
+  get-started-title: "अपनी भूमिका चुनें"
+  get-started-message: "वह भूमिका चुनें जो आपको सबसे अच्छा वर्णित करती है ताकि आप शुरू कर सकें। आप इसे बाद में ऐप सेटिंग्स में बदल सकते हैं।"
+
+role:
+  current: "वर्तमान छात्र"
+  prospective: "संभावित छात्र"
+  faculty: "फैकल्टी / स्टाफ"
+
+home:
+  discover: "खोजें"
+  chat: "चैट"
+  map: "नक्शा"
+  me: "मैं"
+  admissions: "प्रवेश"
+  transfer: "स्थानांतरण"
+  timesheet: "समय पत्रक"
+  advising: "सलाह"
+  tutoring: "ट्यूटरिंग"
+  careers: "करियर"
+  scholarships: "छात्रवृत्ति"
+  counseling: "परामर्श"
+  student-life: "छात्र जीवन"
+  library: "पुस्तकालय"
+  printing: "प्रिंटिंग"
+  calendar: "कैलेंडर"
+  directory: "निर्देशिका"
+  shuttle: "शटल"
+  sports: "खेल"
+
+shuttle:
+  message: "कोई भी Queens College का छात्र अपना वर्तमान QCard दिखाकर शटल में सवारी कर सकता है।"
+  shuttle-map: "शटल मानचित्र"
+  real-time-map: "वास्तविक समय मानचित्र"
+  schedule: "अनुसूची"
+
+printing:
+  message: "छात्र QCard प्रत्येक सेमेस्टर में $10 प्रिंटिंग फंड के साथ आता है (प्रति पेज 5 सेंट)। अपने दस्तावेज़ों को प्रिंटिंग सिस्टम में अपलोड करें और कैंपस पर किसी भी प्रिंटर पर उन्हें प्रिंट करें:\n\n• Rosenthal Library 2nd floor\n• I Building 2nd floor lab\n• Powdermaker Hall 210\n• Kiely Hall 131\n• Student Union LL52\n• Queens Hall Lobby"
+  upload-documents: "दस्तावेज़ अपलोड करें"
+
+timesheet:
+  message: "अपनी टाइमशीट जमा करने के लिए Time and Leave Reporting System (TLR) तक पहुँचें। HR/PR सहायता पृष्ठों तक पहुंच केवल कैंपस के कंप्यूटरों, कैंपस Wi-Fi (qwifi-secured), और VPN उपयोगकर्ताओं के लिए सीमित है। ITS के सहायता पृष्ठ में उन तक पहुँचने के बारे में और जानें।"
+  hr: "HRAssist (पूर्ण समय)"
+  pr: "PRAssist (आंशिक समय)"
+  how-to-access: "कैसे पहुँचें"
+
+counseling:
+  message: "लाइसेंस प्राप्त मनोवैज्ञानिक और परामर्शदाता व्यक्तिगत परामर्श, समूह, और कॉलेज या सामुदायिक संसाधनों के लिए उपयुक्त संदर्भ प्रदान करते हैं। सभी सत्र मुफ्त और गोपनीय हैं।\nपहली नियुक्ति स्थापित करने के लिए, पहला कदम हमारे कार्यालय को ईमेल या कॉल करना है। छात्रों को एक परामर्शक के साथ संक्षिप्त स्क्रीनिंग के लिए समय निर्धारित किया जाएगा।\n\nस्थान: Frese Hall 1st Floor\nईमेल: CounselingServices@qc.cuny.edu\nफोन: 718-997-5420"
+  make-an-appointment: "नियुक्ति बनाएँ"
+
+tutoring:
+  learning-commons: "लर्निंग कॉमन्स"
+  learning-commons-message: "लर्निंग कॉमन्स मुफ्त सहकर्मी ट्यूटरिंग, कार्यशालाएं, अध्ययन स्थान, प्रिंटिंग स्टेशन, और अन्य सेवाएं प्रदान करता है।\nस्थान: Kiely Hall 131\nईमेल: LCommons@qc.cuny.edu\nफोन: 718-997-5670"
+  book-an-appointment: "नियुक्ति बुक करें"
+  study-print: "अध्ययन और प्रिंट"
+  writing-center: "लेखन केंद्र"
+  writing-center-message: "लेखन केंद्र Queens College के सभी छात्रों को ब्रेनस्टॉर्मिंग, अंतिम संशोधनों, व्यक्तिगत वक्तव्यों और कवर पत्रों से लेकर मुफ्त लेखन सहायता प्रदान करता है।\nस्थान: Kiely Hall 229\nईमेल: qc.writing.center@qc.cuny.edu\nफोन: 718-997-5676"
+
+transfer:
+  transfer-explorer: "CUNY ट्रांसफर एक्सप्लोरर"
+  transfer-explorer-message: "CUNY ट्रांसफर एक्सप्लोरर कॉलेज ट्रांसफर के बारे में महत्वपूर्ण जानकारी को सार्वजनिक और समझने में आसान बनाता है ताकि छात्र नए कॉलेज में दाखिला लेने से पहले उम्मीदों को जान सकें।\n * CUNY लॉगिन आवश्यक"
+  transfer-explorer-by-course: "CUNY से CUNY पाठ्यक्रम के आधार पर"
+  transfer-explorer-by-subject: "CUNY से CUNY विषय के आधार पर"
+  transfer-explorer-by-transcript: "CUNY से CUNY अभिलेख के आधार पर *"
+  qc-transfer-support: "QC ट्रांसफर सहायता"
+  qc-transfer-support-message: "ACE QC एक समग्र सहायता कार्यक्रम है जो ट्रांसफर छात्रों की शैक्षणिक गति पर निर्माण करने और छात्रों को समय पर अपनी स्नातक की डिग्री पूरी करने में मदद करने के लिए डिजाइन किया गया है।"
+  qc-transfer-support-transfer-honors: "ट्रांसफर सम्मान"
+  qc-transfer-support-transfer-advising: "ट्रांसफर सलाह"
+  qc-transfer-support-international-transfer: "अंतरराष्ट्रीय ट्रांसफर"
+
+library:
+  rosenthal-library: "Rosenthal पुस्तकालय"
+  rosenthal-library-message: "Rosenthal पुस्तकालय कॉलेज का बौद्धिक केंद्र है। यह Queens College समुदाय को ज्ञान और बौद्धिक विकास की खोज में समर्थन करने के लिए विभिन्न सेवाओं और संसाधनों की पेशकश करता है।\nस्थान: Benjamin S. Rosenthal Building\nफोन: (718) 997-3700"
+  onesearch: "OneSearch"
+  library-hours: "पुस्तकालय के घंटे"
+  remote-access: "दूरस्थ पहुँच"
+  makerspace: "Makerspace"
+  makerspace-message: "Queens College Makerspace सभी के लिए टिंकर, क्राफ्ट, बनाने, डिजाइन करने और सीखने का स्थान है। यह 3D प्रिंटर्स, लेजर कटर, सिलाई मशीनें, और अन्य उपकरणों और सामग्रियों तक पहुंच प्रदान करता है। नए उपयोगकर्ताओं को Makerspace का उपयोग करने के लिए ओरिएंटेशन का अनुरोध करना होगा। \nस्थान: Benjamin S. Rosenthal Library, Level 1, Room 101\nईमेल: makerspace@qc.cuny.edu"
+  makerspace-hours: "Makerspace के घंटे"
+  makerspace-orientation: "Makerspace ओरिएंटेशन"
+
+careers:
+  cei: "करियर एंगेजमेंट और इंटर्नशिप्स केंद्र"
+  cei-message: "करियर एंगेजमेंट और इंटर्नशिप्स केंद्र (CEI) सभी Queens College छात्रों और पूर्व छात्रों को करियर विकास सेवाएं प्रदान करता है। CEI करियर परामर्श, रेज़्यूमे और कवर लेटर समीक्षा, मॉक साक्षात्कार, और करियर कार्यशालाएं प्रदान करता है।\nHireQC CEI की नौकरी पोस्टिंग साइट है, जो केवल Queens College छात्रों के लिए उपलब्ध है।\nस्थान: Frese Hall 213\nईमेल: qc_career@qc.cuny.edu\nफोन: 718-997-4465"
+  career-liaisons: "करियर संपर्क"
+  upcoming-workshops-events: "आगामी कार्यशालाएं और इवेंट"
+  join-hireqc: "HireQC में शामिल हों"
+
+advising:
+  aac: "अकादमिक सलाहकार केंद्र"
+  aac-message: "अकादमिक सलाहकार केंद्र (AAC) सभी Queens College छात्रों को अकादमिक सलाह देता है। AAC सलाहकार छात्रों को डिग्री की आवश्यकताओं को समझने, पाठ्यक्रम चुनने, और स्नातक होने की योजना बनाने में मदद करते हैं।\nस्थान: Kiely Hall 217\nईमेल: advising@qc.cuny.edu\nफोन: 718-997-5599"
+  make-advising-appointment: "नियुक्ति बनाएँ"
+  academic-advising-resources: "अकादमिक सलाहकार संसाधन"
+  specialty-advising: "विशेषता सलाह"
+  meet-our-staff: "हमारे स्टाफ से मिलें"
+
+student-life:
+  osdl: "छात्र विकास और नेतृत्व कार्यालय"
+  osdl-message: "छात्र विकास और नेतृत्व कार्यालय (OSDL) छात्रों को नेतृत्व कौशल विकसित करने, परिसर जीवन में संलग्न होने और समुदाय बनाने के अवसर प्रदान करता है। OSDL छात्र क्लबों और संगठनों, छात्र सरकार, और परिसर घटनाओं की देखरेख करता है।\nस्थान: Student Union, Lower Level 23\nईमेल: Studentlife@qc.cuny.edu"
+  clubs: "क्लब और संगठन"
+  student-association: "छात्र संघ"
+  food-pantry: "Knights Table खाद्य पैंट्री"
+  nso: "नए छात्र ओरिएंटेशन"
+  vpsa: "छात्र मामले और नामांकन प्रबंधन"
+  vpsa-message: "छात्र मामले और नामांकन प्रबंधन (SAEM) विभाग छात्रों की अकादमिक और व्यक्तिगत सफलता का समर्थन करने वाली सेवाओं और कार्यक्रमों की पेशकश करता है।\nस्थान: Student Union, Room 300\nईमेल: vpsa@qc.cuny.edu"
+  meet-our-staff: "हमारे स्टाफ से मिलें"
+  student-affairs: "छात्र मामले"
+
+chat:
+  title: "ChatKnights में आपका स्वागत है"
+  subtitle: "मैं CUNY Queens College में एक AI चैटबॉट हूँ जो अकादमिक संसाधनों, छात्र जीवन और अधिक के बारे में प्रश्नों के उत्तर देता हूँ।"
+  try-it: "इसे आजमाएँ"
+  try-example-1: "मैं क्लब में कैसे शामिल होऊँ?"
+  try-example-2: "ट्यूटरिंग सेंटर कहाँ है?"
+  try-example-3: "मुझे एक क्लास बदलने की आवश्यकता है।"
+  try-example-4: "Registrar कार्यालय की वेबसाइट क्या है?"
+  disclaimer: "ChatKnights गलतियाँ कर सकता है। महत्वपूर्ण जानकारी की जाँच करने पर विचार करें।"
+  placeholder: "ChatKnights को संदेश भेजें..."
+
+map:
+  hint: "भवनों की खोज करें..."
+  building: "भवन"
+
+options:
+  my-academics: "मेरी शैक्षणिक जानकारी"
+  apply-to-qc: "QC में आवेदन करें"
+  staff-email: "स्टाफ ईमेल"
+  student-email: "छात्र ईमेल"
+  app-settings: "ऐप सेटिंग्स"
+  switch-role: "भूमिका बदलें"
+  switch-language: "भाषा बदलें"
+  send-feedback: "प्रतिक्रिया भेजें"
+  rate-this-app: "इस ऐप को रेट करें"
+  about-app: "GoKnights के बारे में"
+
+aboutapp:
+  about: "के बारे में"
+  privacy-policy: "गोपनीयता नीति"
+  open-source-licenses: "ओपन सोर्स लाइसेंस"
+  disclaimer: "अस्वीकरण"
+
+button:
+  cancel: "रद्द करें"
+  learn-more: "और जानें"
+  search: "खोजें"
+
+language:
+  en_US: "English"
+  es_ES: "Español"
+  zh_CN: "中文"
+  he_IL: "עברית"
+  hi_IN: "हिन्दी"

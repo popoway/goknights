@@ -31,100 +31,104 @@ class _MyStudentLifePageState extends State<MyStudentLifePage> {
           ),
           // This widget fills the remaining space in the viewport.
           // Drag the scrollable area to collapse the CupertinoSliverNavigationBar.
-          SliverFillRemaining(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                CupertinoListSection.insetGrouped(
-                  header: Text(
-                      FlutterI18n.translate(context, "student-life.osdl"),
-                      style: optionTextStyle),
-                  footer: Text(
-                      FlutterI18n.translate(
-                          context, "student-life.osdl-message"),
-                      style: optionTextStyle),
-                  children: <CupertinoListTile>[
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(context, "student-life.clubs"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://www.qc.cuny.edu/sl/clubs-and-organizations/'),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(
-                              context, "student-life.student-association"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://www.qc.cuny.edu/sl/student-association/'),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(
-                              context, "student-life.food-pantry"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://www.qc.cuny.edu/sdl/food-pantry/'),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(context, "student-life.nso"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () =>
-                          _launchURL('https://www.qc.cuny.edu/sdl/osdl-nso/'),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(context, "button.learn-more"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL('https://www.qc.cuny.edu/sdl/'),
-                    ),
-                  ],
-                ),
-                CupertinoListSection.insetGrouped(
-                  header: Text(
-                      FlutterI18n.translate(context, "student-life.vpsa"),
-                      style: optionTextStyle),
-                  footer: Text(
-                      FlutterI18n.translate(
-                          context, "student-life.vpsa-message"),
-                      style: optionTextStyle),
-                  children: <CupertinoListTile>[
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(
-                              context, "student-life.student-affairs"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://www.qc.cuny.edu/student-affairs-enrollment-management/sa/'),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(
-                              context, "student-life.meet-our-staff"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://www.qc.cuny.edu/student-affairs-enrollment-management/saemdirectory/'),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(context, "button.learn-more"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://www.qc.cuny.edu/student-affairs-enrollment-management/'),
-                    ),
-                  ],
-                ),
-              ],
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 900,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  CupertinoListSection.insetGrouped(
+                    header: Text(
+                        FlutterI18n.translate(context, "student-life.osdl"),
+                        style: optionTextStyle),
+                    footer: Text(
+                        FlutterI18n.translate(
+                            context, "student-life.osdl-message"),
+                        style: optionTextStyle),
+                    children: <CupertinoListTile>[
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "student-life.clubs"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.qc.cuny.edu/sl/clubs-and-organizations/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "student-life.student-association"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.qc.cuny.edu/sl/student-association/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "student-life.food-pantry"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.qc.cuny.edu/sdl/food-pantry/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(context, "student-life.nso"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () =>
+                            _launchURL('https://www.qc.cuny.edu/sdl/osdl-nso/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(context, "button.learn-more"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL('https://www.qc.cuny.edu/sdl/'),
+                      ),
+                    ],
+                  ),
+                  CupertinoListSection.insetGrouped(
+                    header: Text(
+                        FlutterI18n.translate(context, "student-life.vpsa"),
+                        style: optionTextStyle),
+                    footer: Text(
+                        FlutterI18n.translate(
+                            context, "student-life.vpsa-message"),
+                        style: optionTextStyle),
+                    children: <CupertinoListTile>[
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "student-life.student-affairs"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.qc.cuny.edu/student-affairs-enrollment-management/sa/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "student-life.meet-our-staff"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.qc.cuny.edu/student-affairs-enrollment-management/saemdirectory/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(context, "button.learn-more"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.qc.cuny.edu/student-affairs-enrollment-management/'),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],

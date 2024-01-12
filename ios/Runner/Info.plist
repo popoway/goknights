@@ -28,6 +28,7 @@
 			<string>es</string>
 			<string>zh</string>
 			<string>he</string>
+			<string>hi</string>
 		</array>
 		<key>CFBundleName</key>
 		<string>goknights</string>

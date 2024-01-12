@@ -34,6 +34,12 @@ technologies and software, which help us safeguard all the information we collec
 
 The app does not use cookies or similar technologies to collect data about the user.
 
+## Our Generative AI Policy
+
+ChatKnights is designed to operate without collecting any personal information. We only process the
+text of your queries during your interaction with the chatbot. All interactions are processed on 
+the fly, and no data is stored on any server after processing is complete.
+
 ## Links to Other Websites
 
 Our app contains links that lead to other websites. If you click on these links, the app is not

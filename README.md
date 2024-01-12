@@ -69,6 +69,7 @@ Below are some brief instructions on setting up this project locally. To get a l
 * [Flutter SDK](https://flutter.dev/docs/get-started/install) for cross-platform development
 * [Xcode](https://developer.apple.com/xcode/) and [CocoaPods](https://cocoapods.org/) for iOS dependencies
 * [Android Studio](https://developer.android.com/studio) for Android dependencies
+* [Azure OpenAI Service API](https://azure.microsoft.com/en-us/products/ai-services/openai-service) or Commercial [OpenAI API](https://platform.openai.com/) for ChatKnights dependencies
 * Your preferred code editor (I use [Visual Studio Code](https://code.visualstudio.com/))
 
 ### Installation
@@ -86,6 +87,9 @@ Below are some brief instructions on setting up this project locally. To get a l
    # example .env file
    GOOGLE_MAPS_API_KEY=your_key_here
    UPLOAD_KEYSTORE_PASSWORD=google_play_keystore
+   OPENAI_API_ENDPOINT=your_endpoint (ex. api.openai.com)
+   OPENAI_API_KEY=your_api_key
+   OPENAI_API_MODEL=gpt-4-turbo
    ```
 4. You're all set! Run the app with `flutter run` or your preferred editor.
 

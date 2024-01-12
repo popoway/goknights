@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:flutter_i18n/flutter_i18n.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:flutter_config/flutter_config.dart';
 
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
@@ -39,6 +39,15 @@ class MyChatPage extends StatefulWidget {
 }
 
 class _MyChatPageState extends State<MyChatPage> {
+  @override
+  void initState() {
+    super.initState();
+    nextTryExample();
+  }
+
+  List<String> tryExamples = [];
+  String tryExample = 'How do I join a club?';
+
   final List<types.TextMessage> _messages = [];
   final _user = const types.User(id: '82091008-a484-4a89-ae75-a22bf8d6f3ac');
   final _bot = const types.User(
@@ -56,6 +65,13 @@ class _MyChatPageState extends State<MyChatPage> {
     var brightness = MediaQuery.of(context).platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
 
+    tryExamples = [
+      FlutterI18n.translate(context, "chat.try-example-1"),
+      FlutterI18n.translate(context, "chat.try-example-2"),
+      FlutterI18n.translate(context, "chat.try-example-3"),
+      FlutterI18n.translate(context, "chat.try-example-4")
+    ];
+
     return Scaffold(
       body: Chat(
           messages: _messages,
@@ -63,6 +79,7 @@ class _MyChatPageState extends State<MyChatPage> {
           onAvatarTap: _handleAvatarTapped,
           // when user double taps on message, select the entire text of that message
           onMessageDoubleTap: _handleMessageDoubleTapped,
+          usePreviewData: false, // disable link preview
           user: _user,
           showUserNames: true,
           showUserAvatars: true,
@@ -88,8 +105,9 @@ class _MyChatPageState extends State<MyChatPage> {
                               color: CupertinoColors.lightBackgroundGray))),
                   primaryColor: Color(0xFFE71939),
                   userAvatarNameColors: [Color(0xFFE71939)]),
-          l10n: const ChatL10nEn(
-            inputPlaceholder: 'Message ChatKnights...',
+          l10n: ChatL10nEn(
+            inputPlaceholder:
+                FlutterI18n.translate(context, "chat.placeholder"),
           ),
           emptyState: GestureDetector(
             onTap: () {
@@ -106,7 +124,7 @@ class _MyChatPageState extends State<MyChatPage> {
                 const SizedBox(height: 16),
                 // title: Welcome to ChatKnights
                 Text(
-                  'Welcome to ChatKnights',
+                  FlutterI18n.translate(context, "chat.title"),
                   style: TextStyle(
                     color: isDarkMode ? CupertinoColors.white : Colors.black,
                     fontSize: 24,
@@ -117,7 +135,7 @@ class _MyChatPageState extends State<MyChatPage> {
                 SizedBox(
                     width: 460,
                     child: Text(
-                      'I am an AI chatbot at CUNY Queens College that answers questions about academic resources, student life, and more.',
+                      FlutterI18n.translate(context, "chat.subtitle"),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color:
@@ -130,7 +148,7 @@ class _MyChatPageState extends State<MyChatPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Try: ',
+                      '${FlutterI18n.translate(context, "chat.try-it")}:',
                       style: TextStyle(
                         color:
                             isDarkMode ? CupertinoColors.white : Colors.black,
@@ -139,12 +157,11 @@ class _MyChatPageState extends State<MyChatPage> {
                     ),
                     TextButton(
                       onPressed: () {
-                        _handleSendPressed(const types.PartialText(
-                            text: 'How do I join a club?'));
+                        _handleSendPressed(types.PartialText(text: tryExample));
                       },
-                      child: const Text(
-                        'How do I join a club?',
-                        style: TextStyle(
+                      child: Text(
+                        tryExample,
+                        style: const TextStyle(
                           color: Color(0xFFE71939),
                           fontSize: 16,
                         ),
@@ -161,9 +178,9 @@ class _MyChatPageState extends State<MyChatPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        'ChatKnights can make mistakes. Consider checking important information.',
-                        style: TextStyle(
+                      Text(
+                        FlutterI18n.translate(context, "chat.disclaimer"),
+                        style: const TextStyle(
                           color: CupertinoColors.inactiveGray,
                           fontSize: 13,
                         ),
@@ -171,11 +188,11 @@ class _MyChatPageState extends State<MyChatPage> {
                       TextButton(
                         onPressed: () {
                           _launchURL(
-                              'https://github.com/popoway/goknights/blob/main/PRIVACY.md');
+                              'https://github.com/popoway/goknights/wiki/Introducing-ChatKnights');
                         },
-                        child: const Text(
-                          'Learn more',
-                          style: TextStyle(
+                        child: Text(
+                          FlutterI18n.translate(context, "button.learn-more"),
+                          style: const TextStyle(
                             color: Color(0xFFE71939),
                             fontSize: 13,
                           ),
@@ -336,6 +353,21 @@ class _MyChatPageState extends State<MyChatPage> {
       setState(() {
         _messages.removeWhere((element) => element.id == textMessage2Id);
       });
+    });
+  }
+
+  void nextTryExample() {
+    Future.delayed(const Duration(milliseconds: 4000), () async {
+      // randomly select a new try example
+      var rng = new Random();
+      var newTryExample = tryExample;
+      do {
+        newTryExample = tryExamples[rng.nextInt(tryExamples.length)];
+      } while (newTryExample == tryExample);
+      setState(() {
+        tryExample = newTryExample;
+      });
+      nextTryExample(); // repeat
     });
   }
 }

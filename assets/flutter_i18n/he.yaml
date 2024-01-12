@@ -17,6 +17,7 @@ role:
 
 home:
   discover: "גלה"
+  chat: "לְשׂוֹחֵחַ"
   map: "מפה"
   me: "אני"
   admissions: "קבלה"
@@ -113,6 +114,17 @@ student-life:
   meet-our-staff: "הכירו את הצוות שלנו"
   student-affairs: "ענייני סטודנטים"
 
+chat:
+  title: "ברוכים הבאים ל-ChatKnights"
+  subtitle: "אני בוט שיחה מלאכותי במכללת CUNY Queens שעונה על שאלות לגבי משאבים אקדמיים, חיי סטודנטים ועוד."
+  try-it: "נסה זאת"
+  try-example-1: "איך אני מצטרף למועדון?"
+  try-example-2: "איפה מרכז החונכות?"
+  try-example-3: "אני צריך להחליף קורס."
+  try-example-4: "מה הוא אתר האינטרנט של משרד הרשמים?"
+  disclaimer: "ל-ChatKnights יכולים להיות טעויות. שקול לבדוק מידע חשוב."
+  placeholder: "שלח הודעה ל-ChatKnights..."
+
 map:
   hint: "חפש בניינים..."
   building: "בניין"
@@ -145,3 +157,4 @@ language:
   es_ES: "Español"
   zh_CN: "中文"
   he_IL: "עברית"
+  hi_IN: "हिन्दी"
