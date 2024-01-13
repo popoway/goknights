@@ -124,6 +124,7 @@ chat:
   try-example-4: "What‘s Registrar office website?"
   disclaimer: "ChatKnights can make mistakes. Consider checking important information."
   placeholder: "Message ChatKnights..."
+  too-short: "Your message is too short for me to understand. Please elaborate your question."
 
 map:
   hint: "Search buildings..."

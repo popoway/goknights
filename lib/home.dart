@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:quick_actions/quick_actions.dart';
 import 'package:back_button_interceptor/back_button_interceptor.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'chatknights.dart';
 import 'map.dart';
@@ -597,11 +598,18 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(
-                                iconListCurrent[index]['icon'],
-                                size: 50,
-                                color: const Color(0xFFE71939),
-                              ),
+                              // if name is student life, show SA logo
+                              iconListCurrent[index]['name'] == 'student-life'
+                                  ? SvgPicture.asset(
+                                      'assets/icon/SALogo.svg',
+                                      height: 50,
+                                      semanticsLabel: 'SA Logo',
+                                    )
+                                  : Icon(
+                                      iconListCurrent[index]['icon'],
+                                      size: 50,
+                                      color: const Color(0xFFE71939),
+                                    ),
                               // wrap text in FittedBox to prevent overflow
                               FittedBox(
                                 fit: BoxFit.fitWidth,

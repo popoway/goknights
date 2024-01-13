@@ -111,7 +111,10 @@ class _MyChatPageState extends State<MyChatPage> {
           ),
           emptyState: GestureDetector(
             onTap: () {
-              FocusManager.instance.primaryFocus?.unfocus();
+              FocusManager.instance.primaryFocus?.unfocus(); // hide keyboard
+            },
+            onVerticalDragStart: (_) {
+              FocusManager.instance.primaryFocus?.unfocus(); // hide keyboard
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -260,6 +263,26 @@ class _MyChatPageState extends State<MyChatPage> {
   }
 
   void _handleSendPressed(types.PartialText message) {
+    // if the message is too short, tell the user to type more
+    if (message.text.length < 7) {
+      var textMessage = types.TextMessage(
+        author: _user,
+        createdAt: DateTime.now().millisecondsSinceEpoch,
+        id: randomString(),
+        text: message.text,
+        showStatus: false,
+      );
+      var textMessage2 = types.TextMessage(
+        author: _bot,
+        createdAt: DateTime.now().millisecondsSinceEpoch,
+        id: randomString(),
+        text: FlutterI18n.translate(context, "chat.too-short"),
+      );
+      _addMessage(textMessage);
+      _addMessage(textMessage2);
+      return;
+    }
+
     var textMessage = types.TextMessage(
       author: _user,
       createdAt: DateTime.now().millisecondsSinceEpoch,

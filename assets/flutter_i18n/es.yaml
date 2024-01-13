@@ -124,6 +124,7 @@ chat:
   try-example-4: "¿Cuál es el sitio web de la oficina del Registro?"
   disclaimer: "ChatKnights puede cometer errores. Considera verificar información importante."
   placeholder: "Mensaje a ChatKnights..."
+  too-short: "Tu mensaje es demasiado corto para que yo lo entienda. Por favor, elabora tu pregunta."
 
 map:
   hint: "Buscar edificios..."

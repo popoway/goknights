@@ -124,6 +124,7 @@ chat:
   try-example-4: "注册办公室的网站是什么？"
   disclaimer: "ChatKnights 可能会犯错误。请考虑核对重要信息。"
   placeholder: "给 ChatKnights 发消息..."
+  too-short: "您的信息太短了，我无法理解。请详细说明您的问题。"
 
 map:
   hint: "搜索建筑物..."
