@@ -13,6 +13,7 @@ Blackboard: https://bbhosted.cuny.edu/
 QC Username (known as CAMS Account) for Computer Lab, Campus Wi-Fi, Printing: https://cams.qc.cuny.edu/
 Course Evaluation: http://www.qc.cuny.edu/evaluate
 CUNY Global Search (View Course Catalog): https://globalsearch.cuny.edu/
+CUNYfirst Student Center (Update personal information, Pay tuition online, Request unofficial transcript): https://home.cunyfirst.cuny.edu/
 CUNYfirst Schedule Builder (View Your Class Schedule, Enroll, Swap, or Drop a class):  https://sb.cunyfirst.cuny.edu/
 Academic Calendar: https://www.cuny.edu/academics/academic-calendars/
 Academic Department Websites Catalog: https://www.qc.cuny.edu/academics/

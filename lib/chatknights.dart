@@ -26,7 +26,21 @@ class OpenAIRequest {
 
   OpenAIRequest(this.messages);
 
+  // https://help.openai.com/en/articles/5247780-using-logit-bias-to-define-token-probability
+  // https://platform.openai.com/tokenizer?view=bpe
   Map<String, dynamic> toJson() => {
+        'temperature': 0.2,
+        'logit_bias': {
+          // prevent ChatKnights from saying certain things
+          '25688': -100, // .aspx
+          '300': -100, // as
+          '1804': -100, // px
+          '2628': -100, // .html
+          '30089': -100, // /default
+          '58290': -100, // .asp
+          '13671': -100, // asp
+          '16744': -100, // /P
+        },
         'messages': messages,
       };
 }

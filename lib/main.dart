@@ -35,13 +35,14 @@ Future<void> main() async {
   counter = (prefs.getInt('counter') ?? 0);
   role = (prefs.getString('role') ?? 'current');
   // if debug mode (kDebugMode == true), always show onboarding
-  if (false) {
-    counter = 0;
-  } else {
-    await prefs.setInt("counter", counter + 1);
-  }
+  // if (false) {
+  //   counter = 0;
+  // } else {
+  //   await prefs.setInt("counter", counter + 1);
+  // }
   // print('counter ${counter}');
   // print('role ${role}');
+  await prefs.setInt("counter", counter + 1);
 
   runApp(const MyApp());
 }
