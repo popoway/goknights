@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_config/flutter_config.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
@@ -44,11 +45,14 @@ Future<void> main() async {
   // print('role ${role}');
   await prefs.setInt("counter", counter + 1);
 
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  final Brightness _brightness =
+      SchedulerBinding.instance.platformDispatcher.platformBrightness;
 
   // This widget is the root of your application.
   @override
@@ -65,8 +69,10 @@ class MyApp extends StatelessWidget {
     }
     return Theme(
         data: ThemeData(
-            colorScheme:
-                ColorScheme.fromSeed(seedColor: const Color(0xFFE71939))),
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: const Color(0xFFE71939), brightness: _brightness),
+          primaryColor: const Color(0xFFE71939),
+        ),
         child: CupertinoApp(
           navigatorKey: NavigationService.navigatorKey,
           title: 'GoKnights',
