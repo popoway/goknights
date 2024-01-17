@@ -67,6 +67,20 @@ class MyApp extends StatelessWidget {
       // print('show review dialog ' + counter.toString());
       _showReviewDialog();
     }
+    // set system navigation bar color and icon brightness for android
+    var mySystemTheme = _brightness == Brightness.light
+        ? SystemUiOverlayStyle.light.copyWith(
+            systemNavigationBarColor:
+                CupertinoTheme.of(context).barBackgroundColor,
+            systemNavigationBarIconBrightness: Brightness.dark,
+          )
+        : SystemUiOverlayStyle.dark.copyWith(
+            systemNavigationBarColor:
+                CupertinoTheme.of(context).barBackgroundColor,
+            systemNavigationBarIconBrightness: Brightness.light,
+          );
+    SystemChrome.setSystemUIOverlayStyle(mySystemTheme);
+
     return Theme(
         data: ThemeData(
           colorScheme: ColorScheme.fromSeed(

@@ -62,8 +62,10 @@ class CupertinoTabBarDemo extends StatelessWidget {
       child: DefaultTextStyle(
         style: DefaultTextStyle.of(context).style.copyWith(fontSize: 17),
         child: CupertinoTabScaffold(
+          resizeToAvoidBottomInset: false,
           restorationId: 'cupertino_tab_scaffold',
           tabBar: CupertinoTabBar(
+            iconSize: 26,
             items: [
               for (final tabInfo in tabInfo)
                 BottomNavigationBarItem(

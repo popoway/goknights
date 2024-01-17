@@ -93,6 +93,10 @@ class _MyChatPageState extends State<MyChatPage> {
           onAvatarTap: _handleAvatarTapped,
           // when user double taps on message, select the entire text of that message
           onMessageDoubleTap: _handleMessageDoubleTapped,
+          textMessageOptions: const TextMessageOptions(
+            onLinkPressed: _launchURL,
+          ),
+          dateLocale: 'en_US',
           usePreviewData: false, // disable link preview
           user: _user,
           showUserNames: true,
