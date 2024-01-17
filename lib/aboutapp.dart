@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 
 class AboutAppPage extends StatefulWidget {
   const AboutAppPage({super.key, required this.title});
@@ -32,11 +33,22 @@ class _AboutAppPageState extends State<AboutAppPage> {
     buildSignature: 'Unknown',
     installerStore: 'Unknown',
   );
+  bool myInterceptor(bool stopDefaultButtonEvent, RouteInfo info) {
+    Navigator.of(context).pop();
+    return true;
+  }
 
   @override
   void initState() {
     super.initState();
     _initPackageInfo();
+    BackButtonInterceptor.add(myInterceptor);
+  }
+
+  @override
+  void dispose() {
+    BackButtonInterceptor.remove(myInterceptor);
+    super.dispose();
   }
 
   Future<void> _initPackageInfo() async {

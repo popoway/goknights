@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -49,6 +50,20 @@ class CupertinoTabBarDemo extends StatelessWidget {
         CupertinoIcons.profile_circled,
       ),
     ];
+    // set system navigation bar color and icon brightness for android
+    var mySystemTheme =
+        MediaQuery.of(context).platformBrightness == Brightness.light
+            ? SystemUiOverlayStyle.light.copyWith(
+                systemNavigationBarColor:
+                    CupertinoTheme.of(context).barBackgroundColor,
+                systemNavigationBarIconBrightness: Brightness.dark,
+              )
+            : SystemUiOverlayStyle.dark.copyWith(
+                systemNavigationBarColor:
+                    CupertinoTheme.of(context).barBackgroundColor,
+                systemNavigationBarIconBrightness: Brightness.light,
+              );
+    SystemChrome.setSystemUIOverlayStyle(mySystemTheme);
 
     return WillPopScope(
       // forbidden swipe in iOS(my ThemeData(platform: TargetPlatform.iOS,) from onboarding.dart)
@@ -415,6 +430,14 @@ class _MyHomePageState extends State<MyHomePage> {
   bool myInterceptor(bool stopDefaultButtonEvent, RouteInfo info) {
     // navigator pop
     print("BACK BUTTON!"); // Do some stuff.
+    // if there are more than 1 routes, pop
+    if (Navigator.of(context).canPop()) {
+      Navigator.of(context).pop();
+    } else {
+      // if there is only 1 route, exit app
+      SystemChannels.platform.invokeMethod<void>('SystemNavigator.pop');
+      return true;
+    }
     return true;
   }
 

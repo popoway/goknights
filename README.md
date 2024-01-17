@@ -208,7 +208,11 @@ Open Source Licenses and Acknowledgements are available within the "About" dialo
     </tbody>
 </table>
 
-Special thanks to the [Office of Associate Provost for Innovation and Student Success](https://www.qc.cuny.edu/student-success/), the [International Students and Scholars Office](https://www.qc.cuny.edu/academics/iss/), and the [Office of Student Affairs and Enrollment Management](https://www.qc.cuny.edu/student-affairs-enrollment-management/) at Queens College for their support and guidance.
+Special thanks to the following departments at Queens College for their support and guidance: 
+
+- [Office of Associate Provost for Innovation and Student Success](https://www.qc.cuny.edu/student-success/)
+- [International Students and Scholars Office](https://www.qc.cuny.edu/academics/iss/)
+- [Office of Student Affairs and Enrollment Management](https://www.qc.cuny.edu/student-affairs-enrollment-management/) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
