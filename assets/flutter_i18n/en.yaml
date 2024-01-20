@@ -122,6 +122,7 @@ chat:
   try-example-2: "Where is the tutoring center?"
   try-example-3: "I need to swap a class."
   try-example-4: "What‘s Registrar office website?"
+  try-example-5: "Can I park on campus?"
   disclaimer: "ChatKnights can make mistakes. Consider checking important information."
   placeholder: "Message ChatKnights..."
   too-short: "Your message is too short for me to understand. Please elaborate your question."

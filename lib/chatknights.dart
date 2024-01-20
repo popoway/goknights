@@ -83,7 +83,8 @@ class _MyChatPageState extends State<MyChatPage> {
       FlutterI18n.translate(context, "chat.try-example-1"),
       FlutterI18n.translate(context, "chat.try-example-2"),
       FlutterI18n.translate(context, "chat.try-example-3"),
-      FlutterI18n.translate(context, "chat.try-example-4")
+      FlutterI18n.translate(context, "chat.try-example-4"),
+      FlutterI18n.translate(context, "chat.try-example-5")
     ];
 
     return Scaffold(
