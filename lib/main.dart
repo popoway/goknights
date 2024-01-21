@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_config/flutter_config.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:in_app_review/in_app_review.dart';
 
@@ -54,6 +55,26 @@ class MyApp extends StatelessWidget {
   final Brightness _brightness =
       SchedulerBinding.instance.platformDispatcher.platformBrightness;
 
+  PackageInfo _packageInfo = PackageInfo(
+    appName: 'Unknown',
+    packageName: 'Unknown',
+    version: 'Unknown',
+    buildNumber: 'Unknown',
+    buildSignature: 'Unknown',
+    installerStore: 'Unknown',
+  );
+
+  Future<void> _initPackageInfo() async {
+    final info = await PackageInfo.fromPlatform();
+    _packageInfo = info;
+    // print(_packageInfo);
+    // store version, build number and installerStore in shared preferences
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString("version", _packageInfo.version);
+    await prefs.setString("buildNumber", _packageInfo.buildNumber);
+    await prefs.setString("installerStore", _packageInfo.installerStore!);
+  }
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -61,6 +82,7 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+    _initPackageInfo();
     // print(counter.toString());
     // if counter == 5 or 20, show review dialog
     if (counter == 5 || counter == 20) {

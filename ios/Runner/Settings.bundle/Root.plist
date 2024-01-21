@@ -5,6 +5,55 @@
 	<key>StringsTable</key>
 	<string>Root</string>
 	<key>PreferenceSpecifiers</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string></string>
+			<key>FooterText</key>
+			<string>Copyright © 2023-2024 Ming Lei.</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Version</string>
+			<key>Key</key>
+			<string>flutter.version</string>
+			<key>DefaultValue</key>
+			<string>2.0.0</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Build</string>
+			<key>Key</key>
+			<string>flutter.buildNumber</string>
+			<key>DefaultValue</key>
+			<string>42</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Variant</string>
+			<key>Key</key>
+			<string>flutter.installerStore</string>
+			<key>DefaultValue</key>
+			<string>com.apple.simulator</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Role</string>
+			<key>Key</key>
+			<string>flutter.role</string>
+			<key>DefaultValue</key>
+			<string>current</string>
+		</dict>
+	</array>
 </dict>
 </plist>
