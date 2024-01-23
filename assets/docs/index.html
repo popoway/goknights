@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoKnights App Redirect</title>
+  <script>
+    function redirectToStore() {
+      // Detecting the user's platform
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Open the Google Play Store for Android devices in a new tab
+      if (/android/i.test(userAgent)) {
+        window.open("https://play.google.com/store/apps/details?id=com.popoway.goknights", '_blank');
+      }
+
+      // Open the Apple App Store for iOS devices in a new tab
+      else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.open("https://apps.apple.com/us/app/goknights/id6463623285", '_blank');
+      }
+
+      // If device is neither Android nor iOS, log to console (or handle otherwise)
+      else {
+        console.log("Non-Android/iOS device detected");
+      }
+    }
+
+    // Redirect to GitHub page after a delay
+    function navigateToGithub() {
+      setTimeout(function () {
+        window.location.href = "https://github.com/popoway/goknights#readme";
+      }, 500); // 500ms delay
+    }
+
+    // Execute redirection functions on page load
+    window.onload = function () {
+      redirectToStore();
+      navigateToGithub();
+    };
+  </script>
+</head>
+
+<body>
+  <h1>Welcome to GoKnights</h1>
+  <p>Redirecting you to the appropriate app store...</p>
+</body>
+
+</html>
