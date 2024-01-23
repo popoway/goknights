@@ -108,7 +108,7 @@ flutter build appbundle
 ## Roadmap
 
 - [x] Faculty timesheet
-- [ ] i18n support with Italian, Chinese and Spanish
+- [x] i18n support with Italian, Chinese and Spanish
 - [ ] https://pub.dev/packages/app_links
 
 ## Contributing
@@ -212,12 +212,14 @@ Special thanks to the following departments at Queens College for their support 
 
 - [Office of Associate Provost for Innovation and Student Success](https://www.qc.cuny.edu/student-success/)
 - [International Students and Scholars Office](https://www.qc.cuny.edu/academics/iss/)
-- [Office of Student Affairs and Enrollment Management](https://www.qc.cuny.edu/student-affairs-enrollment-management/) 
+- [Office of Vice President for Student Affairs and Enrollment Management](https://www.qc.cuny.edu/student-affairs-enrollment-management/) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Disclaimer
 
 "Disclaimer: While I am both an employee of Queens College and a graduate student in Computer Science here, the "GoKnights" app is a personal project developed during my summer break. The content, views, and opinions expressed within the app are solely my own and do not reflect the positions, strategies, or opinions of Queens College. This app is neither officially associated with nor maintained by Queens College as part of my employment."
+
+The SA logo is used under the permission of the Queens College Student Association.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
