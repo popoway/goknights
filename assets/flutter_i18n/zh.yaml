@@ -78,39 +78,43 @@ transfer:
 
 library:
   rosenthal-library: "Rosenthal 图书馆"
-  rosenthal-library-message: "Rosenthal 图书馆是学院的智力中心。它为 Queens College 社区追求知识和智力成长提供了广泛的服务和资源。\n地点：Benjamin S. Rosenthal 大楼\n电话：(718) 997-3700"
+  rosenthal-library-message: "Rosenthal 图书馆是学院的智力中心。它为 Queens College 社区追求知识和智力成长提供了广泛的服务和资源。\n位置：Benjamin S. Rosenthal 大楼\n电话：(718) 997-3700"
   onesearch: "OneSearch"
   library-hours: "图书馆开放时间"
   remote-access: "远程访问"
   makerspace: "创客空间"
-  makerspace-message: "Queens College 创客空间是一个供所有人探索、创作、制作、设计和学习的地方。它提供3D打印机、激光切割机、缝纫机等工具和材料的使用。新用户必须申请导向课程才能使用创客空间。\n地点：Benjamin S. Rosenthal 图书馆，1楼，101室\n电子邮件：makerspace@qc.cuny.edu"
+  makerspace-message: "Queens College 创客空间是一个供所有人探索、创作、制作、设计和学习的地方。它提供3D打印机、激光切割机、缝纫机等工具和材料的使用。新用户必须申请导向课程才能使用创客空间。\n位置：Benjamin S. Rosenthal 图书馆，1楼，101室\n电子邮件：makerspace@qc.cuny.edu"
   makerspace-hours: "创客空间开放时间"
   makerspace-orientation: "创客空间导向课程"
 
 careers:
   cei: "职业参与和实习中心"
-  cei-message: "职业参与和实习中心（CEI）为所有 Queens College 学生和校友提供职业发展服务。CEI提供职业咨询、简历和求职信审查、模拟面试和职业研讨会。\nHireQC 是 CEI 的招聘网站，专为 Queens College 学生提供。\n地点：Frese Hall 213\n电子邮件：qc_career@qc.cuny.edu\n电话：718-997-4465"
+  cei-message: "职业参与和实习中心（CEI）为所有 Queens College 学生和校友提供职业发展服务。CEI 提供职业咨询、简历和求职信审查、模拟面试和职业研讨会。\nHireQC 是 CEI 的招聘网站，专为 Queens College 学生提供。\n位置：Frese Hall 213\n电子邮件：qc_career@qc.cuny.edu\n电话：718-997-4465"
   career-liaisons: "职业联络员"
   upcoming-workshops-events: "即将举行的研讨会和活动"
   join-hireqc: "加入HireQC"
 
 advising:
   aac: "学术指导中心"
-  aac-message: "学术指导中心（AAC）为所有 Queens College 学生提供学术指导。AAC顾问帮助学生了解学位要求、选择课程和规划毕业。\n地点：Kiely Hall 217\n电子邮件：advising@qc.cuny.edu\n电话：718-997-5599"
+  aac-message: "学术指导中心（AAC）为所有 Queens College 学生提供学术指导。AAC 顾问帮助学生了解学位要求、选择课程和规划毕业。\n位置：Kiely Hall 217\n电子邮件：advising@qc.cuny.edu\n电话：718-997-5599"
   make-advising-appointment: "预约咨询"
   academic-advising-resources: "学术指导资源"
   specialty-advising: "专业指导"
   meet-our-staff: "认识我们的员工"
+  fye: "第一年体验"
+  fye-message: "第一年体验 (FYE) 计划通过规划和同伴指导来指导新生和转学生，以支持他们在 Queens College 的第一年发展社区并找到自己的学术道路。\n位置：Honors Hall Room 5\n电子邮件：fye@qc.cuny.edu\n电话：718-997-5567"
+  meet-our-mentors: "认识我们的导师"
 
 student-life:
   osdl: "学生发展与领导力办公室"
-  osdl-message: "学生发展与领导力办公室 (OSDL) 为学生提供培养领导技能、参与校园生活和建立社区的机会。 OSDL 负责监督学生社团和组织、学生政府和校园活动。\n地点: Student Union, Lower Level 23\n电子邮件: Studentlife@qc.cuny.edu"
+  osdl-message: "学生发展与领导力办公室 (OSDL) 为学生提供培养领导技能、参与校园生活和建立社区的机会。 OSDL 负责监督学生社团和组织、学生政府和校园活动。\n位置: Student Union, Lower Level 23\n电子邮件: Studentlife@qc.cuny.edu"
   clubs: "社团和组织"
+  upcoming-club-events: "即将举行的社团活动"
   student-association: "学生会"
   food-pantry: "Knights Table 食品储藏室"
   nso: "新生迎新"
   vpsa: "学生事务及招生管理"
-  vpsa-message: "学生事务和招生管理部 (SAEM) 提供服务和计划来支持学生的学业和个人成功。\n地点: Student Union, Room 300\n电子邮件: vpsa@qc.cuny.edu"
+  vpsa-message: "学生事务和招生管理部 (SAEM) 提供服务和计划来支持学生的学业和个人成功。\n位置: Student Union, Room 300\n电子邮件: vpsa@qc.cuny.edu"
   meet-our-staff: "认识我们的员工"
   student-affairs: "学生事务"
 
@@ -141,13 +145,14 @@ options:
   switch-language: "切换语言"
   send-feedback: "发送反馈"
   rate-this-app: "评分此应用"
-  about-app: "关于GoKnights"
+  about-app: "关于 GoKnights"
 
 aboutapp:
   about: "关于"
   privacy-policy: "隐私政策"
   open-source-licenses: "开源许可证"
   disclaimer: "免责声明"
+  acknowledgements-and-disclaimer: "致谢与免责声明"
 
 button:
   cancel: "取消"

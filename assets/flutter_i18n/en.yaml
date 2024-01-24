@@ -101,11 +101,15 @@ advising:
   academic-advising-resources: "Academic Advising Resources"
   specialty-advising: "Specialty Advising"
   meet-our-staff: "Meet Our Staff"
+  fye: "First Year Experience"
+  fye-message: "The First Year Experience (FYE) program guides incoming students, both freshmen and transfers, through programming and peer mentorship to support them in developing community and finding their academic paths during their first year at Queens College.\nLocation: Honors Hall Room 5\nEmail: fye@qc.cuny.edu\nPhone: 718-997-5567"
+  meet-our-mentors: "Meet Our Mentors"
 
 student-life:
   osdl: "The Office of Student Development & Leadership"
   osdl-message: "The Office of Student Development & Leadership (OSDL) provides opportunities for students to develop leadership skills, engage in campus life, and build community. OSDL oversees student clubs and organizations, student government, and campus events.\nLocation: Student Union, Lower Level 23\nEmail: Studentlife@qc.cuny.edu"
   clubs: "Clubs and Organizations"
+  upcoming-club-events: "Upcoming Club Events"
   student-association: "Student Association"
   food-pantry: "Knights Table Food Pantry"
   nso: "New Student Orientation"
@@ -148,6 +152,7 @@ aboutapp:
   privacy-policy: "Privacy Policy"
   open-source-licenses: "Open Source Licenses"
   disclaimer: "Disclaimer"
+  acknowledgements-and-disclaimer: "Acknowledgements & Disclaimer"
 
 button:
   cancel: "Cancel"

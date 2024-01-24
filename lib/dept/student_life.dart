@@ -33,7 +33,7 @@ class _MyStudentLifePageState extends State<MyStudentLifePage> {
           // Drag the scrollable area to collapse the CupertinoSliverNavigationBar.
           SliverToBoxAdapter(
             child: SizedBox(
-              height: 900,
+              height: 1000,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
@@ -54,6 +54,15 @@ class _MyStudentLifePageState extends State<MyStudentLifePage> {
                         trailing: const CupertinoListTileChevron(),
                         onTap: () => _launchURL(
                             'https://www.qc.cuny.edu/sl/clubs-and-organizations/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "student-life.upcoming-club-events"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () =>
+                            _launchURL('https://qc.campusgroups.com/events'),
                       ),
                       CupertinoListTile.notched(
                         title: Text(

@@ -94,6 +94,7 @@ class _AboutAppPageState extends State<AboutAppPage> {
                           fit: BoxFit.cover),
                     ),
                   ),
+                  const SizedBox(height: 20),
                   Text(_packageInfo.appName,
                       style: CupertinoTheme.of(context)
                           .textTheme
@@ -108,7 +109,7 @@ class _AboutAppPageState extends State<AboutAppPage> {
                           ).resolveFrom(context),
                           fontSize: 12)),
                   Container(
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(24),
                     child: Text('Copyright © 2024 Ming Lei.',
                         style: TextStyle(
                             color: const CupertinoDynamicColor.withBrightness(
@@ -122,6 +123,12 @@ class _AboutAppPageState extends State<AboutAppPage> {
                         context, "aboutapp.privacy-policy")),
                     onPressed: () => _launchURL(
                         'https://github.com/popoway/goknights/blob/main/PRIVACY.md'),
+                  ),
+                  CupertinoButton(
+                    child: Text(FlutterI18n.translate(
+                        context, "aboutapp.acknowledgements-and-disclaimer")),
+                    onPressed: () => _launchURL(
+                        'https://github.com/popoway/goknights#acknowledgements'),
                   ),
                   CupertinoButton(
                     child: Text(FlutterI18n.translate(
@@ -142,12 +149,6 @@ class _AboutAppPageState extends State<AboutAppPage> {
                       ),
                       applicationLegalese: 'GNU General Public License v3.0',
                     ),
-                  ),
-                  CupertinoButton(
-                    child: Text(
-                        FlutterI18n.translate(context, "aboutapp.disclaimer")),
-                    onPressed: () => _launchURL(
-                        'https://github.com/popoway/goknights#disclaimer'),
                   ),
                 ],
               ),

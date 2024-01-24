@@ -30,63 +30,100 @@ class _MyAdvisingPageState extends State<MyAdvisingPage> {
           ),
           // This widget fills the remaining space in the viewport.
           // Drag the scrollable area to collapse the CupertinoSliverNavigationBar.
-          SliverFillRemaining(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                CupertinoListSection.insetGrouped(
-                  header: Text(FlutterI18n.translate(context, "advising.aac"),
-                      style: optionTextStyle),
-                  footer: Text(
-                      FlutterI18n.translate(context, "advising.aac-message"),
-                      style: optionTextStyle),
-                  children: <CupertinoListTile>[
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(
-                              context, "advising.make-advising-appointment"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://www.qc.cuny.edu/navigate/qc-navigate-appointments/'),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(
-                              context, "advising.academic-advising-resources"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://www.qc.cuny.edu/aac/academic-resources/'),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(
-                              context, "advising.specialty-advising"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://www.qc.cuny.edu/aac/specialty-advising/'),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(
-                              context, "advising.meet-our-staff"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://www.qc.cuny.edu/aac/meet-our-staff/'),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(context, "button.learn-more"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL('https://www.qc.cuny.edu/aac/'),
-                    ),
-                  ],
-                ),
-              ],
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 950,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  CupertinoListSection.insetGrouped(
+                    header: Text(FlutterI18n.translate(context, "advising.aac"),
+                        style: optionTextStyle),
+                    footer: Text(
+                        FlutterI18n.translate(context, "advising.aac-message"),
+                        style: optionTextStyle),
+                    children: <CupertinoListTile>[
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "advising.make-advising-appointment"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.qc.cuny.edu/navigate/qc-navigate-appointments/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(context,
+                                "advising.academic-advising-resources"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.qc.cuny.edu/aac/academic-resources/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "advising.specialty-advising"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.qc.cuny.edu/aac/specialty-advising/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "advising.meet-our-staff"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.qc.cuny.edu/aac/meet-our-staff/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(context, "button.learn-more"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL('https://www.qc.cuny.edu/aac/'),
+                      ),
+                    ],
+                  ),
+                  CupertinoListSection.insetGrouped(
+                    header: Text(FlutterI18n.translate(context, "advising.fye"),
+                        style: optionTextStyle),
+                    footer: Text(
+                        FlutterI18n.translate(context, "advising.fye-message"),
+                        style: optionTextStyle),
+                    children: <CupertinoListTile>[
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "advising.meet-our-mentors"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () =>
+                            _launchURL('https://www.qc.cuny.edu/fye/mentors/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "advising.meet-our-staff"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.qc.cuny.edu/fye/faculty-staff/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(context, "button.learn-more"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL('https://www.qc.cuny.edu/fye/'),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],

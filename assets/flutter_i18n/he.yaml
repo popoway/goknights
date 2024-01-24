@@ -101,11 +101,15 @@ advising:
   academic-advising-resources: "משאבי ייעוץ אקדמי"
   specialty-advising: "ייעוץ מיוחד"
   meet-our-staff: "הכירו את הצוות שלנו"
+  fye: "ניסיון שנה ראשונה"
+  fye-message: "תוכנית התנסות בשנה הראשונה (FYE) מדריכה סטודנטים נכנסים, הן סטודנטים א' והן מעברים, באמצעות תכנות וחונכות עמיתים כדי לתמוך בהם בפיתוח הקהילה ובמציאת הנתיבים האקדמיים שלהם במהלך השנה הראשונה שלהם בקווינס קולג'.\nמיקום: Honors Hall חדר 5\nאימייל : fye@qc.cuny.edu\nטלפון: 718-997-5567"
+  meet-our-mentors: "הכירו את המנטורים שלנו"
 
 student-life:
   osdl: "המשרד לפיתוח ומנהיגות תלמידים"
   osdl-message: "המשרד לפיתוח ומנהיגות סטודנטים (OSDL) מספק הזדמנויות לסטודנטים לפתח מיומנויות מנהיגות, לעסוק בחיי הקמפוס ולבנות קהילה. OSDL מפקחת על מועדוני סטודנטים וארגונים, ממשלת סטודנטים ואירועי קמפוס.\nLocation: Student Union, Lower Level 23\nEmail: Studentlife@qc.cuny.edu"
   clubs: "מועדונים וארגונים"
+  upcoming-club-events: "אירועי מועדונים קרובים"
   student-association: "אגודת סטודנטים"
   food-pantry: "Knights Table מזווה מזון"
   nso: "אוריינטציה חדשה לסטודנטים"
@@ -148,6 +152,7 @@ aboutapp:
   privacy-policy: "מדיניות פרטיות"
   open-source-licenses: "רישיונות קוד פתוח"
   disclaimer: "הבהרה"
+  acknowledgements-and-disclaimer: "תודות וכתב ויתור"
 
 button:
   cancel: "בטל"
