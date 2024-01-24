@@ -34,7 +34,7 @@ home:
   calendar: "Calendar"
   directory: "Directory"
   shuttle: "Shuttle"
-  sports: "Sports"
+  sports: "Athletics"
 
 shuttle:
   message: "Any Queens College student may ride the shuttle by displaying a current QCard as identification."

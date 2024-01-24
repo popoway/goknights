@@ -12,7 +12,7 @@ onboarding:
 
 role:
   current: "现任学生"
-  prospective: "预期的学生"
+  prospective: "未来的学生"
   faculty: "教职员工"
 
 home:
@@ -47,7 +47,7 @@ printing:
   upload-documents: "上传文件"
 
 timesheet:
-  message: "访问时间和休假报告系统 (TLR) 以提交您的时间表。 访问 HR/PR Assist 页面仅限于校园内计算机、校园 Wi-Fi (qwifi-secured)和 VPN 用户。 在 ITS 的支持页面中了解有关如何访问它们的更多信息。"
+  message: "访问时间和休假报告系统 (TLR) 以提交您的时间表。 访问 HR/PR Assist 页面仅限于校园内计算机、校园 Wi-Fi (qwifi-secured) 和 VPN 用户。 在 ITS 的支持页面中了解有关如何访问它们的更多信息。"
   hr: "HRAssist (全职)"
   pr: "PRAssist (兼职)"
   how-to-access: "如何访问"
@@ -66,37 +66,37 @@ tutoring:
 
 transfer:
   transfer-explorer: "CUNY 转学生探索者"
-  transfer-explorer-message: "CUNY 转学生探索者使有关大学转学的重要信息变得公开且易于理解，以便学生在入学新学院之前知道可以预期什么。\n * 需要CUNY登录"
-  transfer-explorer-by-course: "CUNY到CUNY按课程"
-  transfer-explorer-by-subject: "CUNY到CUNY按学科"
-  transfer-explorer-by-transcript: "CUNY到CUNY按成绩单 *"
+  transfer-explorer-message: "CUNY 转学生探索者使有关大学转学的重要信息变得公开且易于理解，以便学生在入学新学院之前知道可以预期什么。\n * 需要 CUNY Login 登录"
+  transfer-explorer-by-course: "CUNY 到 CUNY 按课程"
+  transfer-explorer-by-subject: "CUNY 到 CUNY 按学科"
+  transfer-explorer-by-transcript: "CUNY 到 CUNY 按成绩单 *"
   qc-transfer-support: "QC 转学生支持"
-  qc-transfer-support-message: "ACE QC是一个全面的支持计划，旨在建立转学生的学术势头，并帮助学生准时完成学士学位。"
+  qc-transfer-support-message: "ACE QC 是一个全面的支持计划，旨在建立转学生的学术势头，并帮助学生准时完成学士学位。"
   qc-transfer-support-transfer-honors: "转学生荣誉"
   qc-transfer-support-transfer-advising: "转学生咨询"
   qc-transfer-support-international-transfer: "国际转学生"
 
 library:
   rosenthal-library: "Rosenthal 图书馆"
-  rosenthal-library-message: "Rosenthal 图书馆是学院的智力中心。它为皇后学院社区追求知识和智力成长提供了广泛的服务和资源。\n地点：Benjamin S. Rosenthal大楼\n电话：(718) 997-3700"
+  rosenthal-library-message: "Rosenthal 图书馆是学院的智力中心。它为 Queens College 社区追求知识和智力成长提供了广泛的服务和资源。\n地点：Benjamin S. Rosenthal 大楼\n电话：(718) 997-3700"
   onesearch: "OneSearch"
   library-hours: "图书馆开放时间"
   remote-access: "远程访问"
   makerspace: "创客空间"
-  makerspace-message: "皇后学院创客空间是一个供所有人探索、创作、制作、设计和学习的地方。它提供3D打印机、激光切割机、缝纫机等工具和材料的使用。新用户必须申请导向课程才能使用创客空间。\n地点：Benjamin S. Rosenthal图书馆，1楼，101室\n电子邮件：makerspace@qc.cuny.edu"
+  makerspace-message: "Queens College 创客空间是一个供所有人探索、创作、制作、设计和学习的地方。它提供3D打印机、激光切割机、缝纫机等工具和材料的使用。新用户必须申请导向课程才能使用创客空间。\n地点：Benjamin S. Rosenthal 图书馆，1楼，101室\n电子邮件：makerspace@qc.cuny.edu"
   makerspace-hours: "创客空间开放时间"
   makerspace-orientation: "创客空间导向课程"
 
 careers:
   cei: "职业参与和实习中心"
-  cei-message: "职业参与和实习中心（CEI）为所有皇后学院学生和校友提供职业发展服务。CEI提供职业咨询、简历和求职信审查、模拟面试和职业研讨会。\nHireQC是CEI的招聘网站，专为皇后学院学生提供。\n地点：Frese Hall 213\n电子邮件：qc_career@qc.cuny.edu\n电话：718-997-4465"
+  cei-message: "职业参与和实习中心（CEI）为所有 Queens College 学生和校友提供职业发展服务。CEI提供职业咨询、简历和求职信审查、模拟面试和职业研讨会。\nHireQC 是 CEI 的招聘网站，专为 Queens College 学生提供。\n地点：Frese Hall 213\n电子邮件：qc_career@qc.cuny.edu\n电话：718-997-4465"
   career-liaisons: "职业联络员"
   upcoming-workshops-events: "即将举行的研讨会和活动"
   join-hireqc: "加入HireQC"
 
 advising:
   aac: "学术指导中心"
-  aac-message: "学术指导中心（AAC）为所有皇后学院学生提供学术指导。AAC顾问帮助学生了解学位要求、选择课程和规划毕业。\n地点：Kiely Hall 217\n电子邮件：advising@qc.cuny.edu\n电话：718-997-5599"
+  aac-message: "学术指导中心（AAC）为所有 Queens College 学生提供学术指导。AAC顾问帮助学生了解学位要求、选择课程和规划毕业。\n地点：Kiely Hall 217\n电子邮件：advising@qc.cuny.edu\n电话：718-997-5599"
   make-advising-appointment: "预约咨询"
   academic-advising-resources: "学术指导资源"
   specialty-advising: "专业指导"
@@ -104,8 +104,8 @@ advising:
 
 student-life:
   osdl: "学生发展与领导力办公室"
-  osdl-message: "学生发展与领导力办公室 (OSDL) 为学生提供培养领导技能、参与校园生活和建立社区的机会。 OSDL 负责监督学生俱乐部和组织、学生政府和校园活动。\n地点: Student Union, Lower Level 23\n电子邮件: Studentlife@qc.cuny.edu"
-  clubs: "俱乐部和组织"
+  osdl-message: "学生发展与领导力办公室 (OSDL) 为学生提供培养领导技能、参与校园生活和建立社区的机会。 OSDL 负责监督学生社团和组织、学生政府和校园活动。\n地点: Student Union, Lower Level 23\n电子邮件: Studentlife@qc.cuny.edu"
+  clubs: "社团和组织"
   student-association: "学生会"
   food-pantry: "Knights Table 食品储藏室"
   nso: "新生迎新"
@@ -133,7 +133,7 @@ map:
 
 options:
   my-academics: "我的学术"
-  apply-to-qc: "申请到QC"
+  apply-to-qc: "申请到 QC"
   staff-email: "员工邮件"
   student-email: "学生邮件"
   app-settings: "应用设置"
