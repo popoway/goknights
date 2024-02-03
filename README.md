@@ -54,9 +54,9 @@
 
 ## Description
 
-Inspired by numerous inquiries and questions from incoming freshmen during new student orientation this summer, this app is created in order to serve as a centralized destination to showcase some of the highlighted student services and resources available on campus.
+Inspired by numerous inquiries and questions from incoming freshmen during new student orientation this summer, and the lack of official college app, GoKnights is created in order to serve as a centralized destination to showcase some of the highlighted student services and resources available on campus.
 
-![Screen shot of home screen of goknights](./assets/screenshots/app_overview.jpg)
+![Screen shot of home screen of GoKnights](./assets/screenshots/app_overview.jpg)
 
 This project is currently under development and will be updated periodically.
 

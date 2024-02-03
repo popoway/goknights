@@ -282,8 +282,46 @@ class _MyChatPageState extends State<MyChatPage> {
   }
 
   void _handleSendPressed(types.PartialText message) {
+    // if message == "demo", show a demo message
+    if (message.text == "demo") {
+      var textMessage = types.TextMessage(
+        author: _user,
+        createdAt: DateTime.now().millisecondsSinceEpoch,
+        id: randomString(),
+        text: "Where is the tutoring center?",
+        showStatus: true,
+        status: types.Status.sent,
+      );
+      var textMessage2 = types.TextMessage(
+        author: _bot,
+        createdAt: DateTime.now().millisecondsSinceEpoch,
+        id: randomString(),
+        text:
+            "The Learning Commons, which includes the Academic Support Center and Tutoring, is located in Kiely Hall 131. You can find more information about their services at https://www.qc.cuny.edu/academics/qclc/.",
+      );
+      var textMessage3 = types.TextMessage(
+        author: _user,
+        createdAt: DateTime.now().millisecondsSinceEpoch,
+        id: randomString(),
+        text: "I need to swap a class.",
+        showStatus: true,
+        status: types.Status.sent,
+      );
+      var textMessage4 = types.TextMessage(
+        author: _bot,
+        createdAt: DateTime.now().millisecondsSinceEpoch,
+        id: randomString(),
+        text:
+            "You can swap a class using the CUNYfirst Schedule Builder at https://sb.cunyfirst.cuny.edu/. If you need help with CUNYfirst, you can contact the ITS Tech Helpdesk at Kiely Hall 226 or visit their website at https://support.qc.cuny.edu/.",
+      );
+      _addMessage(textMessage);
+      _addMessage(textMessage2);
+      _addMessage(textMessage3);
+      _addMessage(textMessage4);
+      return;
+    }
     // if the message is too short, tell the user to type more
-    if (message.text.length < 7) {
+    else if (message.text.length < 7) {
       var textMessage = types.TextMessage(
         author: _user,
         createdAt: DateTime.now().millisecondsSinceEpoch,
