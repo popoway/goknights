@@ -6,7 +6,7 @@ This section lists which versions of this project are currently being supported 
 
 | Version    | Supported          |
 | ---------- | ------------------ |
-| 2.0.0      | :white_check_mark: |
+| 2.1.0      | :white_check_mark: |
 | < 2.0.0    | :x:                |
 
 ## Reporting a Vulnerability

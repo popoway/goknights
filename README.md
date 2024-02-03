@@ -3,6 +3,8 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/popoway/goknights)
 ![GitHub language count](https://img.shields.io/github/languages/count/popoway/goknights)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/popoway/goknights/main)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/popoway/goknights/dart.yml)
+![GitHub Release](https://img.shields.io/github/v/release/popoway/goknights)
 
 <!-- PROJECT LOGO -->
 <br />

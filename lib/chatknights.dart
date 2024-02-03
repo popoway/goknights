@@ -246,7 +246,7 @@ class _MyChatPageState extends State<MyChatPage> {
     print(partialRequest);
     return http.post(
         Uri.parse(
-            "https://$_endpoint/openai/deployments/$_model/chat/completions?api-version=2023-05-15"),
+            "https://$_endpoint/openai/deployments/$_model/chat/completions?api-version=2023-12-01-preview"),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
           'api-key': _key,
