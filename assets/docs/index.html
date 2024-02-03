@@ -5,46 +5,78 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="icon.png" type="image/png">
   <title>GoKnights App Redirect</title>
   <script>
     function redirectToStore() {
       // Detecting the user's platform
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-      // Open the Google Play Store for Android devices in a new tab
-      if (/android/i.test(userAgent)) {
-        window.open("https://play.google.com/store/apps/details?id=com.popoway.goknights", '_blank');
-      }
-
-      // Open the Apple App Store for iOS devices in a new tab
-      else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        window.open("https://apps.apple.com/us/app/goknights/id6463623285", '_blank');
-      }
-
-      // If device is neither Android nor iOS, log to console (or handle otherwise)
-      else {
-        console.log("Non-Android/iOS device detected");
-      }
-    }
-
-    // Redirect to GitHub page after a delay
-    function navigateToGithub() {
       setTimeout(function () {
-        window.location.href = "https://github.com/popoway/goknights#readme";
+        // Open the Google Play Store for Android devices in a new tab
+        if (/android/i.test(userAgent)) {
+          window.location.href = "https://play.google.com/store/apps/details?id=com.popoway.goknights";
+        }
+        // Open the Apple App Store for iOS devices in a new tab
+        else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          window.location.href = "https://apps.apple.com/us/app/goknights/id6463623285";
+        }
       }, 500); // 500ms delay
     }
-
     // Execute redirection functions on page load
     window.onload = function () {
       redirectToStore();
-      navigateToGithub();
     };
   </script>
 </head>
 
 <body>
-  <h1>Welcome to GoKnights</h1>
-  <p>Redirecting you to the appropriate app store...</p>
+  <div>
+    <img src="icon.png" alt="GoKnights Icon" style="height: 100px;" id="logo">
+    <h1>Welcome to GoKnights</h1>
+    <p>Elevate Your QC Knights experience</p>
+  </div>
+  <div>
+    <a href="https://play.google.com/store/apps/details?id=com.popoway.goknights" target="_blank">
+      <img src="googleplay-badge.png" alt="Get it on Google Play" style="height: 50px;">
+    </a>
+    <a href="https://apps.apple.com/us/app/goknights/id6463623285" target="_blank">
+      <img src="appstore-badge.png" alt="Download on the App Store" style="height: 50px;">
+    </a>
+  </div>
+  <p>Or visit our <a href="https://github.com/popoway/goknights#readme-top">GitHub page</a> for more information</p>
+  <small>Copyright © 2024 Ming Lei. 
+    <a href="https://github.com/popoway/goknights/blob/main/PRIVACY.md#goknights-privacy-policy">Privacy</a>
+    <a href="https://github.com/popoway/goknights#acknowledgements">Credits</a>
+  <small>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+    div {
+      text-align: center;
+    }
+    #logo {
+      /* round corner */
+      border-radius: 15%;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: black;
+        color: white;
+      }
+    }
+    
+    a {
+      color: lightblue;
+    }
+  </style>
+
 </body>
 
 </html>
