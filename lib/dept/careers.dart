@@ -30,54 +30,84 @@ class _MyCareersPageState extends State<MyCareersPage> {
           ),
           // This widget fills the remaining space in the viewport.
           // Drag the scrollable area to collapse the CupertinoSliverNavigationBar.
-          SliverFillRemaining(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                CupertinoListSection.insetGrouped(
-                  header: Text(FlutterI18n.translate(context, "careers.cei"),
-                      style: optionTextStyle),
-                  footer: Text(
-                      FlutterI18n.translate(context, "careers.cei-message"),
-                      style: optionTextStyle),
-                  children: <CupertinoListTile>[
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(
-                              context, "careers.career-liaisons"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://www.qc.cuny.edu/academics/cei/career-meet-the-team/'),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(
-                              context, "careers.upcoming-workshops-events"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://www.qc.cuny.edu/academics/cei/next-workshop/'),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(context, "careers.join-hireqc"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://queenscollege-csm.symplicity.com/'),
-                    ),
-                    CupertinoListTile.notched(
-                      title: Text(
-                          FlutterI18n.translate(context, "button.learn-more"),
-                          style: optionTextStyle),
-                      trailing: const CupertinoListTileChevron(),
-                      onTap: () =>
-                          _launchURL('https://www.qc.cuny.edu/academics/cei/'),
-                    ),
-                  ],
-                ),
-              ],
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 950,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  CupertinoListSection.insetGrouped(
+                    header: Text(FlutterI18n.translate(context, "careers.cei"),
+                        style: optionTextStyle),
+                    footer: Text(
+                        FlutterI18n.translate(context, "careers.cei-message"),
+                        style: optionTextStyle),
+                    children: <CupertinoListTile>[
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "careers.career-liaisons"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.qc.cuny.edu/academics/cei/career-meet-the-team/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "careers.upcoming-workshops-events"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.qc.cuny.edu/academics/cei/next-workshop/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "careers.join-hireqc"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://queenscollege-csm.symplicity.com/'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(context, "button.learn-more"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.qc.cuny.edu/academics/cei/'),
+                      ),
+                    ],
+                  ),
+                  CupertinoListSection.insetGrouped(
+                    header: Text(FlutterI18n.translate(context, "careers.cdc"),
+                        style: optionTextStyle),
+                    footer: Text(
+                        FlutterI18n.translate(context, "careers.cdc-message"),
+                        style: optionTextStyle),
+                    children: <CupertinoListTile>[
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "careers.upcoming-workshops-events"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL('https://linktr.ee/qcareers'),
+                      ),
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(
+                                context, "careers.join-mailing-list"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://docs.google.com/forms/d/e/1FAIpQLScBS5SX3wWDiSbFHfKDgXY7PgZ45TmnwRYMfTFIEJOdgNWjHA/viewform'),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],

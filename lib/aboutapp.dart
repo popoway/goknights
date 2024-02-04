@@ -122,7 +122,7 @@ class _AboutAppPageState extends State<AboutAppPage> {
                     child: Text(FlutterI18n.translate(
                         context, "aboutapp.privacy-policy")),
                     onPressed: () => _launchURL(
-                        'https://github.com/popoway/goknights/blob/main/PRIVACY.md'),
+                        'https://github.com/popoway/goknights/blob/main/PRIVACY.md#goknights-privacy-policy'),
                   ),
                   CupertinoButton(
                     child: Text(FlutterI18n.translate(

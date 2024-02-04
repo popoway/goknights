@@ -93,6 +93,9 @@ careers:
   career-liaisons: "Career Liaisons"
   upcoming-workshops-events: "Upcoming Workshops & Events"
   join-hireqc: "Join HireQC"
+  cdc: "SA Career Development Committee"
+  cdc-message: "The Student Association Career Development Committee (CDC) is a student-run organization that serves to help all students improve resume writing, interview skills, and create a bullet proof plan for the future.\nLocation: Student Union 319"
+  join-mailing-list: "Join Mailing List"
 
 advising:
   aac: "Academic Advising Center"
@@ -108,8 +111,8 @@ advising:
 student-life:
   osdl: "The Office of Student Development & Leadership"
   osdl-message: "The Office of Student Development & Leadership (OSDL) provides opportunities for students to develop leadership skills, engage in campus life, and build community. OSDL oversees student clubs and organizations, student government, and campus events.\nLocation: Student Union, Lower Level 23\nEmail: Studentlife@qc.cuny.edu"
-  clubs: "Clubs and Organizations"
-  upcoming-club-events: "Upcoming Club Events"
+  clubs: "Clubs and Organizations List"
+  upcoming-club-events: "Upcoming Club Events (UKnighted)"
   student-association: "Student Association"
   food-pantry: "Knights Table Food Pantry"
   nso: "New Student Orientation"

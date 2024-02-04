@@ -53,7 +53,7 @@ class _MyStudentLifePageState extends State<MyStudentLifePage> {
                             style: optionTextStyle),
                         trailing: const CupertinoListTileChevron(),
                         onTap: () => _launchURL(
-                            'https://www.qc.cuny.edu/sl/clubs-and-organizations/'),
+                            'https://qc.campusgroups.com/club_signup'),
                       ),
                       CupertinoListTile.notched(
                         title: Text(
