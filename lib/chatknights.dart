@@ -69,7 +69,7 @@ class _MyChatPageState extends State<MyChatPage> {
       firstName: 'ChatKnights',
       lastName: 'AI',
       imageUrl:
-          "https://github.com/popoway/goknights/blob/main/assets/icon/icon-scaled.png?raw=true");
+          "https://github.com/popoway/goknights/blob/main/assets/icon/icon-scaled-128px.png?raw=true");
   final _endpoint = FlutterConfig.get('OPENAI_API_ENDPOINT');
   final _key = FlutterConfig.get('OPENAI_API_KEY');
   final _model = FlutterConfig.get('OPENAI_API_MODEL');
