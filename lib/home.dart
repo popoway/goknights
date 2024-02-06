@@ -65,6 +65,9 @@ class CupertinoTabBarDemo extends StatelessWidget {
               );
     SystemChrome.setSystemUIOverlayStyle(mySystemTheme);
 
+    var tabController = CupertinoTabController(initialIndex: 0);
+    var currentTabIndex = 0;
+
     return WillPopScope(
       // forbidden swipe in iOS(my ThemeData(platform: TargetPlatform.iOS,) from onboarding.dart)
       onWillPop: () async {
@@ -88,6 +91,14 @@ class CupertinoTabBarDemo extends StatelessWidget {
                   icon: Icon(tabInfo.icon),
                 ),
             ],
+            onTap: (tappedIndex) {
+              if (currentTabIndex == 0 && tappedIndex == 0) {
+                if (Navigator.of(myHomePageContext).canPop()) {
+                  Navigator.of(myHomePageContext).pop();
+                }
+              }
+              currentTabIndex = tappedIndex;
+            },
           ),
           tabBuilder: (context, index) {
             return CupertinoTabView(
@@ -99,6 +110,7 @@ class CupertinoTabBarDemo extends StatelessWidget {
               ),
             );
           },
+          controller: tabController,
         ),
       ),
     );
@@ -134,6 +146,8 @@ class _CupertinoDemoTab extends StatelessWidget {
     }
   }
 }
+
+var myHomePageContext;
 
 /// This is the stateless widget that the main application instantiates.
 class MyHomePage extends StatefulWidget {
@@ -489,6 +503,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    myHomePageContext = context;
+
     // if landscape, show 5 icons per row; if portrait, show 3 icons per row
     final columnCount =
         MediaQuery.of(context).orientation == Orientation.landscape ? 5 : 3;
