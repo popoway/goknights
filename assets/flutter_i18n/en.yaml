@@ -83,7 +83,7 @@ library:
   library-hours: "Library Hours"
   remote-access: "Remote Access"
   makerspace: "Makerspace"
-  makerspace-message: "The Queens College Makerspace is a a place for all to tinker, craft, make, design, and learn. It provides access to 3D printers, laser cutters, sewing machines, and other tools and materials. New users must request Orientation to use the Makerspace. \nLocation: Benjamin S. Rosenthal Library, Level 1, Room 101\nEmail: makerspace@qc.cuny.edu"
+  makerspace-message: "The Queens College Makerspace is a place for all to tinker, craft, make, design, and learn. It provides access to 3D printers, laser cutters, sewing machines, and other tools and materials. New users must request Orientation to use the Makerspace. \nLocation: Benjamin S. Rosenthal Library, Level 1, Room 101\nEmail: makerspace@qc.cuny.edu"
   makerspace-hours: "Makerspace Hours"
   makerspace-orientation: "Makerspace Orientation"
 
