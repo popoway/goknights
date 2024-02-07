@@ -30,6 +30,9 @@ class _TabInfo {
 class CupertinoTabBarDemo extends StatelessWidget {
   const CupertinoTabBarDemo({super.key});
 
+  static var tabController = CupertinoTabController(initialIndex: 0);
+  static var currentTabIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     final tabInfo = [
@@ -65,9 +68,6 @@ class CupertinoTabBarDemo extends StatelessWidget {
               );
     SystemChrome.setSystemUIOverlayStyle(mySystemTheme);
 
-    var tabController = CupertinoTabController(initialIndex: 0);
-    var currentTabIndex = 0;
-
     return WillPopScope(
       // forbidden swipe in iOS(my ThemeData(platform: TargetPlatform.iOS,) from onboarding.dart)
       onWillPop: () async {
@@ -92,6 +92,8 @@ class CupertinoTabBarDemo extends StatelessWidget {
                 ),
             ],
             onTap: (tappedIndex) {
+              // print('tappedIndex: $tappedIndex');
+              // print('currentTabIndex: $currentTabIndex');
               if (currentTabIndex == 0 && tappedIndex == 0) {
                 if (Navigator.of(myHomePageContext).canPop()) {
                   Navigator.of(myHomePageContext).pop();
