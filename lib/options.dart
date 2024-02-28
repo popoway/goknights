@@ -420,7 +420,7 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                               return Text('Error: ${snapshot.error}');
                             } else {
                               return Text(
-                                  'GoKnights has enlivened your college experience for ${snapshot.data} time${snapshot.data == 1 ? '' : 's'}.',
+                                  'GoKnights has enlivened your college experience ${snapshot.data} time${snapshot.data == 1 ? '' : 's'}.',
                                   style: TextStyle(
                                       color: const CupertinoDynamicColor
                                           .withBrightness(
