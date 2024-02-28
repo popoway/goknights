@@ -2,16 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class MyCareersPage extends StatefulWidget {
-  const MyCareersPage({super.key, required this.title});
+class MyNewsPage extends StatefulWidget {
+  const MyNewsPage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyCareersPage> createState() => _MyCareersPageState();
+  State<MyNewsPage> createState() => _MyNewsPageState();
 }
 
-class _MyCareersPageState extends State<MyCareersPage> {
+class _MyNewsPageState extends State<MyNewsPage> {
   @override
   Widget build(BuildContext context) {
     // list tile text style that match light dark mode of system
@@ -26,100 +26,80 @@ class _MyCareersPageState extends State<MyCareersPage> {
         // A list of sliver widgets.
         slivers: <Widget>[
           CupertinoSliverNavigationBar(
-            largeTitle: Text(FlutterI18n.translate(context, "home.careers")),
+            largeTitle: Text(FlutterI18n.translate(context, "home.news")),
           ),
           // This widget fills the remaining space in the viewport.
           // Drag the scrollable area to collapse the CupertinoSliverNavigationBar.
           SliverToBoxAdapter(
             child: SizedBox(
-              height: 1250,
+              height: 800,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   CupertinoListSection.insetGrouped(
-                    header: Text(FlutterI18n.translate(context, "careers.cei"),
+                    header: Text(FlutterI18n.translate(context, "news.ocm"),
                         style: optionTextStyle),
                     footer: Text(
-                        FlutterI18n.translate(context, "careers.cei-message"),
+                        FlutterI18n.translate(context, "news.ocm-message"),
                         style: optionTextStyle),
                     children: <CupertinoListTile>[
                       CupertinoListTile.notched(
                         title: Text(
-                            FlutterI18n.translate(
-                                context, "careers.career-liaisons"),
+                            FlutterI18n.translate(context, "news.qview"),
                             style: optionTextStyle),
                         trailing: const CupertinoListTileChevron(),
                         onTap: () => _launchURL(
-                            'https://www.qc.cuny.edu/academics/cei/career-meet-the-team/'),
+                            'https://www.qc.cuny.edu/communications/the-qview/'),
                       ),
                       CupertinoListTile.notched(
                         title: Text(
                             FlutterI18n.translate(
-                                context, "careers.upcoming-workshops-events"),
+                                context, "news.frankly-speaking"),
                             style: optionTextStyle),
                         trailing: const CupertinoListTileChevron(),
                         onTap: () => _launchURL(
-                            'https://www.qc.cuny.edu/academics/cei/next-workshop/'),
+                            'https://www.qc.cuny.edu/po/frankly-speaking/'),
                       ),
                       CupertinoListTile.notched(
                         title: Text(
-                            FlutterI18n.translate(
-                                context, "careers.join-hireqc"),
+                            FlutterI18n.translate(context, "news.archive"),
                             style: optionTextStyle),
                         trailing: const CupertinoListTileChevron(),
                         onTap: () => _launchURL(
-                            'https://queenscollege-csm.symplicity.com/'),
-                      ),
-                      CupertinoListTile.notched(
-                        title: Text(
-                            FlutterI18n.translate(context, "button.learn-more"),
-                            style: optionTextStyle),
-                        trailing: const CupertinoListTileChevron(),
-                        onTap: () => _launchURL(
-                            'https://www.qc.cuny.edu/academics/cei/'),
+                            'https://www.qc.cuny.edu/communications/press-release-archive/'),
                       ),
                     ],
                   ),
                   CupertinoListSection.insetGrouped(
-                    header: Text(FlutterI18n.translate(context, "careers.cdc"),
+                    header: Text(FlutterI18n.translate(context, "news.tkn"),
                         style: optionTextStyle),
                     footer: Text(
-                        FlutterI18n.translate(context, "careers.cdc-message"),
+                        FlutterI18n.translate(context, "news.tkn-message"),
                         style: optionTextStyle),
                     children: <CupertinoListTile>[
                       CupertinoListTile.notched(
                         title: Text(
-                            FlutterI18n.translate(
-                                context, "careers.upcoming-workshops-events"),
-                            style: optionTextStyle),
-                        trailing: const CupertinoListTileChevron(),
-                        onTap: () => _launchURL('https://linktr.ee/qcareers'),
-                      ),
-                      CupertinoListTile.notched(
-                        title: Text(
-                            FlutterI18n.translate(
-                                context, "careers.join-mailing-list"),
+                            FlutterI18n.translate(context, "news.campus-news"),
                             style: optionTextStyle),
                         trailing: const CupertinoListTileChevron(),
                         onTap: () => _launchURL(
-                            'https://docs.google.com/forms/d/e/1FAIpQLScBS5SX3wWDiSbFHfKDgXY7PgZ45TmnwRYMfTFIEJOdgNWjHA/viewform'),
+                            'https://www.theknightnews.com/category/local-news/qc-news/'),
                       ),
-                    ],
-                  ),
-                  CupertinoListSection.insetGrouped(
-                    header: Text(FlutterI18n.translate(context, "careers.ee"),
-                        style: optionTextStyle),
-                    footer: Text(
-                        FlutterI18n.translate(context, "careers.ee-message"),
-                        style: optionTextStyle),
-                    children: <CupertinoListTile>[
+                      CupertinoListTile.notched(
+                        title: Text(
+                            FlutterI18n.translate(context, "news.op-eds"),
+                            style: optionTextStyle),
+                        trailing: const CupertinoListTileChevron(),
+                        onTap: () => _launchURL(
+                            'https://www.theknightnews.com/category/op-eds/'),
+                      ),
                       CupertinoListTile.notched(
                         title: Text(
                             FlutterI18n.translate(context, "button.learn-more"),
                             style: optionTextStyle),
                         trailing: const CupertinoListTileChevron(),
                         onTap: () =>
-                            _launchURL('https://www.qc.cuny.edu/academics/ee/'),
+                            _launchURL('https://www.theknightnews.com/'),
                       ),
                     ],
                   ),
@@ -136,7 +116,7 @@ class _MyCareersPageState extends State<MyCareersPage> {
 _launchURL(String url) async {
   final Uri uri = Uri.parse(url);
   // launch in web browser, new window
-  if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+  if (!await launchUrl(uri)) {
     throw Exception('Could not launch $url');
   }
 }

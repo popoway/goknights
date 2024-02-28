@@ -34,6 +34,7 @@ home:
   calendar: "日历"
   directory: "目录"
   shuttle: "班车"
+  news: "新闻"
   sports: "运动"
 
 shuttle:
@@ -96,6 +97,8 @@ careers:
   cdc: "学生会职业发展委员会"
   cdc-message: "学生会职业发展委员会 (CDC) 是一个由学生管理的组织，旨在帮助所有学生提高简历写作、面试技巧，并为未来制定无懈可击的计划。\n地点：Student Union 319"
   join-mailing-list: "加入邮件列表"
+  ee: "体验式教育"
+  ee-message: "体验式教育办公室通过为学生提供体验式学习机会来支持大学的服务使命，帮助他们在课堂内外培养长期成功。\n地点：Frese Hall 102\n电子邮件：experientialeducation@qc.cuny.edu\n电话：718-997-0565"
 
 advising:
   aac: "学术指导中心"
@@ -120,6 +123,17 @@ student-life:
   vpsa-message: "学生事务和招生管理部 (SAEM) 提供服务和计划来支持学生的学业和个人成功。\n位置: Student Union, Room 300\n电子邮件: vpsa@qc.cuny.edu"
   meet-our-staff: "认识我们的员工"
   student-affairs: "学生事务"
+
+news:
+  ocm: "传播与营销办公室"
+  ocm-message: "传播和营销办公室由新闻服务、编辑服务、创意服务、摄影服务、营销和视频制作组成。"
+  qview: "The QView"
+  frankly-speaking: "Frankly Speaking"
+  archive: "新闻稿档案"
+  tkn: "The Knight News"
+  tkn-message: "《骑士新闻》是 Queens College 学生办的报纸。 该月刊涵盖校园新闻、学生活动和当地活动。\n地点：Student Union LL35\n电子邮件：info@theknightnews.com"
+  campus-news: "校园新闻"
+  op-eds: "专栏"
 
 chat:
   title: "欢迎来到 ChatKnights"

@@ -34,6 +34,7 @@ home:
   calendar: "Calendario"
   directory: "Directorio"
   shuttle: "Lanzadera"
+  news: "Noticias"
   sports: "Deportes"
 
 shuttle:
@@ -96,6 +97,8 @@ careers:
   cdc: "Comité de Desarrollo Profesional"
   cdc-message: "El Comité de Desarrollo Profesional (CDC) de la Asociación de Estudiantes es una organización dirigida por estudiantes que sirve para ayudar a todos los estudiantes a mejorar la redacción de currículums, sus habilidades para entrevistas y crear un plan invulnerable para el futuro.\nUbicación: Student Union 319"
   join-mailing-list: "Unirse a la lista de correos"
+  ee: "Educación Experiencial"
+  ee-message: "La Oficina de Educación Experiencial apoya la misión de servicio de la universidad conectando a los estudiantes con oportunidades de aprendizaje experiencial para ayudarlos a cultivar su éxito a largo plazo dentro y fuera del aula.\nUbicación: Frese Hall 102\nCorreo electrónico: experientialeducation@qc.cuny.edu\nTeléfono: 718-997-0565"
 
 advising:
   aac: "Centro de Asesoramiento Académico"
@@ -120,6 +123,17 @@ student-life:
   vpsa-message: "La División de Asuntos Estudiantiles y Gestión de Inscripciones (SAEM) brinda servicios y programas para apoyar el éxito académico y personal de los estudiantes.\nUbicación: Student Union, Room 300\nCorreo electrónico: vpsa@qc.cuny.edu"
   meet-our-staff: "Conozca a Nuestro Personal"
   student-affairs: "Asuntos Estudiantiles"
+
+news:
+  ocm: "Oficina de Comunicaciones y Marketing"
+  ocm-message: "La Oficina de Comunicaciones y Marketing consta de servicios de noticias, servicios editoriales, servicios creativos, servicios fotográficos, marketing y producción de vídeos."
+  qview: "The QView"
+  frankly-speaking: "Frankly Speaking"
+  archive: "Archivo de Comunicados de Prensa"
+  tkn: "The Knight News"
+  tkn-message: "The Knight News es el periódico dirigido por estudiantes de Queens College. Esta publicación mensual cubre noticias del campus, actividades estudiantiles y eventos locales.\nUbicación: Student Union LL35\nCorreo electrónico: info@theknightnews.com"
+  campus-news: "Noticias del Campus"
+  op-eds: "Artículos de Opinión"
 
 chat:
   title: "Bienvenido a ChatKnights"

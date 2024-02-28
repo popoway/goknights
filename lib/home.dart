@@ -20,6 +20,7 @@ import 'dept/library.dart';
 import 'dept/careers.dart';
 import 'dept/advising.dart';
 import 'dept/shuttle_map.dart';
+import 'dept/news.dart';
 
 class _TabInfo {
   const _TabInfo(this.title, this.icon);
@@ -425,6 +426,12 @@ class _MyHomePageState extends State<MyHomePage> {
       'role': ['current', 'prospective', 'faculty'],
     },
     {
+      'icon': CupertinoIcons.news_solid,
+      'name': 'news',
+      'url': 'https://www.theknightnews.com/',
+      'role': ['current', 'prospective', 'faculty'],
+    },
+    {
       'icon': CupertinoIcons.sportscourt,
       'name': 'sports',
       'url': 'https://queensknights.com/index.aspx',
@@ -621,6 +628,17 @@ class _MyHomePageState extends State<MyHomePage> {
                                             context, "home.student-life")),
                                     title: FlutterI18n.translate(
                                         context, "home.student-life")),
+                              );
+                            } else if (iconListCurrent[index]['name'] ==
+                                'news') {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => MyNewsPage(
+                                        title: FlutterI18n.translate(
+                                            context, "home.news")),
+                                    title: FlutterI18n.translate(
+                                        context, "home.news")),
                               );
                             } else if (iconListCurrent[index]['name'] ==
                                 'timesheet') {
