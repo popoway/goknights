@@ -147,6 +147,7 @@ chat:
   disclaimer: "ChatKnights 可能会犯错误。请考虑核对重要信息。"
   placeholder: "给 ChatKnights 发消息..."
   too-short: "您的信息太短了，我无法理解。请详细说明您的问题。"
+  error: "哎呀！看起来我的回答出了问题。请再试一次。"
 
 map:
   hint: "搜索建筑物..."

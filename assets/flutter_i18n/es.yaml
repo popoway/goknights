@@ -147,6 +147,7 @@ chat:
   disclaimer: "ChatKnights puede cometer errores. Considera verificar información importante."
   placeholder: "Mensaje a ChatKnights..."
   too-short: "Tu mensaje es demasiado corto para que yo lo entienda. Por favor, elabora tu pregunta."
+  error: "Lo siento, no puedo responder a eso. Por favor, intenta otra pregunta."
 
 map:
   hint: "Buscar edificios..."

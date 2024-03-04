@@ -242,16 +242,22 @@ class _MyChatPageState extends State<MyChatPage> {
     });
   }
 
-  Future<http.Response> fetchCompletion(String partialRequest) {
+  Future<http.Response> fetchCompletion(String partialRequest) async {
     print(partialRequest);
-    return http.post(
-        Uri.parse(
-            "https://$_endpoint/openai/deployments/$_model/chat/completions?api-version=2023-12-01-preview"),
-        headers: <String, String>{
-          'Content-Type': 'application/json; charset=UTF-8',
-          'api-key': _key,
-        },
-        body: partialRequest);
+    try {
+      return await http.post(
+          Uri.parse(
+              "https://$_endpoint/openai/deployments/$_model/chat/completions?api-version=2023-12-01-preview"),
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+            'api-key': _key,
+          },
+          body: partialRequest);
+    } catch (e) {
+      print('Exception caught: $e');
+      // Handle the exception here
+    }
+    return Future.value(http.Response('{"error": "Exception caught"}', 500));
   }
 
   /// Composes request JSON for Azure OpenAI API
@@ -363,14 +369,21 @@ class _MyChatPageState extends State<MyChatPage> {
       _replaceMessage(textMessage2);
 
       // send message to Azure OpenAI API
-      var response = await fetchCompletion(
-          await _composeRequestJSON(_messages, message.text));
-      print(utf8.decode(response.bodyBytes));
-      var responseJSON = jsonDecode(utf8.decode(response.bodyBytes));
-      // sample response:
-      // {"id":"chatcmpl-8f6aKXU20mj0koJvwLXLe9eb9Qynw","object":"chat.completion","created":1704807452,"model":"gpt-35-turbo","choices":[{"finish_reason":"stop","index":0,"message":{"role":"assistant","content":"Yes, many Azure AI services support customer managed keys. These include Azure Cognitive Services, Azure Machine Learning, and Azure Databricks."}}],"usage":{"prompt_tokens":59,"completion_tokens":27,"total_tokens":86}}
-      var responseContent = responseJSON['choices'][0]['message']['content'];
-
+      http.Response response;
+      String responseContent = "Error: No response.";
+      try {
+        response = await fetchCompletion(
+            await _composeRequestJSON(_messages, message.text));
+        print(utf8.decode(response.bodyBytes));
+        var responseJSON = jsonDecode(utf8.decode(response.bodyBytes));
+        // sample response:
+        // {"id":"chatcmpl-8f6aKXU20mj0koJvwLXLe9eb9Qynw","object":"chat.completion","created":1704807452,"model":"gpt-35-turbo","choices":[{"finish_reason":"stop","index":0,"message":{"role":"assistant","content":"Yes, many Azure AI services support customer managed keys. These include Azure Cognitive Services, Azure Machine Learning, and Azure Databricks."}}],"usage":{"prompt_tokens":59,"completion_tokens":27,"total_tokens":86}}
+        responseContent = responseJSON['choices'][0]['message']['content'];
+      } catch (e) {
+        print('Exception caught: $e');
+        responseContent = FlutterI18n.translate(context, "chat.error");
+        // Handle the exception here
+      }
       var responseMessage = types.TextMessage(
         author: _bot,
         createdAt: DateTime.now().millisecondsSinceEpoch,
