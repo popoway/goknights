@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
-import 'package:flutter_config/flutter_config.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
@@ -70,9 +70,9 @@ class _MyChatPageState extends State<MyChatPage> {
       lastName: 'AI',
       imageUrl:
           "https://github.com/popoway/goknights/blob/main/assets/icon/icon-scaled-128px.png?raw=true");
-  final _endpoint = FlutterConfig.get('OPENAI_API_ENDPOINT');
-  final _key = FlutterConfig.get('OPENAI_API_KEY');
-  final _model = FlutterConfig.get('OPENAI_API_MODEL');
+  final _endpoint = dotenv.env['OPENAI_API_ENDPOINT'];
+  final _key = dotenv.env['OPENAI_API_KEY'];
+  final _model = dotenv.env['OPENAI_API_MODEL'];
 
   @override
   Widget build(BuildContext context) {
@@ -250,7 +250,7 @@ class _MyChatPageState extends State<MyChatPage> {
               "https://$_endpoint/openai/deployments/$_model/chat/completions?api-version=2023-12-01-preview"),
           headers: <String, String>{
             'Content-Type': 'application/json; charset=UTF-8',
-            'api-key': _key,
+            'api-key': _key!,
           },
           body: partialRequest);
     } catch (e) {
