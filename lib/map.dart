@@ -455,6 +455,11 @@ class _MyMapPageState extends State<MyMapPage> {
             .toLowerCase()
             .contains(query.toLowerCase())) {
           markersCurrent.add(marker);
+        } else if (marker.infoWindow.snippet != null &&
+            marker.infoWindow.snippet!
+                .toLowerCase()
+                .contains(query.toLowerCase())) {
+          markersCurrent.add(marker);
         }
       }
     });
