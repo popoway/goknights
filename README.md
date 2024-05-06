@@ -36,6 +36,9 @@
     <a href="https://github.com/popoway/goknights/issues">Report Bug</a>
     ·
     <a href="https://github.com/popoway/goknights/issues">Request Feature</a>
+    <br />
+    <br />
+    📢 GoKnights is featured on <i>The Knight News</i>, Queens College's monthly publication! <a href="https://www.theknightnews.com/2024/02/26/goknights-an-app-for-the-community-by-the-community/">Read Coverage</a>
   </p>
 </div>
 
@@ -213,8 +216,11 @@ Open Source Licenses and Acknowledgements are available within the "About" dialo
             <td>Sayashmini Madhow</td>
         </tr>
         <tr>
-            <td>Marketing</td>
+            <td rowspan=2>Marketing</td>
             <td><a href="https://www.instagram.com/qcareers">@qcareers</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://www.instagram.com/p/C5PFLNEPR45/">@qclearningcommons</a></td>
         </tr>
     </tbody>
 </table>
