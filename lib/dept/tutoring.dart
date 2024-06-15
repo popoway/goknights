@@ -50,8 +50,7 @@ class _MyTutoringPageState extends State<MyTutoringPage> {
                               context, "tutoring.book-an-appointment"),
                           style: optionTextStyle),
                       trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://outlook.office365.com/owa/calendar/LearningCommons1@CUNY907.onmicrosoft.com/bookings/'),
+                      onTap: () => _launchURL('https://qclc.mywconline.com/'),
                     ),
                     CupertinoListTile.notched(
                       title: Text(

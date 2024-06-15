@@ -123,12 +123,12 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                           _launchURL('https://home.cunyfirst.cuny.edu/'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text('Blackboard', style: optionTextStyle),
+                      title: Text('Brightspace', style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.square_list,
                       ),
                       trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL('https://bbhosted.cuny.edu'),
+                      onTap: () => _launchURL('https://brightspace.cuny.edu/'),
                     ),
                     CupertinoListTile.notched(
                       title: Text(
@@ -145,13 +145,13 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                           _launchURL('https://outlook.com/login.cuny.edu'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text('QC Navigate', style: optionTextStyle),
+                      title: Text('QC Navigate Staff', style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.compass,
                       ),
                       trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL(
-                          'https://qc-cuny.navigate.eab.com/api/v1/auth/login/?return_to=https%3A%2F%2Fqc-cuny.navigate.eab.com%2F%23%2Fmy%2Fpriority-feed%2F'),
+                      onTap: () =>
+                          _launchURL('https://qc-cuny.campus.eab.com/'),
                     ),
                   ],
                 );
@@ -175,12 +175,12 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                           _launchURL('https://home.cunyfirst.cuny.edu/'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text('Blackboard', style: optionTextStyle),
+                      title: Text('Brightspace', style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.square_list,
                       ),
                       trailing: const CupertinoListTileChevron(),
-                      onTap: () => _launchURL('https://bbhosted.cuny.edu'),
+                      onTap: () => _launchURL('https://brightspace.cuny.edu/'),
                     ),
                     CupertinoListTile.notched(
                       title: Text(
@@ -207,7 +207,8 @@ class _MyOptionsPageState extends State<MyOptionsPage> {
                           'https://degreeworks.cuny.edu/Dashboard_qc'),
                     ),
                     CupertinoListTile.notched(
-                      title: Text('QC Navigate', style: optionTextStyle),
+                      title:
+                          Text('QC Navigate Student', style: optionTextStyle),
                       leading: const Icon(
                         CupertinoIcons.compass,
                       ),

@@ -419,13 +419,6 @@ class _MyHomePageState extends State<MyHomePage> {
       'role': ['current', 'prospective', 'faculty'],
     },
     {
-      'icon': CupertinoIcons.bus,
-      'name': 'shuttle',
-      'url':
-          'https://queenscollegeshuttles.com/map?showHeader=0&route=3235&silent_disable_timeout=1',
-      'role': ['current', 'prospective', 'faculty'],
-    },
-    {
       'icon': CupertinoIcons.news_solid,
       'name': 'news',
       'url': 'https://www.theknightnews.com/',
@@ -482,9 +475,15 @@ class _MyHomePageState extends State<MyHomePage> {
         if (shortcutType == 'action_printing') {
           // shortcut = 'action one';
           _launchURL('https://qcprint.qc.cuny.edu/myprintcenter/#');
-        } else if (shortcutType == 'action_shuttle') {
+        } else if (shortcutType == 'action_tutoring') {
           // shortcut = 'action two';
-          _showShuttleActionSheet(context);
+          Navigator.push(
+            context,
+            CupertinoPageRoute(
+                builder: (context) => MyTutoringPage(
+                    title: FlutterI18n.translate(context, "home.tutoring")),
+                title: FlutterI18n.translate(context, "home.tutoring")),
+          );
         }
       });
     });
@@ -494,7 +493,7 @@ class _MyHomePageState extends State<MyHomePage> {
         type: 'action_printing',
         localizedTitle: "Printing",
       ),
-      const ShortcutItem(type: 'action_shuttle', localizedTitle: "Shuttle"),
+      const ShortcutItem(type: 'action_tutoring', localizedTitle: "Tutoring"),
     ]).then((void _) {
       setState(() {
         // if (shortcut == 'no action set') {

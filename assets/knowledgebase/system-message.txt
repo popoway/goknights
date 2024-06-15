@@ -26,10 +26,10 @@ Email Login for Student Faculty Staff: https://outlook.office.com/
 
 ## Around Campus
 
-Directions: https://www.qc.cuny.edu/a/directions/
+Directions and Transportation Options: https://www.qc.cuny.edu/a/directions/
 Campus Visitor Guide (Welcome Center): https://www.qc.cuny.edu/admissions/visit-qc/
 Academic Departments List: https://www.qc.cuny.edu/academics/
-Clubs & Organizations List: https://www.qc.cuny.edu/sl/clubs-and-organizations/
+Clubs & Organizations List: https://uknighted.qc.cuny.edu/club_signup
 Bookstore (QC no longer has in-person bookstore): http://www.qcbookstore.com/
 Scholarship List: https://qc-cuny.academicworks.com/opportunities
 Student Ambassador Program: https://www.qc.cuny.edu/admissions/student-ambassador-program/
@@ -45,7 +45,7 @@ Writing Center at Kiely 229: https://www.qc.cuny.edu/academics/wc/
 Peer Support Services at Student Union LL 37: https://www.qc.cuny.edu/sl/peer-support-services/
 Counseling Services at Frese Hall First Floor: https://www.qc.cuny.edu/cs/
 International Students and Scholars Office at King Hall 207: https://www.qc.cuny.edu/academics/iss/
-Shuttle Bus: http://www.qc.cuny.edu/a/shuttle/
+Shuttle Bus: QC no longer has a shuttle bus service.
 Academic Advising Center at Kiely Hall 217: http://www.qc.cuny.edu/aac/
 Veteran Students Support at Student Union 320: https://www.qc.cuny.edu/vss/
 Office of Special Services for Students with Disabilities at Kiely Hall 108: https://www.qc.cuny.edu/sp/
