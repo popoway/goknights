@@ -105,6 +105,7 @@ class _MyMapPageState extends State<MyMapPage> {
       position: const LatLng(40.7352096, -73.8160514),
       infoWindow: const InfoWindow(
         title: 'Jefferson Hall (JH)',
+        snippet: 'Office of Undergraduate Admissions\nWelcome Center',
       ),
     ),
     Marker(
@@ -133,6 +134,13 @@ class _MyMapPageState extends State<MyMapPage> {
       position: const LatLng(40.736033, -73.819013),
       infoWindow: const InfoWindow(
         title: 'Powdermaker Hall (PH)',
+      ),
+    ),
+    Marker(
+      markerId: MarkerId('marker_bldg_ae'),
+      position: const LatLng(40.736781, -73.817768),
+      infoWindow: const InfoWindow(
+        title: 'Alumni Hall (AE)',
       ),
     ),
     Marker(
@@ -167,7 +175,15 @@ class _MyMapPageState extends State<MyMapPage> {
       markerId: MarkerId('marker_bldg_dh'),
       position: const LatLng(40.737219, -73.817559),
       infoWindow: const InfoWindow(
-        title: 'Dining Hall (DH)',
+          title: 'Dining Hall (DH)', snippet: 'QC Hub\nPatio Room'),
+    ),
+    Marker(
+      markerId: MarkerId('marker_bldg_ib'),
+      position: const LatLng(40.737441, -73.818255),
+      infoWindow: const InfoWindow(
+        title: 'I Building (IB)',
+        snippet:
+            'QCard Student ID Office\nInformation Technology Services (ITS)',
       ),
     ),
     Marker(
@@ -198,6 +214,20 @@ class _MyMapPageState extends State<MyMapPage> {
       position: const LatLng(40.737473, -73.816267),
       infoWindow: const InfoWindow(
         title: 'Rathaus Hall (RA)',
+      ),
+    ),
+    Marker(
+      markerId: MarkerId('marker_bldg_gb'),
+      position: const LatLng(40.737091, -73.815794),
+      infoWindow: const InfoWindow(
+        title: 'G Building (GB)',
+      ),
+    ),
+    Marker(
+      markerId: MarkerId('marker_bldg_gc'),
+      position: const LatLng(40.737337, -73.815844),
+      infoWindow: const InfoWindow(
+        title: 'Gertz Center (GC)',
       ),
     ),
     Marker(
