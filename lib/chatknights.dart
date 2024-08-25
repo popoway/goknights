@@ -247,7 +247,7 @@ class _MyChatPageState extends State<MyChatPage> {
     try {
       return await http.post(
           Uri.parse(
-              "https://$_endpoint/openai/deployments/$_model/chat/completions?api-version=2023-12-01-preview"),
+              "https://$_endpoint/openai/deployments/$_model/chat/completions?api-version=2024-07-01-preview"),
           headers: <String, String>{
             'Content-Type': 'application/json; charset=UTF-8',
             'api-key': _key!,
@@ -303,7 +303,7 @@ class _MyChatPageState extends State<MyChatPage> {
         createdAt: DateTime.now().millisecondsSinceEpoch,
         id: randomString(),
         text:
-            "The Learning Commons, which includes the Academic Support Center and Tutoring, is located in Kiely Hall 131. You can find more information about their services at https://www.qc.cuny.edu/academics/qclc/.",
+            "The Learning Commons, which includes the Academic Support Center and Peer Tutoring, is located in Kiely Hall 131. You can find more information about their services at https://www.qc.cuny.edu/academics/qclc/.",
       );
       var textMessage3 = types.TextMessage(
         author: _user,
@@ -318,7 +318,7 @@ class _MyChatPageState extends State<MyChatPage> {
         createdAt: DateTime.now().millisecondsSinceEpoch,
         id: randomString(),
         text:
-            "You can swap a class using the CUNYfirst Schedule Builder at https://sb.cunyfirst.cuny.edu/. If you need help with CUNYfirst, you can contact the ITS Tech Helpdesk at Kiely Hall 226 or visit their website at https://support.qc.cuny.edu/.",
+            "You can swap a class using the CUNYfirst Schedule Builder at https://sb.cunyfirst.cuny.edu/. If you need help with CUNYfirst, you can contact the ITS Tech Helpdesk at I Building 200 or visit their website at https://support.qc.cuny.edu/.",
       );
       _addMessage(textMessage);
       _addMessage(textMessage2);

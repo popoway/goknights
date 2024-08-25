@@ -94,7 +94,7 @@ Below are some brief instructions on setting up this project locally. To get a l
    UPLOAD_KEYSTORE_PASSWORD=google_play_keystore
    OPENAI_API_ENDPOINT=your_endpoint (ex. api.openai.com)
    OPENAI_API_KEY=your_api_key
-   OPENAI_API_MODEL=gpt-4-turbo
+   OPENAI_API_MODEL=gpt-4o-mini
    ```
 4. You're all set! Run the app with `flutter run` or your preferred editor.
 
