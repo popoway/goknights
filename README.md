@@ -67,7 +67,9 @@ This project is currently under development and will be updated periodically.
 
 ## Getting Started
 
-Below are some brief instructions on setting up this project locally. To get a local copy up and running follow these simple example steps.
+Below are some brief instructions on setting up this project *locally*. To get a local copy up and running follow these simple example steps.
+
+**🛑 If you only want to download and use the app your phone, not code and debug it, you should scroll up and use [one of these buttons](#readme-top) instead. 🛑**
 
 ### Prerequisites
 

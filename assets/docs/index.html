@@ -36,6 +36,10 @@
     <p>Elevate Your QC Knights experience</p>
   </div>
   <div>
+      <div id="qr-prompt">
+        <img id="qr" src="goknights-qr.png" style="height: 180px;" alt="GoKnights QR Code to this page">
+        <p><strong>Scan to Download</strong></p>
+      </div>
     <a href="https://play.google.com/store/apps/details?id=com.popoway.goknights" target="_blank">
       <img src="googleplay-badge.png" alt="Get it on Google Play" style="height: 50px;">
     </a>
@@ -65,13 +69,24 @@
       /* round corner */
       border-radius: 15%;
     }
+    #qr-prompt {
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 10px 0 0 0;
+      margin: 20px auto;
+      max-width: 220px;
+    }
     @media (prefers-color-scheme: dark) {
       body {
         background-color: black;
         color: white;
       }
     }
-    
+    @media screen and (max-width: 600px) {
+      #qr-prompt {
+        display: none;
+      }
+    }
     a {
       color: lightblue;
     }
