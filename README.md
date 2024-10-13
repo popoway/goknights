@@ -182,8 +182,11 @@ Open Source Licenses and Acknowledgements are available within the "About" dialo
             <td>Chris Galarraga</td>
         </tr>
         <tr>
-            <td>Translation: Hebrew</td>
+            <td rowspan=2>Translation: Hebrew</td>
             <td>Sofia Taherkhani</td>
+        </tr>
+        <tr>
+            <td>Launy Schweiger</td>
         </tr>
         <tr>
             <td>Translation: Hindi</td>
