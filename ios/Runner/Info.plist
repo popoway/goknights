@@ -65,5 +65,7 @@
 	<true/>
 	<key>UIStatusBarHidden</key>
 	<false/>
+	<key>kMDItemKeywords</key>
+	<string>Queens College,QC,City University of New York,CUNY,campus map,student resources</string>
 </dict>
 </plist>
